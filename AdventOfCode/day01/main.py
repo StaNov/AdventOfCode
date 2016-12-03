@@ -8,7 +8,7 @@ def main():
 
     content = f.read()
 
-    result = solver.solve(content)
+    result = solver.solve_1(content)
 
     return result
 
