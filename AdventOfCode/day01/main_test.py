@@ -2,5 +2,9 @@
 import main
 
 
-def test_main():
-    assert main.main() == 262
+def test_main_1():
+    assert main.main_1() == 262
+
+
+def test_main_2():
+    assert main.main_2() == 131

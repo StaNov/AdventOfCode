@@ -42,6 +42,9 @@ class Marshaller:
     def steps_from_start(self):
         return abs(self._x) + abs(self._y)
 
+    def current_position(self):
+        return self._x, self._y
+
 
 class Direction:
 

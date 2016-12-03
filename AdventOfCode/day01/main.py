@@ -3,17 +3,26 @@ import solver
 import os
 
 
-def main():
+def main_1():
+    content = _read_input()
+    return solver.solve_1(content)
+
+
+def main_2():
+    content = _read_input()
+    return solver.solve_2(content)
+
+
+def _read_input():
     f = open(os.path.join(os.path.dirname(__file__), "input"))
-
-    content = f.read()
-
-    result = solver.solve_1(content)
-
-    return result
+    input_text = f.read()
+    f.close()
+    return input_text
 
 
 if __name__ == "__main__":
-    result = main()
+    result_1 = main_1()
+    print("FIRST RESULT IS: " + str(result_1) + "!!!")
 
-    print("AND THE RESULT IS: " + str(result) + "!!!")
+    result_2 = main_2()
+    print("SECOND RESULT IS: " + str(result_2) + "!!!")
