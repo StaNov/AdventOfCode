@@ -12,7 +12,7 @@ class PositionRecorder:
 
         if (position[0] != self._current_position[0] and
                 position[1] != self._current_position[1]):
-            raise Exception("New position is not in line with the previous one!")
+            raise ValueError("New position is not in line with the previous one!")
 
         is_first_step = True
         for x in _inclusive_range(self._current_position[0], position[0]):

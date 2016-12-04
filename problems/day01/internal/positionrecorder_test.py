@@ -23,3 +23,9 @@ def test_record_position():
 
     with pytest.raises(Exception):
         recorder.record((10, -10))
+
+
+def test_record_bad_position():
+    recorder = PositionRecorder()
+    with pytest.raises(ValueError):
+        recorder.record((2, 3))

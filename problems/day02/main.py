@@ -19,7 +19,7 @@ class Main:
 
 if __name__ == "__main__":
     result_1 = Main.main_1()
-    print("FIRST RESULT IS: " + str(result_1) + " !!!")
+    print("FIRST  RESULT IS: " + str(result_1) + " !!!")
 
     result_2 = Main.main_2()
     print("SECOND RESULT IS: " + str(result_2) + " !!!")
