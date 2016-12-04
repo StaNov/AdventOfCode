@@ -1,5 +1,6 @@
-from positionrecorder import PositionRecorder
 import pytest
+
+from problems.day01.internal.positionrecorder import PositionRecorder
 
 
 def test_record_position():
