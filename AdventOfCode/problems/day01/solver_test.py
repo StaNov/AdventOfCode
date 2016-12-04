@@ -1,4 +1,4 @@
-from problems.day01.solver import Solver
+from .solver import Solver
 
 
 def test_1_1():

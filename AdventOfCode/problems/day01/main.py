@@ -1,5 +1,8 @@
-from problems.day01.solver import Solver
 from utils import InputReader
+if __name__ == "__main__":
+    from problems.day01.solver import Solver
+else:
+    from .solver import Solver
 
 
 class Main:

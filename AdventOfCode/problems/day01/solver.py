@@ -1,4 +1,4 @@
-from problems.day01.internal import Marshaller, MarshallerController, PositionRecorder
+from .internal import Marshaller, MarshallerController, PositionRecorder
 
 
 class Solver:

@@ -1,4 +1,4 @@
-from problems.day01.main import Main
+from .main import Main
 
 
 def test_main_1():
