@@ -1,29 +1,22 @@
-from . import Keyboard
-
-
 class KeyboardController:
     def __init__(self, keyboard):
         self._keyboard = keyboard
 
     def move_up(self):
-        new_key = self._key() - 3
-        if new_key >= 1:
-            self._keyboard.set_key(new_key)
+        new_index = self._index()[0] - 1, self._index()[1]
+        self._keyboard.set_index(new_index)
 
     def move_down(self):
-        new_key = self._key() + 3
-        if new_key <= 9:
-            self._keyboard.set_key(new_key)
+        new_index = self._index()[0] + 1, self._index()[1]
+        self._keyboard.set_index(new_index)
 
     def move_left(self):
-        new_key = self._key() - 1
-        if new_key % 3 != 0:
-            self._keyboard.set_key(new_key)
+        new_index = self._index()[0], self._index()[1] - 1
+        self._keyboard.set_index(new_index)
 
     def move_right(self):
-        new_key = self._key() + 1
-        if new_key % 3 != 1:
-            self._keyboard.set_key(new_key)
+        new_index = self._index()[0], self._index()[1] + 1
+        self._keyboard.set_index(new_index)
 
-    def _key(self):
-        return self._keyboard.get_key()
+    def _index(self):
+        return self._keyboard.get_index()

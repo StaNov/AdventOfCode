@@ -1,12 +1,19 @@
-from .internal import Keyboard, KeyboardController
+from .internal import Keyboard, KeyboardAdvanced, KeyboardController
 
 
 class Solver:
     @staticmethod
     def solve_1(input_string):
+        return Solver._solve(input_string, Keyboard())
+
+    @staticmethod
+    def solve_2(input_string):
+        return Solver._solve(input_string, KeyboardAdvanced())
+
+    @staticmethod
+    def _solve(input_string, keyboard):
         lines = input_string.split("\n")
         result = ""
-        keyboard = Keyboard(5)
         ctrl = KeyboardController(keyboard)
 
         for line in lines:
@@ -26,8 +33,4 @@ class Solver:
 
             result += str(keyboard.get_key())
 
-        return int(result)
-
-    @staticmethod
-    def solve_2(input_string):
-        return 0
+        return result
