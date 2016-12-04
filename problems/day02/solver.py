@@ -1,4 +1,4 @@
-from .internal import Keyboard
+from .internal import Keyboard, KeyboardController
 
 
 class Solver:
@@ -8,8 +8,8 @@ class Solver:
 
         for line in lines:
             keyboard = Keyboard(5)
+            controller = KeyboardController(keyboard)
             # TODO
-            pass
 
         return 0
 
