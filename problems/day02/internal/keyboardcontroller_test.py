@@ -2,7 +2,7 @@ from . import Keyboard, KeyboardController
 
 
 def test_move_right():
-    kb, ctrl = init()
+    kb, ctrl = init(5)
     ctrl.move_right()
     assert kb.get_key() == 6
     ctrl.move_right()
