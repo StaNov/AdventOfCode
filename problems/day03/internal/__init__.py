@@ -1,2 +1,2 @@
-# TODO
-# from .module import Module
+from .lineparser import LineParser
+from .trianglechecker import TriangleChecker

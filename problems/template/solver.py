@@ -1,3 +1,6 @@
+# from .internal import Class
+
+
 class Solver:
     @staticmethod
     def solve_1(input_string):

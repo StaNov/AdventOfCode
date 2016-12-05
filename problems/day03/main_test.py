@@ -2,7 +2,7 @@ from .main import Main
 
 
 def test_main_1():
-    # TODO assert Main.main_1() == 0
+    assert Main.main_1() == 983
     pass
 
 
