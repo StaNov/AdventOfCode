@@ -1,4 +1,4 @@
-from .internal import LineParser, TriangleChecker
+from .internal import InputParser, TriangleChecker
 
 
 class Solver:
@@ -7,7 +7,7 @@ class Solver:
         result = 0
 
         for line in input_string.split("\n"):
-            x, y, z = LineParser.parse(line)
+            x, y, z = InputParser.parse_line(line)
             is_triangle = TriangleChecker.check(x, y, z)
             if is_triangle:
                 result += 1
@@ -16,4 +16,12 @@ class Solver:
 
     @staticmethod
     def solve_2(input_string):
-        return 0  # TODO
+        result = 0
+        triangles = InputParser.parse_vertically(input_string)
+
+        for x, y, z in triangles:
+            is_triangle = TriangleChecker.check(x, y, z)
+            if is_triangle:
+                result += 1
+
+        return result
