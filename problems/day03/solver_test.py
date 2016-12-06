@@ -3,8 +3,8 @@ from .solver import Solver
 
 def test_1_1():
     test_input = (
-        "4 5 6"
-        "7 8 9"
+        "4 5 6\n"
+        "7 8 9\n"
         "5 10 25"
     )
     assert Solver.solve_1(test_input) == 2
