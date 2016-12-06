@@ -15,3 +15,6 @@ def test_1_3():
 
 def test_2_1():
     assert Solver.solve_2("R8, R4, R4, R8") == 4
+
+def test_failing():
+    assert False
