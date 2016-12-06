@@ -1,3 +1,3 @@
 import pytest
 
-pytest.main()
+return pytest.main()
