@@ -1,3 +1,4 @@
 import pytest
 
-return pytest.main()
+exit_code = pytest.main()
+sys.exit(exit_code)
