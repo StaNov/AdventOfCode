@@ -12,5 +12,4 @@ def test_1_1():
 
 
 def test_2_1():
-    # TODO assert Solver.solve_2("test test") == 0
-    pass
+    assert Solver.solve_2("qzmt-zixmtkozy-ivhz-343[zimth]", "very encrypted name") == 343

@@ -1,4 +1,4 @@
-from .internal import LineParser, Evaluator
+from .internal import LineParser, Evaluator, Decrypter
 
 
 class Solver:
@@ -14,5 +14,14 @@ class Solver:
         return result
 
     @staticmethod
-    def solve_2(input_string):
-        return 0  # TODO
+    def solve_2(input_string, finding_room_name="northpole object storage"):
+        for line in input_string.split("\n"):
+            parsed_line = LineParser.parse(line)
+
+            encrypted_string = parsed_line[0]
+            encryption_key = parsed_line[1]
+
+            decrypted = Decrypter.decrypt(encrypted_string, encryption_key)
+
+            if decrypted == finding_room_name and Evaluator.evaluate(parsed_line) != 0:
+                return encryption_key
