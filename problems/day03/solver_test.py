@@ -2,7 +2,12 @@ from .solver import Solver
 
 
 def test_1_1():
-    assert Solver.solve_1("4 5 6\n7 8 9\n5 10 25") == 2
+    test_input = (
+        "4 5 6"
+        "7 8 9"
+        "5 10 25"
+    )
+    assert Solver.solve_1(test_input) == 2
 
 
 def test_2_1():
