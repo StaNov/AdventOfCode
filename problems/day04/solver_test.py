@@ -8,7 +8,7 @@ def test_1_1():
         "not-a-real-room-404[oarel]\n"
         "totally-real-room-200[decoy]"
     )
-    # TODO assert Solver.solve_1("test test") == 1514
+    assert Solver.solve_1(test_input) == 1514
 
 
 def test_2_1():
