@@ -12,7 +12,7 @@ class Solver:
 
     @staticmethod
     def _solve(input_string, keyboard):
-        lines = input_string.split("\n")
+        lines = input_string.splitlines()
         result = ""
         ctrl = KeyboardController(keyboard)
 

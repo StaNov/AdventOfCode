@@ -6,7 +6,7 @@ class Solver:
     def solve_1(input_string):
         result = 0
 
-        for line in input_string.split("\n"):
+        for line in input_string.splitlines():
             x, y, z = InputParser.parse_line(line)
             is_triangle = TriangleChecker.check(x, y, z)
             if is_triangle:

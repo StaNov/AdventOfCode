@@ -9,7 +9,7 @@ class InputParser:
         buffer = []
         result = []
 
-        for line in input_string.split("\n"):
+        for line in input_string.splitlines():
             parsed_line = InputParser.parse_line(line)
             buffer.append(parsed_line)
 
