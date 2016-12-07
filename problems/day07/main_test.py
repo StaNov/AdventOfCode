@@ -2,8 +2,7 @@ from .main import Main
 
 
 def test_main_1():
-    # TODO assert Main.main_1() == 0
-    pass
+    assert Main.main_1() == 105
 
 
 def test_main_2():
