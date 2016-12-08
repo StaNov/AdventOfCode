@@ -27,3 +27,15 @@ def test_is_abba_false_1():
 
 def test_is_abba_false_2():
     assert not AbbaChecker.is_abba("aaaa")
+
+
+def test_is_abba_short_true():
+    assert AbbaChecker.is_abba("aba")
+
+
+def test_is_abba_short_false_1():
+    assert not AbbaChecker.is_abba("xyz")
+
+
+def test_is_abba_short_false_2():
+    assert not AbbaChecker.is_abba("aaa")

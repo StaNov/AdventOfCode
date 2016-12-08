@@ -1,4 +1,4 @@
-from .internal import LineParser, AbbaChecker
+from .internal import LineParser, AbbaChecker, SslChecker
 
 
 class Solver:
@@ -21,4 +21,10 @@ class Solver:
 
     @staticmethod
     def solve_2(input_string):
-        return 0  # TODO
+        result = 0
+
+        for line in input_string.splitlines():
+            if SslChecker.is_ssl(line):
+                result += 1
+
+        return result
