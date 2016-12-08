@@ -1,16 +1,20 @@
 from . import AbbaChecker
 
 
-def test_check_true():
-    assert AbbaChecker.check("xyzxyzabbaxyzxyz")
+def test_get_abbas_from_strings():
+    assert AbbaChecker.get_abbas_from_strings(["xyzx", "xyzabbaxyz", "xyzx", "xyzxybaabxyz"]) == ["abba", "baab"]
 
 
-def test_check_false():
-    assert not AbbaChecker.check("abcdefghijklm")
+def test_get_abbas_from_string_1():
+    assert AbbaChecker.get_abbas_from_string("xyzxyzabbaxyzbaabxyz") == ["abba", "baab"]
 
 
-def test_check_false_2():
-    assert not AbbaChecker.check("xyzxyzaaaaxyzxyz")
+def test_get_abbas_from_string_2():
+    assert AbbaChecker.get_abbas_from_string("abcdefghijklm") == []
+
+
+def test_get_abbas_from_string_3():
+    assert AbbaChecker.get_abbas_from_string("xyzxyzaaaaxyzxyz") == []
 
 
 def test_is_abba_true():

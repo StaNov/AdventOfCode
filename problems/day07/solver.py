@@ -9,7 +9,10 @@ class Solver:
         for line in input_string.splitlines():
             including, excluding = LineParser.parse(line)
 
-            if not AbbaChecker.at_least_one_is_abba(including) or not AbbaChecker.all_are_not_abba(excluding):
+            including_abbas = AbbaChecker.get_abbas_from_strings(including)
+            excluding_abbas = AbbaChecker.get_abbas_from_strings(excluding)
+
+            if len(including_abbas) == 0 or len(excluding_abbas) > 0:
                 continue
 
             result += 1
