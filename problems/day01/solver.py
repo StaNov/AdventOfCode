@@ -1,28 +1,26 @@
+from utils import AbstractSolver
 from .internal import Marshaller, MarshallerController, PositionRecorder
 
 
-class Solver:
-    @staticmethod
-    def solve_1(input_string):
-        marshaller = Marshaller()
-        controller = MarshallerController(marshaller)
+class Solver(AbstractSolver):
+    def __init__(self, input_string=None):
+        super().__init__(input_string)
+        self.marshaller = Marshaller()
+        self.controller = MarshallerController(self.marshaller)
+        self.recorder = PositionRecorder()
 
-        for instruction in input_string.split(", "):
-            controller.execute_instruction(instruction)
+    def solve_1_internal(self):
+        for instruction in self.input_string.split(", "):
+            self.controller.execute_instruction(instruction)
 
-        return marshaller.steps_from_start()
+        return self.marshaller.steps_from_start()
 
-    @staticmethod
-    def solve_2(input_string):
-        marshaller = Marshaller()
-        controller = MarshallerController(marshaller)
-        recorder = PositionRecorder()
+    def solve_2_internal(self):
+        for instruction in self.input_string.split(", "):
+            self.controller.execute_instruction(instruction)
 
-        for instruction in input_string.split(", "):
-            controller.execute_instruction(instruction)
-
-            current_position = marshaller.current_position()
-            already_visited = recorder.record(current_position)
+            current_position = self.marshaller.current_position()
+            already_visited = self.recorder.record(current_position)
 
             if already_visited is not None:
                 return abs(already_visited[0]) + abs(already_visited[1])

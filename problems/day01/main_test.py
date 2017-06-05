@@ -1,9 +1,15 @@
+import pytest
 from .main import Main
 
 
-def test_main_1():
-    assert Main.main_1() == 262
+@pytest.fixture
+def main():
+    return Main()
 
 
-def test_main_2():
-    assert Main.main_2() == 131
+def test_main_1(main):
+    assert main.main_1() == 262
+
+
+def test_main_2(main):
+    assert main.main_2() == 131
