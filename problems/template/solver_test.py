@@ -1,11 +1,18 @@
-# from .solver import Solver
+import pytest
+
+from .solver import Solver
 
 
-def test_1_1():
-    # TODO assert Solver.solve_1("test test") == 0
-    pass
+@pytest.fixture
+def solver():
+    return Solver()
 
 
-def test_2_1():
-    # TODO assert Solver.solve_2("test test") == 0
-    pass
+def test_1_1(solver):
+    # TODO
+    assert solver.solve_1("test test") == 0
+
+
+def test_2_1(solver):
+    # TODO
+    assert solver.solve_2("test test") == 0

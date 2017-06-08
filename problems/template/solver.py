@@ -1,11 +1,15 @@
-# from .internal import Class
+from utils import AbstractSolver
+from .internal import HelperClass
 
 
-class Solver:
-    @staticmethod
-    def solve_1(input_string):
-        return 0  # TODO
+class Solver(AbstractSolver):
+    def initialize_internal(self):
+        self.helper = HelperClass()
 
-    @staticmethod
-    def solve_2(input_string):
-        return 0  # TODO
+    def solve_1_internal(self, input_string):
+        # TODO
+        return self.helper.helper_method(input_string)
+
+    def solve_2_internal(self, input_string):
+        # TODO
+        return self.helper.helper_method(input_string)

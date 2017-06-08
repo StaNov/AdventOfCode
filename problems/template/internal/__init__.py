@@ -1,2 +1,1 @@
-# TODO
-# from .module import Module
+from .helperclass import HelperClass

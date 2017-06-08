@@ -10,6 +10,7 @@ class AbstractSolver:
     def _initialize(self):
         self.initialize_internal()
 
+    # TODO rename to name with underscore in the front?
     def solve_1_internal(self, input_string):
         raise Exception("Abstract method not implemented!")
 
