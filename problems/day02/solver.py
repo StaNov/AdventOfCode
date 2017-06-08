@@ -1,36 +1,39 @@
+from utils import AbstractSolver
 from .internal import Keyboard, KeyboardAdvanced, KeyboardController
 
 
-class Solver:
-    @staticmethod
-    def solve_1(input_string):
-        return Solver._solve(input_string, Keyboard())
+class Solver(AbstractSolver):
+    def initialize_internal(self):
+        self.keyboard = Keyboard()
+        self.keyboard_advanced = KeyboardAdvanced()
 
-    @staticmethod
-    def solve_2(input_string):
-        return Solver._solve(input_string, KeyboardAdvanced())
+    def solve_1_internal(self, input_string):
+        self.controller = KeyboardController(self.keyboard)
+        return self._solve(input_string)
 
-    @staticmethod
-    def _solve(input_string, keyboard):
+    def solve_2_internal(self, input_string):
+        self.controller = KeyboardController(self.keyboard_advanced)
+        return self._solve(input_string)
+
+    def _solve(self, input_string):
         lines = input_string.splitlines()
         result = ""
-        ctrl = KeyboardController(keyboard)
 
         for line in lines:
             for char in line:
                 if char == "L":
-                    ctrl.move_left()
+                    self.controller.move_left()
                     continue
                 if char == "R":
-                    ctrl.move_right()
+                    self.controller.move_right()
                     continue
                 if char == "U":
-                    ctrl.move_up()
+                    self.controller.move_up()
                     continue
                 if char == "D":
-                    ctrl.move_down()
+                    self.controller.move_down()
                     continue
 
-            result += str(keyboard.get_key())
+            result += str(self.controller.get_key())
 
         return result

@@ -18,5 +18,8 @@ class KeyboardController:
         new_index = self._index()[0], self._index()[1] + 1
         self._keyboard.set_index(new_index)
 
+    def get_key(self):
+        return self._keyboard.get_key()
+
     def _index(self):
         return self._keyboard.get_index()

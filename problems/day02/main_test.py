@@ -1,9 +1,17 @@
-from .main import Main
+import pytest
+from .main import MainCalculator
 
 
-def test_main_1():
-    assert Main.main_1() == "53255"
+@pytest.fixture
+def main():
+    return MainCalculator()
 
 
-def test_main_2():
-    assert Main.main_2() == "7423A"
+def test_main_1(main):
+    # TODO
+    assert main.calculate_part_1() == "53255"
+
+
+def test_main_2(main):
+    # TODO
+    assert main.calculate_part_2() == "7423A"

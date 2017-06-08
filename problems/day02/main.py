@@ -1,25 +1,14 @@
-from utils import InputReader
+from utils import AbstractMainCalculator
 if __name__ == "__main__":
     from problems.day02.solver import Solver
 else:
     from .solver import Solver
 
 
-class Main:
-    @staticmethod
-    def main_1():
-        content = InputReader.read_input(__file__)
-        return Solver.solve_1(content)
-
-    @staticmethod
-    def main_2():
-        content = InputReader.read_input(__file__)
-        return Solver.solve_2(content)
+class MainCalculator(AbstractMainCalculator):
+    def __init__(self):
+        super(MainCalculator, self).__init__(Solver(), __file__)
 
 
 if __name__ == "__main__":
-    result_1 = Main.main_1()
-    print("FIRST  RESULT IS: " + str(result_1) + " !!!")
-
-    result_2 = Main.main_2()
-    print("SECOND RESULT IS: " + str(result_2) + " !!!")
+    MainCalculator().calculate_both_parts_and_print_results()
