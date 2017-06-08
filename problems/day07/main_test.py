@@ -7,4 +7,3 @@ def test_main_1():
 
 def test_main_2():
     assert Main.main_2() == 258
-    pass
