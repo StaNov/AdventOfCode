@@ -1,3 +1,3 @@
 from .inputreader import InputReader
-from .abstractmain import AbstractMain
+from .abstractmaincalculator import AbstractMainCalculator
 from .abstractsolver import AbstractSolver
