@@ -2,6 +2,14 @@ import pytest
 
 from .solver import Solver
 
+test_input =\
+    "7\n"\
+    "3\n"\
+    "rect 3x2\n"\
+    "rotate column x=1 by 1\n"\
+    "rotate row y=0 by 4\n"\
+    "rotate column x=1 by 1"
+
 
 @pytest.fixture
 def solver():
@@ -9,12 +17,7 @@ def solver():
 
 
 def test_1_full_example(solver):
-    assert solver.solve_1("7\n"
-                          "3\n"
-                          "rect 3x2\n"
-                          "rotate column x=1 by 1\n"
-                          "rotate row y=0 by 4\n"
-                          "rotate column x=1 by 1") == 6
+    assert solver.solve_1(test_input) == 6
 
 
 def test_1_empty_instructions(solver):
@@ -28,7 +31,8 @@ def test_1_single_rect(solver):
                           "rect 3x2") == 6
 
 
-@pytest.mark.skip
 def test_2_1(solver):
-    # TODO
-    assert solver.solve_2("test test") == 0
+    assert solver.solve_2(test_input) == \
+        " X  X X\n"\
+        "X X    \n"\
+        " X     \n"

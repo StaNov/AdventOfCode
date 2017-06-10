@@ -27,6 +27,18 @@ class Interpreter:
 
         return result
 
+    def get_display(self):
+        result = ""
+        for line in self.array:
+            for value in line:
+                if value:
+                    result += "X"
+                else:
+                    result += " "
+            result += "\n"
+
+        return result
+
 
 class CommandProcessor:
     def __init__(self):
