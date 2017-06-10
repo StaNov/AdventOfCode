@@ -49,7 +49,8 @@ def test_1_unknown_command(interpreter):
         interpreter.command("unknown command")
 
 
-def test_with_exception():
-    # TODO
-    with pytest.raises(Exception):
-        raise Exception("Test exception in test")
+@pytest.mark.skip
+def test_1_rect_transform_the_same(interpreter):
+    interpreter.command("rect 3x2")
+    interpreter.command("rotate row y=0 by 4")
+    assert interpreter.get_lightens() == 6

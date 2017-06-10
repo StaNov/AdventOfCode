@@ -14,17 +14,8 @@ class Interpreter:
             self.array.append(line)
 
     def command(self, line):
-        if not line.startswith("rect"):
-            raise Exception("Unknown command")
-
-        match = re.fullmatch("rect (\w+)x(\w+)", line)
-
-        width = int(match.group(1))
-        height = int(match.group(2))
-
-        for i in range(0, height):
-            for j in range(0, width):
-                self.array[i][j] = True
+        processor = CommandProcessor.create(line)
+        processor.process(self.array)
 
     def get_lightens(self):
         result = 0
@@ -35,3 +26,31 @@ class Interpreter:
                     result += 1
 
         return result
+
+
+class CommandProcessor:
+    def __init__(self):
+        raise Exception("This is abstract class, use the static create method instead.")
+
+    def process(self, array):
+        raise Exception("Abstract method not implemented.")
+
+    @staticmethod
+    def create(command):
+        if command.startswith("rect"):
+            return RectCommandProcessor(command)
+
+        raise Exception("Unknown command")
+
+
+class RectCommandProcessor(CommandProcessor):
+    def __init__(self, command):
+        match = re.fullmatch("rect (\w+)x(\w+)", command)
+
+        self.rect_width = int(match.group(1))
+        self.rect_height = int(match.group(2))
+
+    def process(self, array):
+        for i in range(0, self.rect_height):
+            for j in range(0, self.rect_width):
+                array[i][j] = True
