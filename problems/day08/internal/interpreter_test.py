@@ -49,13 +49,19 @@ def test_1_unknown_command(interpreter):
         interpreter.command("unknown command")
 
 
-def test_1_rect_transform_the_same(interpreter):
+def test_1_rect_rotate_row_the_same(interpreter):
     interpreter.command("rect 3x2")
     interpreter.command("rotate row y=0 by 4")
     assert interpreter.get_lightens() == 6
 
 
-def test_1_rect_transform_over_boundaries_the_same(interpreter):
+def test_1_rect_rotate_row_over_boundaries_the_same(interpreter):
     interpreter.command("rect 3x2")
-    interpreter.command("rotate row y=0 by 20")
+    interpreter.command("rotate column x=1 by 1")
+    assert interpreter.get_lightens() == 6
+
+
+def test_1_rect_rotate_column_the_same(interpreter):
+    interpreter.command("rect 3x2")
+    interpreter.command("rotate column x=1 by 10")
     assert interpreter.get_lightens() == 6
