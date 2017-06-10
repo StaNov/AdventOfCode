@@ -30,14 +30,6 @@ def test_1_single_rect(solver):
 
 
 @pytest.mark.skip
-def test_1_two_rects_non_inclusive(solver):
-    assert solver.solve_1("7\n"
-                          "3\n"
-                          "rect 3x2\n"
-                          "rect 2x4") == 10
-
-
-@pytest.mark.skip
 def test_2_1(solver):
     # TODO
     assert solver.solve_2("test test") == 0
