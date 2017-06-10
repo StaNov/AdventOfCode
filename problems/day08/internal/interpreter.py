@@ -2,18 +2,21 @@ import re
 
 
 class Interpreter:
-    def __init__(self, columns, lines):
+    def __init__(self, width, height):
         self.array = []
-        self._init_array(columns, lines)
+        self._init_array(width, height)
 
-    def _init_array(self, columns, lines):
-        for i in range(0, lines):
+    def _init_array(self, width, height):
+        for i in range(0, height):
             line = []
-            for j in range(0, columns):
+            for j in range(0, width):
                 line.append(False)
             self.array.append(line)
 
     def command(self, line):
+        if not line.startswith("rect"):
+            raise Exception("Unknown command")
+
         match = re.fullmatch("rect (\w+)x(\w+)", line)
 
         width = int(match.group(1))
