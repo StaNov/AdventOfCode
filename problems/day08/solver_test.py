@@ -29,11 +29,31 @@ def test_1_single_rect(solver):
                           "rect 3x2") == 6
 
 
+def test_1_two_rects_the_same(solver):
+    assert solver.solve_1("7\n"
+                          "3\n"
+                          "rect 3x2\n"
+                          "rect 3x2") == 6
+
+
+def test_1_two_rects_second_bigger(solver):
+    assert solver.solve_1("7\n"
+                          "3\n"
+                          "rect 3x2\n"
+                          "rect 4x3") == 12
+
+def test_1_two_rects_second_smaller(solver):
+    assert solver.solve_1("7\n"
+                          "3\n"
+                          "rect 3x2\n"
+                          "rect 1x1") == 6
+
+
 @pytest.mark.skip
 def test_1_two_rects(solver):
     assert solver.solve_1("7\n"
                           "3\n"
-                          "rect 3x2"
+                          "rect 3x2\n"
                           "rect 2x4") == 10
 
 
