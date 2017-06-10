@@ -33,11 +33,9 @@ def test_1_two_rects_second_smaller(interpreter):
 
 @pytest.mark.skip
 def test_1_two_rects_non_inclusive(solver):
-    assert solver.solve_1("7\n"
-                          "3\n"
-                          "rect 3x2\n"
-                          "rect 2x4") == 10
-
+    interpreter.command("rect 3x2")
+    interpreter.command("rect 2x4")
+    assert interpreter.get_lightens() == 10
 
 
 def test_with_exception():
