@@ -53,3 +53,9 @@ def test_1_rect_transform_the_same(interpreter):
     interpreter.command("rect 3x2")
     interpreter.command("rotate row y=0 by 4")
     assert interpreter.get_lightens() == 6
+
+
+def test_1_rect_transform_over_boundaries_the_same(interpreter):
+    interpreter.command("rect 3x2")
+    interpreter.command("rotate row y=0 by 20")
+    assert interpreter.get_lightens() == 6
