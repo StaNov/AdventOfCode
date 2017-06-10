@@ -49,7 +49,6 @@ def test_1_unknown_command(interpreter):
         interpreter.command("unknown command")
 
 
-@pytest.mark.skip
 def test_1_rect_transform_the_same(interpreter):
     interpreter.command("rect 3x2")
     interpreter.command("rotate row y=0 by 4")

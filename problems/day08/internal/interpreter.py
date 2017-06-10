@@ -39,6 +39,8 @@ class CommandProcessor:
     def create(command):
         if command.startswith("rect"):
             return RectCommandProcessor(command)
+        if command.startswith("rotate row"):
+            return RotateRowCommandProcessor(command)
 
         raise Exception("Unknown command")
 
@@ -54,3 +56,22 @@ class RectCommandProcessor(CommandProcessor):
         for i in range(0, self.rect_height):
             for j in range(0, self.rect_width):
                 array[i][j] = True
+
+
+class RotateRowCommandProcessor(CommandProcessor):
+    def __init__(self, command):
+        match = re.fullmatch("rotate row y=(\w+) by (\w+)", command)
+
+        self.row = int(match.group(1))
+        self.by = int(match.group(2))
+
+    def process(self, array):
+        for i in range(0, self.by):
+            self._move_by_one_step(array)
+
+    def _move_by_one_step(self, array):
+        line = array[self.row]
+        last = line[len(line) - 1]
+        for i in reversed(range(0, len(line) - 1)):
+            line[i + 1] = line[i]
+        line[0] = last
