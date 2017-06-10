@@ -65,3 +65,17 @@ def test_1_rect_rotate_column_the_same(interpreter):
     interpreter.command("rect 3x2")
     interpreter.command("rotate column x=1 by 10")
     assert interpreter.get_lightens() == 6
+
+
+def test_1_rect_rotate_row_rect(interpreter):
+    interpreter.command("rect 3x2")
+    interpreter.command("rotate row y=0 by 1")
+    interpreter.command("rect 3x2")
+    assert interpreter.get_lightens() == 7
+
+
+def test_1_rect_rotate_column_rect(interpreter):
+    interpreter.command("rect 3x2")
+    interpreter.command("rotate column x=1 by 1")
+    interpreter.command("rect 3x2")
+    assert interpreter.get_lightens() == 7
