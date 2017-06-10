@@ -29,6 +29,14 @@ def test_1_single_rect(solver):
                           "rect 3x2") == 6
 
 
+@pytest.mark.skip
+def test_1_two_rects(solver):
+    assert solver.solve_1("7\n"
+                          "3\n"
+                          "rect 3x2"
+                          "rect 2x4") == 10
+
+
 def test_2_1(solver):
     # TODO
     assert solver.solve_2("test test") == 0
