@@ -2,13 +2,11 @@ import re
 
 
 class Interpreter:
-    def __init__(self):
+    def __init__(self, columns, lines):
         self.array = []
-        self._init_array()
+        self._init_array(columns, lines)
 
-    def _init_array(self):
-        lines = 20
-        columns = 10
+    def _init_array(self, columns, lines):
         for i in range(0, lines):
             line = []
             for j in range(0, columns):

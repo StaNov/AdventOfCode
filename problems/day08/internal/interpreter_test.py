@@ -5,7 +5,7 @@ from . import Interpreter
 
 @pytest.fixture
 def interpreter():
-    return Interpreter()
+    return Interpreter(7, 3)
 
 
 def test_1_one_rect(interpreter):
