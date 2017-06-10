@@ -32,7 +32,7 @@ def test_1_two_rects_second_smaller(interpreter):
 
 
 @pytest.mark.skip
-def test_1_two_rects_non_inclusive(solver):
+def test_1_two_rects_non_inclusive(interpreter):
     interpreter.command("rect 3x2")
     interpreter.command("rect 2x4")
     assert interpreter.get_lightens() == 10
