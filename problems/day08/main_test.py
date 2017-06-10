@@ -7,10 +7,8 @@ def main():
     return MainCalculator()
 
 
-@pytest.mark.skip
 def test_main_1(main):
-    # TODO
-    assert main.calculate_part_1() == 0
+    assert main.calculate_part_1() == 123
 
 
 @pytest.mark.skip
