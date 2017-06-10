@@ -1,12 +1,10 @@
-import re
-
 from utils import AbstractSolver
-from .internal import HelperClass
+from .internal import Interpreter
 
 
 class Solver(AbstractSolver):
     def initialize_internal(self):
-        self.helper = HelperClass()
+        self.interpreter = Interpreter()
 
     def solve_1_internal(self, input_string):
         lines = input_string.splitlines()
@@ -14,15 +12,14 @@ class Solver(AbstractSolver):
         if len(lines) < 3:
             return 0
 
-        max_size = 0
-        for line in lines[2:]:
-            match = re.fullmatch("rect (\w+)x(\w+)", line)
-            size = int(match.group(1)) * int(match.group(2))
-            if size > max_size:
-                max_size = size
+        self.interpreter = Interpreter()
 
-        return max_size
+        for line in lines[2:]:
+            self.interpreter.command(line)
+
+        return self.interpreter.get_lightens()
 
     def solve_2_internal(self, input_string):
         # TODO
-        return self.helper.helper_method(input_string)
+        # return self.interpreter.helper_method(input_string)
+        pass
