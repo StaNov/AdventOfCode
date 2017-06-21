@@ -3,7 +3,7 @@ class LettersProcessor:
         self.output = ""
 
     def process_letter(self, letter):
-        if letter == "":
+        if len(letter) != 1:
             raise Exception("Argument must be one letter!")
 
         self.output = self.output + letter

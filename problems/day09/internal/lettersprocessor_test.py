@@ -15,3 +15,8 @@ def test_empty_input(processor):
 def test_process_empty_string(processor):
     with pytest.raises(Exception):
         processor.process_letter("")
+
+
+def test_two_letters(processor):
+    with pytest.raises(Exception):
+        processor.process_letter("ab")
