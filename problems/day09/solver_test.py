@@ -27,6 +27,10 @@ def test_1_2(solver):
     assert solver.solve_1("A") == 1
 
 
+def test_1_3(solver):
+    assert solver.solve_1("A(1x5") == 5
+
+
 def test_2_1(solver):
     # TODO
     assert solver.solve_2("test test") == 0
