@@ -8,12 +8,10 @@ def processor():
     return LettersProcessor()
 
 
-def test_helper_method(processor):
-    # TODO
-    assert len(processor.get_processed_output()) == 0
+def test_empty_input(processor):
+    assert processor.get_processed_output() == ""
 
 
-def test_with_exception():
-    # TODO
+def test_process_empty_string(processor):
     with pytest.raises(Exception):
-        raise Exception("Test exception in test")
+        processor.process_letter("")
