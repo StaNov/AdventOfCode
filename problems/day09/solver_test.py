@@ -8,8 +8,6 @@ def solver():
     return Solver()
 
 
-# TODO
-@pytest.mark.skip
 def test_1_full_example(solver):
     assert solver.solve_1("ADVENT") == 6
     assert solver.solve_1("A(1x5)BC") == 7
@@ -32,12 +30,12 @@ def test_1_3(solver):
 
 
 def test_1_4(solver):
-    assert solver.solve_1("(1x5)") == 5
+    with pytest.raises(Exception):
+        solver.solve_1("A((")
 
 
-# TODO
-#def test_1_5(solver):
-#    assert solver.solve_1("(1x5)A") == 5
+def test_1_5(solver):
+    assert solver.solve_1("(1x5)A") == 5
 
 
 # TODO
