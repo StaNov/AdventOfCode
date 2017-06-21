@@ -1,16 +1,16 @@
 import pytest
 
-from . import HelperClass
+from . import LettersProcessor
 
 
 @pytest.fixture
-def helper():
-    return HelperClass()
+def processor():
+    return LettersProcessor()
 
 
-def test_helper_method(helper):
+def test_helper_method(processor):
     # TODO
-    assert helper.helper_method("test") == 0
+    assert len(processor.get_processed_output()) == 0
 
 
 def test_with_exception():

@@ -40,6 +40,8 @@ def test_1_4(solver):
 #    assert solver.solve_1("(1x5)A") == 5
 
 
+# TODO
+@pytest.mark.skip
 def test_2_1(solver):
     # TODO
     assert solver.solve_2("test test") == 0
