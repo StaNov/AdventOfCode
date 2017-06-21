@@ -20,8 +20,11 @@ def test_1_full_example(solver):
 
 
 def test_1_1(solver):
-    # TODO
     assert solver.solve_1("") == 0
+
+
+def test_1_2(solver):
+    assert solver.solve_1("A") == 1
 
 
 def test_2_1(solver):
