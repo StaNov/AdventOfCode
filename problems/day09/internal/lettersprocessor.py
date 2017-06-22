@@ -1,4 +1,4 @@
-from .lettersprocessorstatecontext import LettersProcessorStateContext
+from .states import LettersProcessorStateContext
 
 
 class LettersProcessor:
