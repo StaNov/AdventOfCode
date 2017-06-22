@@ -1,4 +1,5 @@
 class AbstractSolver:
+    # TODO input string into constructor?
     def solve_1(self, input_string):
         return self.solve_1_internal(input_string)
 

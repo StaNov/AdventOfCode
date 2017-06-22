@@ -2,8 +2,7 @@ from utils import InputReader
 
 
 class AbstractMainCalculator:
-    def __init__(self, file):
-        self._file = file
+    def __init__(self):
         self._input_string = self._load_file_content()
 
     def calculate_both_parts_and_print_results(self):
@@ -24,5 +23,9 @@ class AbstractMainCalculator:
     def create_new_solver(self):
         raise Exception("Abstract method not implemented!")
 
+    def get_main_calculator_file_path(self):
+        raise Exception("Abstract method not implemented!")
+
     def _load_file_content(self):
-        return InputReader.read_input(self._file)
+        file_path = self.get_main_calculator_file_path()
+        return InputReader.read_input(file_path)
