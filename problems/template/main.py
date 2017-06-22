@@ -8,7 +8,10 @@ else:
 
 class MainCalculator(AbstractMainCalculator):
     def __init__(self):
-        super(MainCalculator, self).__init__(Solver(), __file__)
+        super(MainCalculator, self).__init__(__file__)
+
+    def create_new_solver(self):
+        return Solver()
 
 
 if __name__ == "__main__":
