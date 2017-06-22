@@ -8,12 +8,22 @@ def solver():
     return Solver()
 
 
-def test_1_full_example(solver):
+def test_1_full_example_1(solver):
     assert solver.solve_1("ADVENT") == 6
+
+def test_1_full_example_2(solver):
     assert solver.solve_1("A(1x5)BC") == 7
+
+def test_1_full_example_3(solver):
     assert solver.solve_1("(3x3)XYZ") == 9
+
+def test_1_full_example_4(solver):
     assert solver.solve_1("A(2x2)BCD(2x2)EFG") == 11
+
+def test_1_full_example_5(solver):
     assert solver.solve_1("(6x1)(1x3)A") == 6
+
+def test_1_full_example_6(solver):
     assert solver.solve_1("X(8x2)(3x3)ABCY") == 18
 
 

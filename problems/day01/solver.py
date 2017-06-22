@@ -3,7 +3,7 @@ from .internal import Marshaller, MarshallerController, PositionRecorder
 
 
 class Solver(AbstractSolver):
-    def initialize_internal(self):
+    def __init__(self):
         self.marshaller = Marshaller()
         self.controller = MarshallerController(self.marshaller)
         self.recorder = PositionRecorder()

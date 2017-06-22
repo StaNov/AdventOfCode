@@ -3,7 +3,7 @@ from .internal import LettersProcessor
 
 
 class Solver(AbstractSolver):
-    def initialize_internal(self):
+    def __init__(self):
         self.letters_processor = LettersProcessor()
 
     def solve_1_internal(self, input_string):

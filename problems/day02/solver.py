@@ -3,7 +3,7 @@ from .internal import Keyboard, KeyboardAdvanced, KeyboardController
 
 
 class Solver(AbstractSolver):
-    def initialize_internal(self):
+    def __init__(self):
         self.keyboard = Keyboard()
         self.keyboard_advanced = KeyboardAdvanced()
 

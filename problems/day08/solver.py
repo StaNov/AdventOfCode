@@ -3,7 +3,7 @@ from .internal import Interpreter
 
 
 class Solver(AbstractSolver):
-    def initialize_internal(self):
+    def __init__(self):
         self.interpreter = None
 
     def solve_1_internal(self, input_string):
