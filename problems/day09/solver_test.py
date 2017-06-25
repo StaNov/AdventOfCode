@@ -49,6 +49,16 @@ def test_1_5(solver):
     assert solver.solve_1("(1x5)A") == 5
 
 
+def test_1_6(solver):
+    with pytest.raises(Exception):
+        solver.solve_1("A(1x5")  # No closing parenthesis
+
+
+def test_1_7(solver):
+    with pytest.raises(Exception):
+        solver.solve_1("A(2x5)A")  # Not enough input to read
+
+
 # TODO
 @pytest.mark.skip
 def test_2_1(solver):
