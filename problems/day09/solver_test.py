@@ -59,8 +59,21 @@ def test_1_7(solver):
         solver.solve_1("A(2x5)A")  # Not enough input to read
 
 
-# TODO
-@pytest.mark.skip
-def test_2_1(solver):
-    # TODO
-    assert solver.solve_2("test test") == 0
+@pytest.mark.skip  # TODO
+def test_2_full_example_1(solver):
+    assert solver.solve_2("(3x3)XYZ") == 9
+
+
+@pytest.mark.skip  # TODO
+def test_2_full_example_2(solver):
+    assert solver.solve_2("X(8x2)(3x3)ABCY") == 20
+
+
+@pytest.mark.skip  # TODO
+def test_2_full_example_3(solver):
+    assert solver.solve_2("(27x12)(20x12)(13x14)(7x10)(1x12)A") == 241920
+
+
+@pytest.mark.skip  # TODO
+def test_2_full_example_4(solver):
+    assert solver.solve_2("(25x3)(3x3)ABC(2x3)XY(5x2)PQRSTX(18x9)(3x2)TWO(5x7)SEVEN") == 445

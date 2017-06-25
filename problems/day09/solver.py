@@ -14,5 +14,4 @@ class Solver(AbstractSolver):
 
     def solve_2_internal(self, input_string):
         # TODO
-        # return self.letters_processor.helper_method(input_string)
-        pass
+        return self.letters_processor.helper_method(input_string)
