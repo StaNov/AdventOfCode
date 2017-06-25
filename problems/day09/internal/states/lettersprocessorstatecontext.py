@@ -14,7 +14,6 @@ class LettersProcessorStateContext:
         self._state.process_letter(self, letter)
 
     def get_processed_output(self):
-        self.add_to_output(self._state.return_remaining_letters())
         return self.output
 
     def set_state(self, state):

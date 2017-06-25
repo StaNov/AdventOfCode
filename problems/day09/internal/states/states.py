@@ -33,9 +33,6 @@ class StateReadingParenthesesContent(LettersProcessorState):
         what_to_repeat_how_many = int(match.group(2))
         caller.set_state(StateReadingWhatToRepeat(what_to_repeat_length, what_to_repeat_how_many))
 
-    def return_remaining_letters(self):
-        return "(" + self.parentheses_content
-
 
 class StateReadingWhatToRepeat(LettersProcessorState):
 
