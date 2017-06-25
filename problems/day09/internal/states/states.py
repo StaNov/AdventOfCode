@@ -5,7 +5,7 @@ from .lettersprocessorstate import LettersProcessorState
 class StateJustReading(LettersProcessorState):
     def process_letter(self, caller, letter):
         if letter != "(":
-            caller.add_to_output(letter)
+            caller.add_to_output_length(1)
             return
 
         caller.set_state(StateReadingParenthesesContent())
@@ -39,11 +39,11 @@ class StateReadingWhatToRepeat(LettersProcessorState):
     def __init__(self, length, how_many):
         self.length = length
         self.how_many = how_many
-        self.what_to_repeat = ""
+        self.already_read_letters_counter = 0
 
     def process_letter(self, caller, letter):
-        self.what_to_repeat = self.what_to_repeat + letter
+        self.already_read_letters_counter += 1
 
-        if len(self.what_to_repeat) == self.length:
-            caller.add_to_output(self.how_many * self.what_to_repeat)
+        if self.already_read_letters_counter == self.length:
+            caller.add_to_output_length(self.how_many * self.length)
             caller.set_state(StateJustReading())

@@ -10,9 +10,7 @@ class Solver(AbstractSolver):
         for char in input_string:
             self.letters_processor.process_letter(char)
 
-        output = self.letters_processor.get_processed_output()
-
-        return len(output)
+        return self.letters_processor.get_processed_output_length()
 
     def solve_2_internal(self, input_string):
         # TODO

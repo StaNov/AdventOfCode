@@ -9,7 +9,7 @@ def processor():
 
 
 def test_empty_input(processor):
-    assert processor.get_processed_output() == ""
+    assert processor.get_processed_output_length() == 0
 
 
 def test_process_empty_string(processor):
