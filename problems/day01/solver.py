@@ -4,6 +4,7 @@ from .internal import Marshaller, MarshallerController, PositionRecorder
 
 class Solver(AbstractSolver):
     def __init__(self):
+        super().__init__()
         self.marshaller = Marshaller()
         self.controller = MarshallerController(self.marshaller)
         self.recorder = PositionRecorder()

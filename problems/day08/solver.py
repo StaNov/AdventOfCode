@@ -4,6 +4,7 @@ from .internal import Interpreter
 
 class Solver(AbstractSolver):
     def __init__(self):
+        super().__init__()
         self.interpreter = None
 
     def solve_1_internal(self, input_string):

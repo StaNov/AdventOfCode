@@ -4,6 +4,7 @@ from .internal import Keyboard, KeyboardAdvanced, KeyboardController
 
 class Solver(AbstractSolver):
     def __init__(self):
+        super().__init__()
         self.keyboard = Keyboard()
         self.keyboard_advanced = KeyboardAdvanced()
 

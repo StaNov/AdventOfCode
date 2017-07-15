@@ -4,6 +4,7 @@ from .internal import HelperClass
 
 class Solver(AbstractSolver):
     def __init__(self):
+        super().__init__()
         self.helper = HelperClass()
 
     def solve_1_internal(self, input_string):

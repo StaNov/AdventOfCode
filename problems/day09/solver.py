@@ -4,6 +4,7 @@ from .internal import LettersProcessor
 
 class Solver(AbstractSolver):
     def __init__(self):
+        super().__init__()
         self.letters_processor = LettersProcessor()
 
     def solve_1_internal(self, input_string):
