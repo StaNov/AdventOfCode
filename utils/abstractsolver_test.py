@@ -1,6 +1,6 @@
 import pytest
 
-from . import *
+from . import AbstractSolver
 
 
 @pytest.fixture
