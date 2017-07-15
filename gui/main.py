@@ -33,3 +33,5 @@ B = Button(top, text="Calculate Day 1", command=calculate)
 B.grid(row=0, sticky=W+E)
 
 top.mainloop()
+
+# TODO dynamically load all days and show their numbers in a select box
