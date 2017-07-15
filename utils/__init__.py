@@ -1,3 +1,3 @@
 from .inputreader import InputReader
-from .abstractmaincalculator import AbstractMainCalculator
+from .abstractdaycalculator import AbstractDayCalculator
 from .abstractsolver import AbstractSolver

@@ -1,10 +1,10 @@
 import pytest
-from .main import MainCalculator
+from .main import DayCalculator
 
 
 @pytest.fixture
 def main():
-    return MainCalculator()
+    return DayCalculator()
 
 
 def test_main_1(main):

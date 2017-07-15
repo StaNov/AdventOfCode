@@ -1,11 +1,11 @@
-from utils import AbstractMainCalculator
+from utils import AbstractDayCalculator
 if __name__ == "__main__":
     from problems.day02.solver import Solver
 else:
     from .solver import Solver
 
 
-class MainCalculator(AbstractMainCalculator):
+class DayCalculator(AbstractDayCalculator):
     def get_main_calculator_file_path(self):
         return __file__
 
@@ -14,4 +14,4 @@ class MainCalculator(AbstractMainCalculator):
 
 
 if __name__ == "__main__":
-    MainCalculator().calculate_both_parts_and_print_results()
+    DayCalculator().calculate_both_parts_and_print_results()

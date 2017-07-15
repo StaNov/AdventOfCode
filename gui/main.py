@@ -1,5 +1,5 @@
 from tkinter import *
-from problems.day01.main import MainCalculator
+from problems.day01.main import DayCalculator
 
 top = Tk()
 top.wm_title("Advent of Code 2016, by StaNov")
@@ -23,7 +23,7 @@ Result2.insert(0, "Click Calculate!")
 
 
 def calculate():
-    calculator = MainCalculator()
+    calculator = DayCalculator()
     Result1.delete(0, len(Result1.get()))
     Result2.delete(0, len(Result2.get()))
     Result1.insert(0, calculator.calculate_part_1())

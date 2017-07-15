@@ -13,7 +13,6 @@ class Solver(AbstractSolver):
     def solve_2_internal(self, input_string):
         self._run_interpreter(input_string)
         result = self.interpreter.get_display()
-        print(result)
         return result
 
     def _run_interpreter(self, input_string):
