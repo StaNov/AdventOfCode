@@ -23,22 +23,22 @@ def calculate():
     Result2.insert(0, calculator.calculate_part_2())
 
 B = Button(top, text="Calculate Day", command=calculate)
-B.grid(row=1, sticky=W+E)
+B.grid(row=0, column=1, sticky=W+E)
 
 top.grid_columnconfigure(1, weight=1)
 
 L1 = Label(top, text="Result 1:")
-L1.grid(row=2)
+L1.grid(row=1)
 
 L2 = Label(top, text="Result 2:")
-L2.grid(row=3)
+L2.grid(row=2)
 
 Result1 = Entry(top)
-Result1.grid(row=2, column=1, sticky="EW")
+Result1.grid(row=1, column=1, sticky="EW")
 Result1.insert(0, "Click Calculate!")
 
 Result2 = Entry(top)
-Result2.grid(row=3, column=1, sticky="EW")
+Result2.grid(row=2, column=1, sticky="EW")
 Result2.insert(0, "Click Calculate!")
 
 top.mainloop()
