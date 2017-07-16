@@ -5,7 +5,7 @@ import problems
 
 top = Tk()
 top.wm_title("Advent of Code 2016, by StaNov")
-top.geometry('500x100')
+top.geometry('600x300')
 
 days_box = ttk.Combobox(top, state="readonly")
 days_box.grid(row=0)
@@ -26,10 +26,8 @@ def calculate():
     Result1.config(state=DISABLED)
     Result2.config(state=DISABLED)
 
-B = Button(top, text="Calculate Day", command=calculate)
+B = Button(top, text="Calculate!", command=calculate)
 B.grid(row=0, column=1, sticky=W+E)
-
-top.grid_columnconfigure(1, weight=1)
 
 L1 = Label(top, text="Result 1:")
 L1.grid(row=1)
@@ -46,5 +44,9 @@ Result2 = Text(top)
 Result2.grid(row=2, column=1, sticky="EW")
 Result2.insert(END, "Click Calculate!")
 Result2.config(state=DISABLED)
+
+top.grid_columnconfigure(1, weight=1)
+top.grid_rowconfigure(1, weight=1)
+top.grid_rowconfigure(2, weight=1)
 
 top.mainloop()
