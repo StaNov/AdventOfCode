@@ -1,4 +1,4 @@
-from utils import InputReader
+from problems.utils import InputReader
 
 
 class AbstractDayCalculator:

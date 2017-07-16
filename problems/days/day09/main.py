@@ -1,6 +1,7 @@
-from utils import AbstractDayCalculator
+from problems.utils import AbstractDayCalculator
+
 if __name__ == "__main__":
-    from problems.day02.solver import Solver
+    from problems.days.day09.solver import Solver
 else:
     from .solver import Solver
 

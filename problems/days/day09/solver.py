@@ -1,4 +1,4 @@
-from utils import AbstractSolver
+from problems.utils import AbstractSolver
 from .internal import LettersProcessor
 
 

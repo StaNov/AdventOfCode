@@ -1,6 +1,6 @@
-from utils import InputReader
+from problems.utils import InputReader
 if __name__ == "__main__":
-    from problems.day03.solver import Solver
+    from problems.days.day07.solver import Solver
 else:
     from .solver import Solver
 

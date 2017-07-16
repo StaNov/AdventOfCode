@@ -1,5 +1,6 @@
 from tkinter import *
-from problems.day01.main import DayCalculator
+
+from problems.days.day01.main import DayCalculator
 
 top = Tk()
 top.wm_title("Advent of Code 2016, by StaNov")
