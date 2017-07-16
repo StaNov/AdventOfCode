@@ -1,9 +1,15 @@
-from .main import Main
+import pytest
+from .main import DayCalculator
 
 
-def test_main_1():
-    assert Main.main_1() == 158835
+@pytest.fixture
+def main():
+    return DayCalculator()
 
 
-def test_main_2():
-    assert Main.main_2() == 993
+def test_main_1(main):
+    assert main.calculate_part_1() == 158835
+
+
+def test_main_2(main):
+    assert main.calculate_part_2() == 993
