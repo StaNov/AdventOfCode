@@ -2,6 +2,7 @@ import pytest
 from .main import DayCalculator
 
 
+# TODO rename to day_calculator
 @pytest.fixture
 def main():
     return DayCalculator()
