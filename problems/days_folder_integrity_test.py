@@ -10,7 +10,7 @@ def test_directory_names_in_days():
 
 
 def _check_folder_name(folder_name):
-    match = re.match("day\d\d|template|__pycache__", folder_name)
+    match = re.fullmatch("day\d\d|template|__pycache__", folder_name)
 
     if not match:
         raise Exception("Folder '" + folder_name + "' does not belong to the days folder!")
