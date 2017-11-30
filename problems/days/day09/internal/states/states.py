@@ -42,16 +42,16 @@ class StateReadingParenthesesContent(LettersProcessorState):
 
 class StateReadingWhatToRepeat(LettersProcessorState):
 
-    def __init__(self, length, how_many):
+    def __init__(self, length, repeat_count):
         self.length = length
-        self.how_many = how_many
-        self.already_read_letters_counter = 0
+        self.repeat_count = repeat_count
+        self.read_text_chunk = ""
 
     def process_letter(self, caller, letter):
-        self.already_read_letters_counter += 1
+        self.read_text_chunk += letter
 
-        if self.already_read_letters_counter == self.length:
-            caller.add_to_output_length(self.how_many * self.length)
+        if len(self.read_text_chunk) == self.length:
+            caller.process_read_text_chunk(self.repeat_count, self.read_text_chunk)
             caller.set_state(StateJustReading())
 
     def is_ok_to_get_output_length_in_this_state(self):
