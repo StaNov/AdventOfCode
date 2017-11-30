@@ -15,7 +15,7 @@ class LettersProcessorStateContext:
 
     def get_processed_output_length(self):
         if not self._state.is_ok_to_get_output_length_in_this_state():
-            raise Exception("Not ok to get output length in this state: " + self._state.__class__.__name__)
+            raise Exception("Not ok to get output length in this state: " + self._state.get_class_name())
 
         return self._output_length
 
