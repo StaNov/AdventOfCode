@@ -4,7 +4,10 @@ from .states import LettersProcessorStateContext
 class LettersProcessor:
 
     def __init__(self):
-        self.context = LettersProcessorStateContext()
+        self.context = self.create_letters_processor_state_context()
+
+    def create_letters_processor_state_context(self):
+        return LettersProcessorStateContext()
 
     def process_letter(self, letter):
         self.context.process_letter(letter)

@@ -25,6 +25,5 @@ class LettersProcessorStateContext:
     def add_to_output_length(self, length_to_add):
         self._output_length += length_to_add
 
-    # TODO override this method
     def process_read_text_chunk(self, repeat_count, read_text_chunk):
         self.add_to_output_length(repeat_count * len(read_text_chunk))

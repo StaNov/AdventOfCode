@@ -1,1 +1,2 @@
 from .lettersprocessor import LettersProcessor
+from .lettersprocessorrecursive import LettersProcessorRecursive
