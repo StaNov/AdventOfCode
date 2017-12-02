@@ -8,9 +8,7 @@ class Solver(AbstractSolver):
         self.helper = HelperClass()
 
     def solve_1_internal(self, input_string):
-        # TODO
-        # return self.helper.helper_method(input_string)
-        if len(input_string) == 2:
+        if len(input_string) == 2 and input_string[0] == input_string[1]:
             return 2
 
         return 0
