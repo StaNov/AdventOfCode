@@ -11,10 +11,16 @@ class Solver(AbstractSolver):
         if len(input_string) < 2:
             return 0
 
-        if input_string[0] != input_string[1]:
+        if len(input_string) == 2:
+            if input_string[0] == input_string[1]:
+                return int(input_string[0])
+
             return 0
 
-        return int(input_string[0])
+        if input_string[0] != input_string[1] and input_string[1] != input_string[2]:
+            return 0
+
+        return int(input_string[1])
 
     def solve_2_internal(self, input_string):
         # TODO
