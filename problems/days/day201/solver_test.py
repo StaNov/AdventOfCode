@@ -66,26 +66,21 @@ def test_2_1(solver):
     # assert solver.solve_2("test test") == 0
 
 
-@pytest.mark.skip
 def test_2_full_example_1(solver):
     assert solver.solve_2("1212") == 6
 
 
-@pytest.mark.skip
 def test_2_full_example_2(solver):
     assert solver.solve_2("1221") == 0
 
 
-@pytest.mark.skip
 def test_2_full_example_3(solver):
     assert solver.solve_2("123425") == 4
 
 
-@pytest.mark.skip
 def test_2_full_example_4(solver):
     assert solver.solve_2("123123") == 12
 
 
-@pytest.mark.skip
 def test_2_full_example_5(solver):
     assert solver.solve_2("12131415") == 4
