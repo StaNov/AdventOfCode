@@ -9,7 +9,7 @@ class Solver(AbstractSolver):
 
     def solve_1_internal(self, input_string):
         if len(input_string) == 2 and input_string[0] == input_string[1]:
-            return 2
+            return int(input_string[0])
 
         return 0
 
