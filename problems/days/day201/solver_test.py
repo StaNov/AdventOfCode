@@ -36,6 +36,10 @@ def test_1_zero_sum_when_one_character_long_input(solver):
     assert solver.solve_1("2") == 0
 
 
+def test_1_non_zero_sum_when_two_identical_digits(solver):
+    assert solver.solve_1("22") == 2
+
+
 def test_2_1(solver):
     # TODO
     assert solver.solve_2("test test") == 0
