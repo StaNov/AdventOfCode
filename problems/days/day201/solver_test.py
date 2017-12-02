@@ -48,7 +48,6 @@ def test_1_non_zero_sum_when_two_same_digits_2(solver):
     assert solver.solve_1("33") == 3
 
 
-@pytest.mark.skip
 def test_1_non_zero_sum_when_two_same_digits_and_one_different(solver):
     assert solver.solve_1("331") == 3
 
