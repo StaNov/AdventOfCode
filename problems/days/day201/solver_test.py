@@ -60,6 +60,10 @@ def test_1_two_pairs_return_their_sum(solver):
     assert solver.solve_1("12334567789") == 10
 
 
+def test_1_two_pairs_return_their_sum_circular(solver):
+    assert solver.solve_1("1233451") == 4
+
+
 def test_2_1(solver):
     # TODO
     assert solver.solve_2("test test") == 0

@@ -14,6 +14,9 @@ class Solver(AbstractSolver):
             if input_string[i] == input_string[i + 1]:
                 result += int(input_string[i])
 
+        if len(input_string) > 2 and input_string[0] == input_string[-1]:
+            result += int(input_string[0])
+
         return result
 
     def solve_2_internal(self, input_string):
