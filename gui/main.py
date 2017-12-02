@@ -26,6 +26,7 @@ def calculate():
     Result1.config(state=DISABLED)
     Result2.config(state=DISABLED)
 
+
 B = Button(top, text="Calculate!", command=calculate)
 B.grid(row=0, column=1, sticky=W+E)
 

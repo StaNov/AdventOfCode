@@ -9,8 +9,9 @@ def get_available_days():
     days_folder_path = os.path.join(os.path.dirname(__file__), "days")
 
     for folder_name in os.listdir(days_folder_path):
-        if re.fullmatch("day\d\d", folder_name):
-            result.append(int(folder_name[-2:]))
+        match = re.fullmatch("day(\d+)", folder_name)
+        if match:
+            result.append(int(match.group(1)))
 
     return result
 
