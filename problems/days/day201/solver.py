@@ -11,8 +11,11 @@ class Solver(AbstractSolver):
         result = 0
 
         for i in range(len(input_string) - 1):
-            if input_string[i] == input_string[i + 1]:
-                result += int(input_string[i])
+            digit_1 = input_string[i]
+            digit_2 = input_string[i + 1]
+
+            if digit_1 == digit_2:
+                result += int(digit_1)
 
         if len(input_string) > 2 and input_string[0] == input_string[-1]:
             result += int(input_string[0])
