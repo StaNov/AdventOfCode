@@ -56,6 +56,10 @@ def test_1_non_zero_sum_when_one_different_digit_and_two_same_ones(solver):
     assert solver.solve_1("133") == 3
 
 
+def test_1_two_pairs_return_their_sum(solver):
+    assert solver.solve_1("12334567789") == 10
+
+
 def test_2_1(solver):
     # TODO
     assert solver.solve_2("test test") == 0

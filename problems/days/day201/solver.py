@@ -8,11 +8,13 @@ class Solver(AbstractSolver):
         self.helper = HelperClass()
 
     def solve_1_internal(self, input_string):
+        result = 0
+
         for i in range(len(input_string) - 1):
             if input_string[i] == input_string[i + 1]:
-                return int(input_string[i])
+                result += int(input_string[i])
 
-        return 0
+        return result
 
     def solve_2_internal(self, input_string):
         # TODO
