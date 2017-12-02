@@ -8,6 +8,12 @@ class Solver(AbstractSolver):
         self.helper = HelperClass()
 
     def solve_1_internal(self, input_string):
+        return self.solve(input_string)
+
+    def solve_2_internal(self, input_string):
+        return self.solve(input_string)
+
+    def solve(self, input_string):
         result = 0
 
         for i in range(len(input_string) - 1):
@@ -21,7 +27,3 @@ class Solver(AbstractSolver):
             result += int(input_string[0])
 
         return result
-
-    def solve_2_internal(self, input_string):
-        # TODO
-        return self.helper.helper_method(input_string)
