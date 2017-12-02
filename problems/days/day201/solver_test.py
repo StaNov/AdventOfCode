@@ -28,6 +28,10 @@ def test_1_full_example_4(solver):
     assert solver.solve_1("91212129") == 9
 
 
+def test_1_zero_sum_when_empty_input(solver):
+    assert solver.solve_1("") == 0
+
+
 def test_2_1(solver):
     # TODO
     assert solver.solve_2("test test") == 0
