@@ -1,21 +1,22 @@
 from problems.utils import AbstractSolver
-from .internal import LineCalculator
+from .internal import LineCalculator, LineCalculatorOnlyEvens
 
 
 class Solver(AbstractSolver):
     def __init__(self):
         super().__init__()
-        self.line_calculator = LineCalculator()
 
     def solve_1_internal(self, input_string):
-        result = 0
-
-        for line in input_string.splitlines():
-            result += self.line_calculator.calculate_line(line)
-
-        return result
+        return _solve(input_string, LineCalculator())
 
     def solve_2_internal(self, input_string):
-        # TODO
-        return 0
-        # return self.helper.helper_method(input_string)
+        return _solve(input_string, LineCalculatorOnlyEvens())
+
+
+def _solve(input_string, line_calculator):
+    result = 0
+
+    for line in input_string.splitlines():
+        result += line_calculator.calculate_line(line)
+
+    return result

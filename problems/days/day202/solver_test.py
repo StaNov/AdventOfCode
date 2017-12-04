@@ -24,11 +24,6 @@ def test_1_full_example(solver):
     assert solver.solve_1("5 1 9 5\n7 5 3\n2 4 6 8") == 18
 
 
-def test_2_1(solver):
-    # TODO
-    assert solver.solve_2("test test") == 0
-
-
 @pytest.mark.skip
 def test_2_full_example_1(solver):
     assert solver.solve_2("5 9 2 8") == 4

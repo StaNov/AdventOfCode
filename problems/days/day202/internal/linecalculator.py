@@ -8,6 +8,9 @@ class LineCalculator:
         lowest = None
 
         for number in numbers:
+            if not self.accept_number(number):
+                continue
+
             if highest is None or number > highest:
                 highest = number
 
@@ -15,3 +18,11 @@ class LineCalculator:
                 lowest = number
 
         return highest - lowest
+
+    def accept_number(self, number):
+        return True
+
+
+class LineCalculatorOnlyEvens(LineCalculator):
+    def accept_number(self, number):
+        return number % 2 == 0

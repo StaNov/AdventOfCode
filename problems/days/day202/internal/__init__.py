@@ -1,1 +1,1 @@
-from .linecalculator import LineCalculator
+from .linecalculator import LineCalculator, LineCalculatorOnlyEvens
