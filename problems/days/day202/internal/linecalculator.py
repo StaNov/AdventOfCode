@@ -3,4 +3,5 @@ class LineCalculator:
         pass
 
     def calculate_line(self, line):
-        return 0
+        number1, number2 = line.split(" ")
+        return int(number1) - int(number2)
