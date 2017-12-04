@@ -8,22 +8,18 @@ def solver():
     return Solver()
 
 
-@pytest.mark.skip
 def test_1_full_example_row_1(solver):
     assert solver.solve_1("5 1 9 5") == 8
 
 
-@pytest.mark.skip
 def test_1_full_example_row_2(solver):
     assert solver.solve_1("7 5 3") == 4
 
 
-@pytest.mark.skip
 def test_1_full_example_row_3(solver):
     assert solver.solve_1("2 4 6 8") == 6
 
 
-@pytest.mark.skip
 def test_1_full_example(solver):
     assert solver.solve_1("5 1 9 5\n7 5 3\n2 4 6 8") == 18
 

@@ -8,15 +8,9 @@ class Solver(AbstractSolver):
         self.line_calculator = LineCalculator()
 
     def solve_1_internal(self, input_string):
-        lines = input_string.splitlines()
-
-        # TODO remove when parsing is done correctly
-        if len(lines) > 10:
-            return 0
-
         result = 0
 
-        for line in lines:
+        for line in input_string.splitlines():
             result += self.line_calculator.calculate_line(line)
 
         return result

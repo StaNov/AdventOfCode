@@ -3,7 +3,7 @@ class LineCalculator:
         pass
 
     def calculate_line(self, line):
-        numbers = map(int, line.split(" "))
+        numbers = map(int, line.split())
         highest = None
         lowest = None
 
