@@ -1,4 +1,3 @@
-# TODO rename to day_calculator.py, also main_test
 from problems.utils import AbstractDayCalculator
 
 if __name__ == "__main__":

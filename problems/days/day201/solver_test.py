@@ -61,7 +61,6 @@ def test_1_full_example_4(solver):
 
 
 def test_2_1(solver):
-    # TODO
     pass
     # assert solver.solve_2("test test") == 0
 
