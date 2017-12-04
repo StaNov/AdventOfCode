@@ -8,8 +8,8 @@ def calculator():
     return LineCalculator()
 
 
-def test_calculator_method(calculator):
-    assert calculator.calculate_line("1") == 1
+def test_calculate_two_same_numbers(calculator):
+    assert calculator.calculate_line("1 1") == 0
 
 
 def test_with_exception():

@@ -3,4 +3,4 @@ class LineCalculator:
         pass
 
     def calculate_line(self, line):
-        return int(line)
+        return 0
