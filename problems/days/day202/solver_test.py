@@ -8,9 +8,8 @@ def solver():
     return Solver()
 
 
-def test_1_1(solver):
-    # TODO
-    assert solver.solve_1("test test") == 0
+def test_1_empty_input_returns_zero_sum(solver):
+    assert solver.solve_1("") == 0
 
 
 @pytest.mark.skip
