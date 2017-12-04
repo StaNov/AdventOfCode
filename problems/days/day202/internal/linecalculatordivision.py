@@ -3,16 +3,17 @@ class LineCalculatorDivision:
         pass
 
     def calculate_line(self, line):
-        return 0
-        # numbers = map(int, line.split())
-        # highest = None
-        # lowest = None
-        #
-        # for number in numbers:
-        #     if highest is None or number > highest:
-        #         highest = number
-        #
-        #     if lowest is None or number < lowest:
-        #         lowest = number
-        #
-        # return highest - lowest
+        numbers_to_read = map(int, line.split())
+        numbers_read = []
+
+        for number_new in numbers_to_read:
+            for number_already_read in numbers_read:
+                if number_new % number_already_read == 0:
+                    return number_new // number_already_read
+
+                if number_already_read % number_new == 0:
+                    return number_already_read // number_new
+
+            numbers_read.append(number_new)
+
+        raise Exception("No matching numbers found, this should never happen.")

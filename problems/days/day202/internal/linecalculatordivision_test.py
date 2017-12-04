@@ -8,5 +8,9 @@ def calculator():
     return LineCalculatorDivision()
 
 
-def test_calculate_two_same_numbers(calculator):
-    assert calculator.calculate_line("") == 0
+def test_calculate_two_divisible_numbers(calculator):
+    assert calculator.calculate_line("8 2") == 4
+
+
+def test_calculate_multiple_divisible_numbers(calculator):
+    assert calculator.calculate_line("11 23 13 2 17 19 10 31") == 5
