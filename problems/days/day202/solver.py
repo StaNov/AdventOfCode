@@ -1,11 +1,11 @@
 from problems.utils import AbstractSolver
-from .internal import HelperClass
+from .internal import LineCalculator
 
 
 class Solver(AbstractSolver):
     def __init__(self):
         super().__init__()
-        self.helper = HelperClass()
+        self.line_calculator = LineCalculator()
 
     def solve_1_internal(self, input_string):
         lines = input_string.splitlines()
@@ -17,11 +17,11 @@ class Solver(AbstractSolver):
         result = 0
 
         for line in lines:
-            result += int(line)
+            result += self.line_calculator.calculate_line(line)
 
         return result
-        # return self.helper.helper_method(input_string)
 
     def solve_2_internal(self, input_string):
         # TODO
-        return self.helper.helper_method(input_string)
+        return 0
+        # return self.helper.helper_method(input_string)
