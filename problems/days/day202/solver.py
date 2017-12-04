@@ -11,7 +11,7 @@ class Solver(AbstractSolver):
         if len(input_string) == 0:
             return 0
 
-        return 1
+        return int(input_string)
         # return self.helper.helper_method(input_string)
 
     def solve_2_internal(self, input_string):
