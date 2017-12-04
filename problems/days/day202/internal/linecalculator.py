@@ -3,5 +3,15 @@ class LineCalculator:
         pass
 
     def calculate_line(self, line):
-        number1, number2 = line.split(" ")
-        return abs(int(number1) - int(number2))
+        numbers = map(int, line.split(" "))
+        highest = None
+        lowest = None
+
+        for number in numbers:
+            if highest is None or number > highest:
+                highest = number
+
+            if lowest is None or number < lowest:
+                lowest = number
+
+        return highest - lowest

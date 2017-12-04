@@ -20,7 +20,5 @@ def test_calculate_two_different_numbers_ascending(calculator):
     assert calculator.calculate_line("1 8") == 7
 
 
-def test_with_exception():
-    # TODO
-    with pytest.raises(Exception):
-        raise Exception("Test exception in test")
+def test_calculate_multiple_different_numbers(calculator):
+    assert calculator.calculate_line("1 8 4 12 2") == 11
