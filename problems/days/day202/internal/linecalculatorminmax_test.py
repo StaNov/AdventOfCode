@@ -1,11 +1,11 @@
 import pytest
 
-from . import LineCalculator
+from . import LineCalculatorMinMax
 
 
 @pytest.fixture
 def calculator():
-    return LineCalculator()
+    return LineCalculatorMinMax()
 
 
 def test_calculate_two_same_numbers(calculator):

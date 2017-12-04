@@ -1,1 +1,2 @@
-from .linecalculator import LineCalculator, LineCalculatorOnlyEvens
+from .linecalculatorminmax import LineCalculatorMinMax
+from .linecalculatordivision import LineCalculatorDivision
