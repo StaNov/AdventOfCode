@@ -10,17 +10,16 @@ class Solver(AbstractSolver):
     def solve_1_internal(self, input_string):
         lines = input_string.splitlines()
 
-        if len(lines) == 0:
+        # TODO remove when parsing is done correctly
+        if len(lines) > 10:
             return 0
 
-        if len(lines) == 1:
-            return int(lines[0])
+        result = 0
 
-        if len(lines) == 2:
-            line1, line2 = lines
-            return int(line1) + int(line2)
+        for line in lines:
+            result += int(line)
 
-        return 0
+        return result
         # return self.helper.helper_method(input_string)
 
     def solve_2_internal(self, input_string):
