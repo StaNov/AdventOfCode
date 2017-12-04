@@ -8,26 +8,6 @@ def solver():
     return Solver()
 
 
-def test_1_empty_input_returns_zero_sum(solver):
-    assert solver.solve_1("") == 0
-
-
-def test_1_one_number_returns_the_number(solver):
-    assert solver.solve_1("1") == 1
-
-
-def test_1_one_number_returns_the_number_2(solver):
-    assert solver.solve_1("5") == 5
-
-
-def test_1_two_rows_return_sum(solver):
-    assert solver.solve_1("5\n3") == 8
-
-
-def test_1_three_rows_return_sum(solver):
-    assert solver.solve_1("10\n12\n20") == 42
-
-
 @pytest.mark.skip
 def test_1_full_example_row_1(solver):
     assert solver.solve_1("5 1 9 5") == 8
