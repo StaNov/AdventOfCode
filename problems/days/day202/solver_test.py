@@ -12,6 +12,10 @@ def test_1_empty_input_returns_zero_sum(solver):
     assert solver.solve_1("") == 0
 
 
+def test_1_one_number_returns_the_number(solver):
+    assert solver.solve_1("1") == 1
+
+
 @pytest.mark.skip
 def test_1_full_example_row_1(solver):
     assert solver.solve_1("5 1 9 5") == 8
