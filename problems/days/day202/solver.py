@@ -8,10 +8,19 @@ class Solver(AbstractSolver):
         self.helper = HelperClass()
 
     def solve_1_internal(self, input_string):
-        if len(input_string) == 0:
+        lines = input_string.splitlines()
+
+        if len(lines) == 0:
             return 0
 
-        return int(input_string)
+        if len(lines) == 1:
+            return int(lines[0])
+
+        if len(lines) == 2:
+            line1, line2 = lines
+            return int(line1) + int(line2)
+
+        return 0
         # return self.helper.helper_method(input_string)
 
     def solve_2_internal(self, input_string):

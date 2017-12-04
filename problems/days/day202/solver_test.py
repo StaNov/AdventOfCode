@@ -20,6 +20,10 @@ def test_1_one_number_returns_the_number_2(solver):
     assert solver.solve_1("5") == 5
 
 
+def test_1_multiple_rows_return_sum(solver):
+    assert solver.solve_1("5\n3") == 8
+
+
 @pytest.mark.skip
 def test_1_full_example_row_1(solver):
     assert solver.solve_1("5 1 9 5") == 8
