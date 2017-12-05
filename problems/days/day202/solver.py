@@ -1,3 +1,4 @@
+from .internal.linessummer import LinesSummer
 from problems.utils import AbstractSolver
 from .internal import LineCalculatorMinMax, LineCalculatorDivision
 
@@ -14,9 +15,4 @@ class Solver(AbstractSolver):
 
 
 def _solve(input_string, line_calculator):
-    result = 0
-
-    for line in input_string.splitlines():
-        result += line_calculator.calculate_line(line)
-
-    return result
+    return LinesSummer(line_calculator).sum_processed_lines(input_string)

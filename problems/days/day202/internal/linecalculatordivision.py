@@ -1,7 +1,8 @@
-class LineCalculatorDivision:
-    def __init__(self):
-        pass
+from .linecalculator import LineCalculator
 
+
+class LineCalculatorDivision(LineCalculator):
+    # TODO refactor: only override processing single number and returning result one
     def calculate_line(self, line):
         numbers_to_read = map(int, line.split())
         numbers_read = []

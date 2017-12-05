@@ -1,7 +1,7 @@
-class LineCalculatorMinMax:
-    def __init__(self):
-        pass
+from .linecalculator import LineCalculator
 
+
+class LineCalculatorMinMax(LineCalculator):
     def calculate_line(self, line):
         numbers = map(int, line.split())
         highest = None
