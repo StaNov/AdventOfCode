@@ -2,19 +2,27 @@ from .linecalculator import LineCalculator
 
 
 class LineCalculatorDivision(LineCalculator):
-    # TODO refactor: only override processing single number and returning result one
-    def calculate_line(self, line):
-        numbers_to_read = map(int, line.split())
-        numbers_read = []
 
-        for number_new in numbers_to_read:
-            for number_already_read in numbers_read:
-                if number_new % number_already_read == 0:
-                    return number_new // number_already_read
+    def __init__(self, line):
+        super().__init__(line)
+        self._numbers_read = []
+        self._result = None
 
-                if number_already_read % number_new == 0:
-                    return number_already_read // number_new
+    def _process_number(self, number):
+        if self._result is not None:
+            return
 
-            numbers_read.append(number_new)
+        for number_already_read in self._numbers_read:
+            if number % number_already_read == 0:
+                self._result = number // number_already_read
 
-        raise Exception("No matching numbers found, this should never happen.")
+            if number_already_read % number == 0:
+                self._result = number_already_read // number
+
+        self._numbers_read.append(number)
+
+    def _get_result(self):
+        if self._result is None:
+            raise Exception("No matching numbers found, this should never happen.")
+
+        return self._result

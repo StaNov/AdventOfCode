@@ -4,19 +4,18 @@ from .linessummer import LinesSummer
 from .linecalculator import LineCalculator
 
 
-@pytest.fixture
-def line_calculator():
-    return LineCalculatorTest()
-
-
-@pytest.fixture
-def summer(line_calculator):
-    return LinesSummer(line_calculator)
-
-
 class LineCalculatorTest(LineCalculator):
-    def calculate_line(self, line):
+
+    def __init__(self, line):
+        super().__init__(line)
+
+    def calculate_line(self):
         return 1
+
+
+@pytest.fixture
+def summer():
+    return LinesSummer(LineCalculatorTest)
 
 
 def test_empty_file_calculates_zero_lines(summer):

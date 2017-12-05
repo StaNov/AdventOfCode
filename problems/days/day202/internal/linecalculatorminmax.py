@@ -2,16 +2,18 @@ from .linecalculator import LineCalculator
 
 
 class LineCalculatorMinMax(LineCalculator):
-    def calculate_line(self, line):
-        numbers = map(int, line.split())
-        highest = None
-        lowest = None
 
-        for number in numbers:
-            if highest is None or number > highest:
-                highest = number
+    def __init__(self, line):
+        super().__init__(line)
+        self._highest = None
+        self._lowest = None
 
-            if lowest is None or number < lowest:
-                lowest = number
+    def _process_number(self, number):
+        if self._highest is None or number > self._highest:
+            self._highest = number
 
-        return highest - lowest
+        if self._lowest is None or number < self._lowest:
+            self._lowest = number
+
+    def _get_result(self):
+        return self._highest - self._lowest
