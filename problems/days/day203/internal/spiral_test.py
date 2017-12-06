@@ -12,7 +12,7 @@ def test_spiral_two_has_one_length():
 
 
 def test_spiral_three_has_one_length():
-    assert Spiral(3).distance_from_start() == 1
+    assert Spiral(3).distance_from_start() == 2
 
 
 def test_with_exception():
