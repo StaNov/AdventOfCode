@@ -14,7 +14,7 @@ class Spiral:
         if self._length == 1:
             return 0
 
-        return self._loop_number + self._length % 2
+        return self._loop_number * 2 - self._distance_from_corner
 
     def _compute_loop_numbers(self):
         i = 1

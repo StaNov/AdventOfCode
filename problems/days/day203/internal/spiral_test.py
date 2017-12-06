@@ -27,12 +27,10 @@ def test_spiral_six_has_one_length():
     assert Spiral(6).distance_from_start() == 1
 
 
-@pytest.mark.skip
 def test_spiral_eleven_has_two_length():
     assert Spiral(11).distance_from_start() == 2
 
 
-@pytest.mark.skip
 def test_spiral_twelve_has_three_length():
     assert Spiral(12).distance_from_start() == 3
 
