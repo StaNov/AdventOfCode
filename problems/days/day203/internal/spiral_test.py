@@ -81,6 +81,10 @@ def test_distance_from_corner_6():
     assert Spiral(6)._distance_from_corner == 1
 
 
+def test_distance_from_corner_19():
+    assert Spiral(19)._distance_from_corner == 2
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):
