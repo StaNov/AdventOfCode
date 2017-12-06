@@ -33,4 +33,8 @@ class Spiral:
         }
 
     def _compute_distance_from_corner(self):
-        self._distance_from_corner = 0
+        if self._length == 1:
+            self._distance_from_corner = 0
+            return
+
+        self._distance_from_corner = 1
