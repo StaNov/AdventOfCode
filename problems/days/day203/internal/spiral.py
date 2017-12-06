@@ -4,9 +4,11 @@ class Spiral:
         self._last_number_in_loop = None
         self._loop_number = None
         self._corner_numbers = None
+        self._distance_from_corner = None
 
         self._compute_loop_numbers()
         self._compute_corner_numbers()
+        self._compute_distance_from_corner()
 
     def distance_from_start(self):
         if self._length == 1:
@@ -29,3 +31,6 @@ class Spiral:
             self._last_number_in_loop - 4 * self._loop_number,
             self._last_number_in_loop - 6 * self._loop_number
         }
+
+    def _compute_distance_from_corner(self):
+        self._distance_from_corner = 0
