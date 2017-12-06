@@ -1,9 +1,6 @@
 class Spiral:
     def __init__(self, length):
-        self.result = 0
-
-    def helper_method(self, param):
-        return self.result
+        self.length = length
 
     def distance_from_start(self):
-        return 0
+        return self.length - 1
