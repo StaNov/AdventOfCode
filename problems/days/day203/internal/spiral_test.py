@@ -40,6 +40,10 @@ def test_last_number_in_loop_1():
     assert Spiral(1).last_number_in_loop() == 1
 
 
+def test_last_number_in_loop_2():
+    assert Spiral(2).last_number_in_loop() == 9
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):

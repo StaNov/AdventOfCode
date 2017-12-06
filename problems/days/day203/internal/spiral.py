@@ -8,6 +8,8 @@ class Spiral:
 
         return 1 + self.length % 2
 
-
     def last_number_in_loop(self):
-        return 1
+        if self.length == 1:
+            return 1
+
+        return 9
