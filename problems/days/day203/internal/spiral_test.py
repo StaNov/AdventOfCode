@@ -11,6 +11,10 @@ def test_spiral_two_has_one_length():
     assert Spiral(2).distance_from_start() == 1
 
 
+def test_spiral_three_has_one_length():
+    assert Spiral(3).distance_from_start() == 1
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):
