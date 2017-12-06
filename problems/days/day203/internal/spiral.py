@@ -3,4 +3,7 @@ class Spiral:
         self.length = length
 
     def distance_from_start(self):
-        return self.length - 1
+        if self.length == 1:
+            return 0
+
+        return 1 + self.length % 2
