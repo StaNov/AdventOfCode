@@ -23,4 +23,9 @@ class Spiral:
         self._loop_number = i//2
 
     def _compute_corner_numbers(self):
-        self._corner_numbers = [1]
+        self._corner_numbers = {
+            self._last_number_in_loop,
+            self._last_number_in_loop - 2 * self._loop_number,
+            self._last_number_in_loop - 4 * self._loop_number,
+            self._last_number_in_loop - 6 * self._loop_number
+        }

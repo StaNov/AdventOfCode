@@ -62,7 +62,15 @@ def test_loop_number_22():
 
 
 def test_corner_numbers_1():
-    assert Spiral(1)._corner_numbers == [1]
+    assert Spiral(1)._corner_numbers == {1}
+
+
+def test_corner_numbers_8():
+    assert Spiral(8)._corner_numbers == {9, 7, 5, 3}
+
+
+def test_corner_numbers_16():
+    assert Spiral(16)._corner_numbers == {13, 17, 21, 25}
 
 
 def test_with_exception():
