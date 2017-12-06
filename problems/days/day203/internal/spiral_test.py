@@ -31,6 +31,15 @@ def test_spiral_eleven_has_two_length():
     assert Spiral(11).distance_from_start() == 2
 
 
+@pytest.mark.skip
+def test_spiral_twelve_has_three_length():
+    assert Spiral(12).distance_from_start() == 3
+
+
+def test_last_number_in_loop_1():
+    assert Spiral(1).last_number_in_loop() == 1
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):
