@@ -1,1 +1,1 @@
-from .helperclass import HelperClass
+from .spiral import Spiral

@@ -1,16 +1,16 @@
 import pytest
 
-from . import HelperClass
+from . import Spiral
 
 
 @pytest.fixture
-def helper():
-    return HelperClass()
+def spiral():
+    return Spiral()
 
 
-def test_helper_method(helper):
+def test_helper_method(spiral):
     # TODO
-    assert helper.helper_method("test") == 0
+    assert spiral.helper_method("test") == 0
 
 
 def test_with_exception():

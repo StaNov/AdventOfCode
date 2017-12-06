@@ -1,4 +1,4 @@
-class HelperClass:
+class Spiral:
     def __init__(self):
         self.result = 0
 
