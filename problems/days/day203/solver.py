@@ -5,7 +5,7 @@ from .internal import Spiral
 class Solver(AbstractSolver):
     def __init__(self):
         super().__init__()
-        self.helper = Spiral()
+        self.helper = Spiral(1)
 
     def solve_1_internal(self, input_string):
         # TODO
