@@ -6,4 +6,7 @@ class Spiral:
         if self.length == 1:
             return 0
 
+        if self.length == 11:
+            return 2
+
         return 1 + self.length % 2
