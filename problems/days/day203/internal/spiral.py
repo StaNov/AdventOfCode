@@ -20,3 +20,6 @@ class Spiral:
             i += 2
 
         self._last_number_in_loop = i ** 2
+
+    def get_loop_number(self):
+        return 0
