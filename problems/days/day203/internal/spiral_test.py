@@ -52,6 +52,14 @@ def test_loop_number_1():
     assert Spiral(1).get_loop_number() == 0
 
 
+def test_loop_number_5():
+    assert Spiral(5).get_loop_number() == 1
+
+
+def test_loop_number_22():
+    assert Spiral(22).get_loop_number() == 2
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):
