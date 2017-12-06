@@ -37,15 +37,15 @@ def test_spiral_twelve_has_three_length():
 
 
 def test_last_number_in_loop_1():
-    assert Spiral(1).last_number_in_loop() == 1
+    assert Spiral(1).get_last_number_in_loop() == 1
 
 
 def test_last_number_in_loop_2():
-    assert Spiral(2).last_number_in_loop() == 9
+    assert Spiral(2).get_last_number_in_loop() == 9
 
 
 def test_last_number_in_loop_14():
-    assert Spiral(14).last_number_in_loop() == 25
+    assert Spiral(14).get_last_number_in_loop() == 25
 
 
 def test_with_exception():
