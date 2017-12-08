@@ -12,7 +12,6 @@ def test_get_last_number_of_empty_spiral(spiral):
     assert 1 == spiral.get_last_number()
 
 
-@pytest.mark.skip
 def test_get_last_number_after_generating_number(spiral):
     spiral.generate_number()
     assert 2 == spiral.get_last_number()
