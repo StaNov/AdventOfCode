@@ -16,3 +16,8 @@ def test_default_position(position):
 def test_position_if_moved_right(position):
     position.move(Direction.RIGHT)
     assert (1, 0) == position.get_coordinates()
+
+
+def test_position_if_moved_up(position):
+    position.move(Direction.UP)
+    assert (0, 1) == position.get_coordinates()
