@@ -115,3 +115,8 @@ def test_get_distance_of_21_numbers(spiral):
     spiral.generate_number()
     spiral.generate_number()
     assert 3 == spiral.get_last_number_distance()
+
+
+def test_generate_numbers(spiral):
+    spiral.generate_numbers(20)
+    assert 21 == spiral.get_last_number()

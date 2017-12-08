@@ -16,6 +16,10 @@ class Spiral:
     def get_last_number(self):
         return self._current_number
 
+    def generate_numbers(self, count):
+        for __ in range(count):
+            self.generate_number()
+
     def generate_number(self):
         self._current_number += 1
         self._current_position.move(self._current_direction)
