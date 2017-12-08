@@ -1,1 +1,1 @@
-from .spiralcomputing import SpiralComputing
+from .spiral import Spiral

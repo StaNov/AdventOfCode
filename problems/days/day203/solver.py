@@ -1,6 +1,5 @@
-from .internal.spiral import Spiral
+from .internal import Spiral
 from problems.utils import AbstractSolver
-from .internal import SpiralComputing
 
 
 class Solver(AbstractSolver):
