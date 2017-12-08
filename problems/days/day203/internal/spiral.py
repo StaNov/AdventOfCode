@@ -32,6 +32,7 @@ class Spiral:
     def _change_direction_if_needed(self):
         x, y = self._current_position.get_coordinates()
 
+        # TODO if there is no number by my left hand, turn
         if abs(y) + 1 == x and self._current_direction == Direction.RIGHT or\
                 abs(x) == abs(y) and self._current_direction != Direction.RIGHT:
             self._current_direction = self._current_direction.rotate()
