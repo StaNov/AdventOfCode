@@ -1,5 +1,5 @@
 from problems.utils import AbstractSolver
-from .internal import Spiral
+from .internal import SpiralComputing
 
 
 class Solver(AbstractSolver):
@@ -8,7 +8,7 @@ class Solver(AbstractSolver):
 
     def solve_1_internal(self, input_string):
         spiral_length = int(input_string)
-        spiral = Spiral(spiral_length)
+        spiral = SpiralComputing(spiral_length)
         return spiral.distance_from_start()
 
     def solve_2_internal(self, input_string):

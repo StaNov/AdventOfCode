@@ -1,4 +1,4 @@
-class Spiral:
+class SpiralComputing:
     def __init__(self, length):
         self._length = length
         self._last_number_in_loop = None
