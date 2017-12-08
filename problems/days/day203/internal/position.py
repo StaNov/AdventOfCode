@@ -12,17 +12,7 @@ class Position:
         return self._position_x, self._position_y
 
     def move(self, direction):
-        if direction == Direction.RIGHT:
-            self._position_x += 1
-
-        if direction == Direction.UP:
-            self._position_y += 1
-
-        if direction == Direction.LEFT:
-            self._position_x -= 1
-
-        if direction == Direction.DOWN:
-            self._position_y -= 1
+        self._position_x, self._position_y = self.get_coordinates_in_direction(direction)
 
     def get_coordinates_in_direction(self, direction):
         if direction == Direction.RIGHT:
