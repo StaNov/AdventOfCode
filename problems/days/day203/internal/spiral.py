@@ -21,7 +21,7 @@ class Spiral:
             self.generate_number()
 
     def generate_number(self):
-        self._current_number += 1
+        self._current_number = self._get_next_number_to_generate()
         self._current_position.move(self._current_direction)
         self._put_current_number_to_current_position()
         self._turn_left_if_possible()
@@ -40,3 +40,6 @@ class Spiral:
 
         if left_hand_value is None:
             self._current_direction = left_hand_direction
+
+    def _get_next_number_to_generate(self):
+        return self._current_number + 1
