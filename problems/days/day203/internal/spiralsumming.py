@@ -2,4 +2,6 @@ from .spiralincremental import SpiralIncremental
 
 
 class SpiralSumming(SpiralIncremental):
-    pass
+
+    def _get_next_number_to_generate(self):
+        return 1
