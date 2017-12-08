@@ -1,12 +1,12 @@
 import pytest
 
 from .direction import Direction
-from .spiral import Spiral
+from .spiralincremental import SpiralIncremental
 
 
 @pytest.fixture
 def spiral():
-    return Spiral()
+    return SpiralIncremental()
 
 
 def test_get_last_number_of_empty_spiral(spiral):

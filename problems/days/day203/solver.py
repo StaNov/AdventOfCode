@@ -1,4 +1,4 @@
-from .internal import Spiral
+from .internal import SpiralIncremental
 from problems.utils import AbstractSolver
 
 
@@ -8,7 +8,7 @@ class Solver(AbstractSolver):
 
     def solve_1_internal(self, input_string):
         spiral_length = int(input_string)
-        spiral = Spiral()
+        spiral = SpiralIncremental()
 
         spiral.generate_numbers(spiral_length - 1)
 

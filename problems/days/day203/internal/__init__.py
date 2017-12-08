@@ -1,1 +1,1 @@
-from .spiral import Spiral
+from .spiralincremental import SpiralIncremental

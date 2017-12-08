@@ -2,7 +2,7 @@ from .position import Position
 from .direction import Direction
 
 
-class Spiral:
+class SpiralIncremental:
 
     def __init__(self):
         super().__init__()
