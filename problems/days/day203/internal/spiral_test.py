@@ -1,5 +1,6 @@
 import pytest
 
+from .direction import Direction
 from .spiral import Spiral
 
 
@@ -15,6 +16,57 @@ def test_get_last_number_of_empty_spiral(spiral):
 def test_get_last_number_after_generating_number(spiral):
     spiral.generate_number()
     assert 2 == spiral.get_last_number()
+
+
+def test_direction_after_first_number(spiral):
+    spiral.generate_number()
+    assert Direction.UP == spiral._current_direction
+
+
+def test_direction_after_two_numbers(spiral):
+    spiral.generate_number()
+    spiral.generate_number()
+    assert Direction.LEFT == spiral._current_direction
+
+
+def test_direction_after_three_numbers(spiral):
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    assert Direction.LEFT == spiral._current_direction
+
+
+def test_direction_after_four_numbers(spiral):
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    assert Direction.DOWN == spiral._current_direction
+
+
+def test_direction_after_eight_numbers(spiral):
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    assert Direction.RIGHT == spiral._current_direction
+
+
+def test_direction_after_nine_numbers(spiral):
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    assert Direction.UP == spiral._current_direction
 
 
 def test_get_distance_of_empty_spiral(spiral):
