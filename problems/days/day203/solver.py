@@ -1,4 +1,4 @@
-from .internal import SpiralIncremental
+from .internal import SpiralIncremental, SpiralSumming
 from problems.utils import AbstractSolver
 
 
@@ -15,6 +15,10 @@ class Solver(AbstractSolver):
         return spiral.get_last_number_distance()
 
     def solve_2_internal(self, input_string):
-        # TODO
-        # return self.helper.helper_method(input_string)
-        return 0
+        limit = int(input_string)
+        spiral = SpiralSumming()
+
+        while spiral.get_last_number() <= limit:
+            spiral.generate_number()
+
+        return spiral.get_last_number()

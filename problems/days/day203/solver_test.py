@@ -9,36 +9,32 @@ def solver():
 
 
 def test_1_full_example_1(solver):
-    assert solver.solve_1("1") == 0
+    assert 0 == solver.solve_1("1")
 
 
 def test_1_full_example_2(solver):
-    assert solver.solve_1("12") == 3
+    assert 3 == solver.solve_1("12")
 
 
 def test_1_full_example_3(solver):
-    assert solver.solve_1("23") == 2
+    assert 2 == solver.solve_1("23")
 
 
 def test_1_full_example_4(solver):
-    assert solver.solve_1("1024") == 31
+    assert 31 == solver.solve_1("1024")
 
 
-@pytest.mark.skip
 def test_2_full_example_1(solver):
-    assert solver.solve_2("0") == 1
+    assert 1 == solver.solve_2("0")
 
 
-@pytest.mark.skip
 def test_2_full_example_2(solver):
-    assert solver.solve_2("1") == 2
+    assert 2 == solver.solve_2("1")
 
 
-@pytest.mark.skip
 def test_2_full_example_3(solver):
-    assert solver.solve_2("2") == 4
+    assert 4 == solver.solve_2("2")
 
 
-@pytest.mark.skip
 def test_2_full_example_4(solver):
-    assert solver.solve_2("3") == 5
+    assert 5 == solver.solve_2("4")
