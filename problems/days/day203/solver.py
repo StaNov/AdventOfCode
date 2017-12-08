@@ -1,3 +1,4 @@
+from .internal.spiral import Spiral
 from problems.utils import AbstractSolver
 from .internal import SpiralComputing
 
@@ -8,8 +9,12 @@ class Solver(AbstractSolver):
 
     def solve_1_internal(self, input_string):
         spiral_length = int(input_string)
-        spiral = SpiralComputing(spiral_length)
-        return spiral.distance_from_start()
+        spiral = Spiral()
+
+        while spiral.get_last_number() < spiral_length:
+            spiral.generate_number()
+
+        return spiral.get_last_number_distance()
 
     def solve_2_internal(self, input_string):
         # TODO

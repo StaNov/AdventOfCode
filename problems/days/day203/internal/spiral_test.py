@@ -84,9 +84,34 @@ def test_get_distance_of_two_numbers(spiral):
     assert 2 == spiral.get_last_number_distance()
 
 
-@pytest.mark.skip
 def test_get_distance_of_three_numbers(spiral):
     spiral.generate_number()
     spiral.generate_number()
     spiral.generate_number()
     assert 1 == spiral.get_last_number_distance()
+
+
+# TODO create some way how to dynamically generate numbers
+def test_get_distance_of_21_numbers(spiral):
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    spiral.generate_number()
+    assert 3 == spiral.get_last_number_distance()

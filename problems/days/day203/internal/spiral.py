@@ -26,7 +26,8 @@ class Spiral:
         self._spiral[self._current_position.get_coordinates()] = self._current_number
 
     def get_last_number_distance(self):
-        return self._current_number - 1
+        x, y = self._current_position.get_coordinates()
+        return abs(x) + abs(y)
 
     def _change_direction_if_needed(self):
         x, y = self._current_position.get_coordinates()
