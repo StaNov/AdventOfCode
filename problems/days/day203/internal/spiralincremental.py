@@ -21,8 +21,8 @@ class SpiralIncremental:
             self.generate_number()
 
     def generate_number(self):
-        self._current_number = self._get_next_number_to_generate()
         self._current_position.move(self._current_direction)
+        self._current_number = self._get_next_number_to_generate()
         self._put_current_number_to_current_position()
         self._turn_left_if_possible()
 
