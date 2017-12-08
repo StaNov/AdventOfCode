@@ -10,8 +10,7 @@ class Solver(AbstractSolver):
         spiral_length = int(input_string)
         spiral = Spiral()
 
-        while spiral.get_last_number() < spiral_length:
-            spiral.generate_number()
+        spiral.generate_numbers(spiral_length - 1)
 
         return spiral.get_last_number_distance()
 
