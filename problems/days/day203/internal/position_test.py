@@ -21,3 +21,13 @@ def test_position_if_moved_right(position):
 def test_position_if_moved_up(position):
     position.move(Direction.UP)
     assert (0, 1) == position.get_coordinates()
+
+
+def test_position_if_moved_left(position):
+    position.move(Direction.LEFT)
+    assert (-1, 0) == position.get_coordinates()
+
+
+def test_position_if_moved_down(position):
+    position.move(Direction.DOWN)
+    assert (0, -1) == position.get_coordinates()

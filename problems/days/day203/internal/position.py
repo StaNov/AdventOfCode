@@ -17,3 +17,9 @@ class Position:
 
         if direction == Direction.UP:
             self._position_y += 1
+
+        if direction == Direction.LEFT:
+            self._position_x -= 1
+
+        if direction == Direction.DOWN:
+            self._position_y -= 1
