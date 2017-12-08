@@ -7,5 +7,5 @@ class Direction(Enum):
     UP = 2
     LEFT = 3
 
-    def rotate(self):
+    def rotate_left(self):
         return Direction((self.value + 1) % len(Direction))
