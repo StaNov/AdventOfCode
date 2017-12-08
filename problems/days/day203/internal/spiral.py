@@ -36,10 +36,12 @@ class Spiral:
     def _turn_left_if_possible(self):
         left_hand_direction = self._current_direction.rotate_left()
         left_hand_position = self._current_position.get_coordinates_in_direction(left_hand_direction)
-        left_hand_value = self._spiral.get(left_hand_position)
 
-        if left_hand_value is None:
+        if self._get_value_at_position(left_hand_position) == 0:
             self._current_direction = left_hand_direction
 
     def _get_next_number_to_generate(self):
         return self._current_number + 1
+
+    def _get_value_at_position(self, position):
+        return self._spiral.get(position, 0)
