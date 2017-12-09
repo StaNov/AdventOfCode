@@ -1,1 +1,2 @@
 from .passwordchecker import PasswordChecker
+from .passwordcheckeranagramic import PasswordCheckerAnagramic
