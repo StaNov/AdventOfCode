@@ -9,8 +9,10 @@ class Solver(AbstractSolver):
 
     def solve_1_internal(self, input_string):
         # TODO
-        return self.helper.helper_method(input_string)
+        # return self.helper.helper_method(input_string)
+        return 0
 
     def solve_2_internal(self, input_string):
         # TODO
-        return self.helper.helper_method(input_string)
+        # return self.helper.helper_method(input_string)
+        return 0
