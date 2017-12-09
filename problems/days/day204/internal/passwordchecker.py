@@ -3,4 +3,4 @@ class PasswordChecker:
         self.result = 0
 
     def check(self, password):
-        return len(password) == 0
+        return len(password.split()) < 2
