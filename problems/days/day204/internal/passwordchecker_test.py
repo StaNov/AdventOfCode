@@ -1,16 +1,15 @@
 import pytest
 
-from . import HelperClass
+from . import PasswordChecker
 
 
 @pytest.fixture
-def helper():
-    return HelperClass()
+def checker():
+    return PasswordChecker()
 
 
-def test_helper_method(helper):
-    # TODO
-    assert helper.helper_method("test") == 0
+def test_empty_password_is_valid(checker):
+    assert checker.check("")
 
 
 def test_with_exception():

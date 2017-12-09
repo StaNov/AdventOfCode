@@ -1,1 +1,1 @@
-from .helperclass import HelperClass
+from .passwordchecker import PasswordChecker

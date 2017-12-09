@@ -1,11 +1,11 @@
 from problems.utils import AbstractSolver
-from .internal import HelperClass
+from .internal import PasswordChecker
 
 
 class Solver(AbstractSolver):
     def __init__(self):
         super().__init__()
-        self.helper = HelperClass()
+        self.helper = PasswordChecker()
 
     def solve_1_internal(self, input_string):
         # TODO
