@@ -22,9 +22,3 @@ def test_one_word_is_valid(checker):
 
 def test_two_different_words_are_valid(checker):
     assert checker.check("abc def")
-
-
-def test_with_exception():
-    # TODO
-    with pytest.raises(Exception):
-        raise Exception("Test exception in test")
