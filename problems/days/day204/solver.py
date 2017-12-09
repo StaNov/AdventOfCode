@@ -4,9 +4,12 @@ from .internal import PasswordChecker, PasswordCheckerAnagramic, ValidPasswordsC
 
 class Solver(AbstractSolver):
     def solve_1_internal(self, input_string):
-        counter = ValidPasswordsCounter(PasswordChecker())
-        return counter.count(input_string)
+        return _count_valid_passwords(PasswordChecker(), input_string)
 
     def solve_2_internal(self, input_string):
-        counter = ValidPasswordsCounter(PasswordCheckerAnagramic())
-        return counter.count(input_string)
+        return _count_valid_passwords(PasswordCheckerAnagramic(), input_string)
+
+
+def _count_valid_passwords(checker, input_string):
+    counter = ValidPasswordsCounter(checker)
+    return counter.count(input_string)
