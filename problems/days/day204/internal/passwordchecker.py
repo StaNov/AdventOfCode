@@ -3,4 +3,4 @@ class PasswordChecker:
         self.result = 0
 
     def check(self, password):
-        return True
+        return len(password) == 0

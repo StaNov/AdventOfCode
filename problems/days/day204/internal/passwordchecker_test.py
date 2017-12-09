@@ -12,6 +12,10 @@ def test_empty_password_is_valid(checker):
     assert checker.check("")
 
 
+def test_two_same_words_are_invalid(checker):
+    assert not checker.check("abc abc")
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):
