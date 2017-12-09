@@ -15,7 +15,6 @@ def test_1_full_example(solver):
         "aa bb cc dd aaa")
 
 
-@pytest.mark.skip
 def test_2_full_example(solver):
     assert 3 == solver.solve_2(
         "abcde fghij\n"

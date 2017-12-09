@@ -1,22 +1,12 @@
 from problems.utils import AbstractSolver
-from .internal import PasswordChecker
+from .internal import PasswordChecker, PasswordCheckerAnagramic, ValidPasswordsCounter
 
 
 class Solver(AbstractSolver):
-    def __init__(self):
-        super().__init__()
-        self.checker = PasswordChecker()
-
     def solve_1_internal(self, input_string):
-        valid_passwords_count = 0
-
-        for line in input_string.splitlines():
-            if self.checker.check(line):
-                valid_passwords_count += 1
-
-        return valid_passwords_count
+        counter = ValidPasswordsCounter(PasswordChecker())
+        return counter.count(input_string)
 
     def solve_2_internal(self, input_string):
-        # TODO
-        # return self.helper.helper_method(input_string)
-        return 0
+        counter = ValidPasswordsCounter(PasswordCheckerAnagramic())
+        return counter.count(input_string)
