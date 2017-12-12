@@ -1,4 +1,4 @@
-from .inputreader import InputReader
+from . import inputfilereader
 from .inputfileparser import InputFileParser
 
 
@@ -37,8 +37,8 @@ class AbstractDayCalculator:
         return InputFileParser()
 
     def _load_file_content(self):
-        file_path = self.get_main_calculator_file_path()
-        return InputReader.read_input(file_path)
+        main_calculator_file_name = self.get_main_calculator_file_path()
+        return inputfilereader.read_file_to_string(main_calculator_file_name)
 
 
 def _print_separator():
