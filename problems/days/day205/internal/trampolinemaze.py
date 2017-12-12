@@ -2,10 +2,10 @@ class TrampolineMaze:
 
     def __init__(self, values):
         self._values = values
-        self._step_done = False
+        self._steps_done = 0
 
     def is_finished(self):
-        return len(self._values) == 0 or self._step_done
+        return len(self._values) == 0 or len(self._values) == self._steps_done
 
     def do_step(self):
-        self._step_done = True
+        self._steps_done += 1
