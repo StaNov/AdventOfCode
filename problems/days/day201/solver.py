@@ -1,5 +1,5 @@
 from problems.utils import AbstractSolver
-from .internal import CaptchaComputer
+from .internal import CaptchaComputer, CaptchaComputerHalfSlice
 
 
 class Solver(AbstractSolver):
@@ -8,7 +8,7 @@ class Solver(AbstractSolver):
         self.helper = CaptchaComputer()
 
     def solve_1_internal(self, input_string):
-        return CaptchaComputer().compute_captcha(input_string, 1)
+        return CaptchaComputer().compute_captcha(input_string)
 
     def solve_2_internal(self, input_string):
-        return CaptchaComputer().compute_captcha(input_string, len(input_string) // 2)
+        return CaptchaComputerHalfSlice().compute_captcha(input_string)

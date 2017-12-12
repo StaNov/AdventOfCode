@@ -1,1 +1,2 @@
 from .captchacomputer import CaptchaComputer
+from .captchacomputerhalfslice import CaptchaComputerHalfSlice
