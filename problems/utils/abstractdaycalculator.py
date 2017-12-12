@@ -31,6 +31,9 @@ class AbstractDayCalculator:
     def get_main_calculator_file_path(self):
         raise Exception("Abstract method not implemented!")
 
+    def get_input_file_parser(self):
+        raise Exception("Abstract method not implemented!")
+
     def _load_file_content(self):
         file_path = self.get_main_calculator_file_path()
         return InputReader.read_input(file_path)
