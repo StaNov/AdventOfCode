@@ -7,10 +7,10 @@ class Solver(AbstractSolver):
         super().__init__()
         self.helper = HelperClass()
 
-    def solve_1_internal(self, input_string):
+    def solve_1_internal(self, input_):
         # TODO
-        return self.helper.helper_method(input_string)
+        return self.helper.helper_method(input_)
 
-    def solve_2_internal(self, input_string):
+    def solve_2_internal(self, input_):
         # TODO
-        return self.helper.helper_method(input_string)
+        return self.helper.helper_method(input_)
