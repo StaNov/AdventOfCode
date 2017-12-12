@@ -1,7 +1,7 @@
 class TrampolineMaze:
 
     def __init__(self, values):
-        pass
+        self._values = values
 
     def is_finished(self):
-        return True
+        return len(self._values) == 0
