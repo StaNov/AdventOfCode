@@ -1,1 +1,1 @@
-from .helperclass import HelperClass
+from .trampolinemaze import TrampolineMaze

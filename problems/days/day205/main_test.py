@@ -8,8 +8,7 @@ def main():
 
 
 def test_main_1(main):
-    # TODO
-    assert main.calculate_part_1() == 0
+    assert 375042 == main.calculate_part_1()
 
 
 def test_main_2(main):

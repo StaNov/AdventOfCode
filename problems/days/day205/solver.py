@@ -1,16 +1,13 @@
 from problems.utils import AbstractSolver
-from .internal import HelperClass
+from .internal import TrampolineMaze
 
 
 class Solver(AbstractSolver):
-    def __init__(self):
-        super().__init__()
-        self.helper = HelperClass()
-
     def solve_1_internal(self, input_):
-        # TODO
-        return self.helper.helper_method(input_)
+        maze = TrampolineMaze(input_)
+        maze.process_until_finished()
+        return maze.get_steps_done()
 
     def solve_2_internal(self, input_):
         # TODO
-        return self.helper.helper_method(input_)
+        return 0
