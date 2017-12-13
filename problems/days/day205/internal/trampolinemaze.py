@@ -18,14 +18,15 @@ class TrampolineMaze:
 
         self._steps_done += 1
 
-        new_current_index = self._current_index + self._values[self._current_index]
-        self._values[self._current_index] += self._value_to_add_to_source_item()
+        jump_distance = self._values[self._current_index]
+        new_current_index = self._current_index + jump_distance
+        self._values[self._current_index] += self._value_to_add_to_source_item(jump_distance)
         self._current_index = new_current_index
 
     def get_steps_done(self):
         return self._steps_done
 
-    def _value_to_add_to_source_item(self):
+    def _value_to_add_to_source_item(self, jump_distance):
         return 1
 
 
