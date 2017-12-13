@@ -14,4 +14,4 @@ def test_1_full_example(solver):
 
 @pytest.mark.skip
 def test_2_full_example(solver):
-    assert 10 == solver.solve_2([2, 3, 2, 3, -1])
+    assert 10 == solver.solve_2([0, 3, 0, 1, -3])
