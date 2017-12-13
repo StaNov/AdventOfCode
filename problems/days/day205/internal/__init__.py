@@ -1,1 +1,2 @@
 from .trampolinemaze import TrampolineMaze
+from .trampolinemazedecrementing import TrampolineMazeDecrementing
