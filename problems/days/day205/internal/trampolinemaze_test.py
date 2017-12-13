@@ -36,7 +36,6 @@ def test_do_step_on_finished_maze_raises_exception():
         maze.do_step()
 
 
-@pytest.mark.skip
 def test_maze_with_zero_is_finished_after_two_step():
     maze = TrampolineMaze([0])
     maze.process_until_finished()
