@@ -1,6 +1,6 @@
 import pytest
 
-from .trampolinemaze import TrampolineMaze, CannotDoStepOnFinishedMaze
+from .trampolinemaze import TrampolineMaze
 
 
 def test_empty_maze_is_already_finished():
@@ -32,7 +32,7 @@ def test_maze_with_one_and_two_is_finished_after_two_steps():
 def test_do_step_on_finished_maze_raises_exception():
     maze = TrampolineMaze([])
     maze.process_until_finished()
-    with pytest.raises(CannotDoStepOnFinishedMaze):
+    with pytest.raises(Exception):
         maze.do_step()
 
 
