@@ -28,4 +28,4 @@ def test_all_days_instantiable():
 
 def _test_instantiating_of_calculator_by_day_number(day_number):
     calculator = problems_facade.get_day_calculator(day_number)
-    calculator.calculate_part_1()
+    assert hasattr(calculator, "calculate_part_1")
