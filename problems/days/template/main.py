@@ -1,3 +1,5 @@
+# TODO when running as main, it needs to be imported by absolute way
+# from problems.days.template.inputfileparser import InputFileParser
 from .inputfileparser import InputFileParser
 from problems.utils import AbstractDayCalculator
 

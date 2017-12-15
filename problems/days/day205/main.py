@@ -2,7 +2,7 @@ from .inputfileparser import InputFileParser
 from problems.utils import AbstractDayCalculator
 
 if __name__ == "__main__":
-    from problems.days.template.solver import Solver
+    from problems.days.day205.solver import Solver
 else:
     from .solver import Solver
 
