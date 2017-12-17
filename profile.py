@@ -10,7 +10,7 @@ def profile(arguments):
 
     profiler.stop()
 
-    print(profiler.output_text(unicode=True, color=True))
+    print(profiler.output_text(unicode=False, color=True))
 
 
 if __name__ == "__main__":
