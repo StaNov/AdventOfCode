@@ -5,5 +5,10 @@ class MemoryBanks:
     def process_until_cycle_is_found(self):
         pass
 
+    def do_step(self):
+        if self._banks:
+            self._banks[0] = 1
+            self._banks[1] = 0
+
     def get_steps(self):
         return 0 if not self._banks else 2
