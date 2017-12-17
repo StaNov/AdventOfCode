@@ -1,1 +1,1 @@
-from .helperclass import HelperClass
+from .memorybanks import MemoryBanks
