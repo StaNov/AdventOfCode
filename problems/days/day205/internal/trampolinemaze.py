@@ -7,13 +7,13 @@ class TrampolineMaze:
         self._current_index = 0
 
     def process_until_finished(self):
-        while not self.is_finished():
-            self.do_step()
+        while not self._is_finished():
+            self._do_step()
 
-    def is_finished(self):
+    def _is_finished(self):
         return self._current_index >= self._values_length
 
-    def do_step(self):
+    def _do_step(self):
         jump_distance = self._values[self._current_index]
         new_current_index = self._current_index + jump_distance
         self._values[self._current_index] += self._value_to_add_to_source_item(jump_distance)
