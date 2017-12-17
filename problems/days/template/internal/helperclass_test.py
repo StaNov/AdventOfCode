@@ -23,4 +23,4 @@ def test_with_exception():
 
 @testsuite.time_expensive
 def test_time_expensive_test():
-    time.sleep(3)
+    time.sleep(1)
