@@ -1,12 +1,12 @@
-# TODO when running as main, it needs to be imported by absolute way
-# from problems.days.template.inputfileparser import InputFileParser
-from .inputfileparser import InputFileParser
 from problems.utils import AbstractDayCalculator
 
 if __name__ == "__main__":
+    # TODO replace template with dayXXX
     from problems.days.template.solver import Solver
+    from problems.days.template.inputfileparser import InputFileParser
 else:
     from .solver import Solver
+    from .inputfileparser import InputFileParser
 
 
 class DayCalculator(AbstractDayCalculator):

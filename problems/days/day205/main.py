@@ -1,10 +1,11 @@
-from .inputfileparser import InputFileParser
 from problems.utils import AbstractDayCalculator
 
 if __name__ == "__main__":
     from problems.days.day205.solver import Solver
+    from problems.days.day205.inputfileparser import InputFileParser
 else:
     from .solver import Solver
+    from .inputfileparser import InputFileParser
 
 
 class DayCalculator(AbstractDayCalculator):
