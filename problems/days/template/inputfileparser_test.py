@@ -7,3 +7,7 @@ def test_parse_empty_string():
 
 def test_parse_one_number():
     assert [1] == InputFileParser().parse("1")
+
+
+def test_parse_one_different_number():
+    assert [2] == InputFileParser().parse("2")
