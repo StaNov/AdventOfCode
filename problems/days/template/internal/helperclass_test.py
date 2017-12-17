@@ -10,7 +10,7 @@ def helper():
 
 def test_helper_method(helper):
     # TODO
-    assert helper.helper_method("test") == 0
+    assert 0 == helper.helper_method("test")
 
 
 def test_with_exception():

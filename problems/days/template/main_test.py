@@ -9,9 +9,9 @@ def main():
 
 def test_main_1(main):
     # TODO
-    assert main.calculate_part_1() == 0
+    assert 0 == main.calculate_part_1()
 
 
 def test_main_2(main):
     # TODO
-    assert main.calculate_part_2() == 0
+    assert 0 == main.calculate_part_2()

@@ -10,9 +10,9 @@ def solver():
 
 def test_1_full_example(solver):
     # TODO
-    assert solver.solve_1("test test") == 0
+    assert 0 == solver.solve_1("test test")
 
 
 def test_2_full_example(solver):
     # TODO
-    assert solver.solve_2("test test") == 0
+    assert 0 == solver.solve_2("test test")
