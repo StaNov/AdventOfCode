@@ -8,4 +8,5 @@ def run_tests(params):
 
 
 if __name__ == "__main__":
-    run_tests(sys.argv[1:])
+    params = ["-m", "not time_expensive"] if len(sys.argv) == 1 else sys.argv[1:]
+    run_tests(params)
