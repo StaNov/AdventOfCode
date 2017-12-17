@@ -3,4 +3,7 @@ language: python
 python:
   - "3.5"
 
-script: python profile.py
+script:
+  - python runtests.py -m "not time_expensive"
+  - python runtests.py -m "time_expensive"
+  - python profile.py

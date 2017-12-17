@@ -1,5 +1,7 @@
 import pytest
+import time
 
+from problems.utils import testsuite
 from . import HelperClass
 
 
@@ -17,3 +19,8 @@ def test_with_exception():
     # TODO
     with pytest.raises(Exception):
         raise Exception("Test exception in test")
+
+
+@testsuite.time_expensive
+def test_time_expensive_test():
+    time.sleep(3)
