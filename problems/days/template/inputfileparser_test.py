@@ -11,3 +11,7 @@ def test_parse_one_number():
 
 def test_parse_one_different_number():
     assert [2] == InputFileParser().parse("2")
+
+
+def test_parse_two_numbers():
+    assert [1, 2] == InputFileParser().parse("1\t2")
