@@ -1,16 +1,16 @@
 from problems.utils import AbstractSolver
-from .internal import HelperClass
+from .internal import ProgramTree
 
 
 class Solver(AbstractSolver):
     def __init__(self):
         super().__init__()
-        self.helper = HelperClass()
+        self.helper = ProgramTree({"test": (123, [])})
 
     def solve_1_internal(self, input_):
         # TODO
-        return self.helper.helper_method(input_)
+        return 0
 
     def solve_2_internal(self, input_):
         # TODO
-        return self.helper.helper_method(input_)
+        return 0
