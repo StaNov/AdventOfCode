@@ -1,9 +1,8 @@
 from problems.utils import AbstractDayCalculator
 
 if __name__ == "__main__":
-    # TODO replace template with dayXXX
-    from problems.days.template.solver import Solver
-    from problems.days.template.inputfileparser import InputFileParser
+    from problems.days.day206.solver import Solver
+    from problems.days.day206.inputfileparser import InputFileParser
 else:
     from .solver import Solver
     from .inputfileparser import InputFileParser
