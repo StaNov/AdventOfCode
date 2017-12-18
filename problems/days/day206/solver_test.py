@@ -12,6 +12,7 @@ def test_1_full_example(solver):
     assert 5 == solver.solve_1([0, 2, 7, 0])
 
 
+# TODO
+@pytest.mark.skip
 def test_2_full_example(solver):
-    # TODO
-    assert 0 == solver.solve_2("test test")
+    assert 4 == solver.solve_2([0, 2, 7, 0])
