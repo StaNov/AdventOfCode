@@ -1,18 +1,16 @@
-import copy
-
-
 class MemoryBanks:
     def __init__(self, banks):
         if not banks:
             raise Exception("Cannot instantiate empty banks!")
 
         self._banks = banks
-        self._initial_banks = banks
-        self._banks = copy.copy(banks)
+        self._visited_states = [tuple(banks)]
+        self._banks = banks
         self._steps_taken = 0
 
     def process_until_cycle_is_found(self):
-        while self._initial_banks != self._banks or self._steps_taken == 0:
+        while tuple(self._banks) not in self._visited_states or self._steps_taken == 0:
+            self._visited_states.append(tuple(self._banks))
             self.do_step()
 
     def do_step(self):
@@ -41,3 +39,6 @@ class MemoryBanks:
 
     def get_steps(self):
         return self._steps_taken
+
+    def __str__(self):
+        return str(self._banks)
