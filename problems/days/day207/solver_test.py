@@ -28,6 +28,7 @@ def test_1_full_example(solver):
     assert "tknk" == solver.solve_1(input_)
 
 
+@pytest.mark.skip
 def test_2_full_example(solver):
     # TODO
     # assert 0 == solver.solve_2("test test")
