@@ -6,14 +6,26 @@ class MemoryBanks:
         pass
 
     def do_step(self):
-        to_distribute = self._banks[0]
-        current_index = 1
-        self._banks[0] = 0
+        highest_index = self.get_highest_index()
+        to_distribute = self._banks[highest_index]
+        current_index = highest_index + 1
+        self._banks[highest_index] = 0
 
         while to_distribute > 0:
             self._banks[current_index] += 1
             current_index += 1
             to_distribute -= 1
+
+    def get_highest_index(self):
+        highest_index = -1
+        highest_value = -1
+
+        for i, bank in enumerate(self._banks):
+            if bank > highest_value:
+                highest_index = i
+                highest_value = bank
+
+        return highest_index
 
     def get_steps(self):
         return 0 if not self._banks else 2

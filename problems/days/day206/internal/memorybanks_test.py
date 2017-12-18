@@ -23,3 +23,9 @@ def test_three_banks_distribution():
     banks = MemoryBanks([2, 0, 0, 0])
     banks.do_step()
     assert [0, 1, 1, 0] == banks._banks
+
+
+def test_distribute_highest_not_first_one():
+    banks = MemoryBanks([0, 1, 2, 0, 0, 0])
+    banks.do_step()
+    assert [0, 1, 0, 1, 1, 0] == banks._banks
