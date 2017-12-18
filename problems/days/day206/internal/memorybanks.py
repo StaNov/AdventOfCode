@@ -13,7 +13,7 @@ class MemoryBanks:
 
         while to_distribute > 0:
             self._banks[current_index] += 1
-            current_index += 1
+            current_index = (current_index + 1) % len(self._banks)
             to_distribute -= 1
 
     def get_highest_index(self):
