@@ -8,9 +8,7 @@ def main():
 
 
 def test_main_1(main):
-    # TODO
-    # assert 0 == main.calculate_part_1()
-    pass
+    assert "wiapj" == main.calculate_part_1()
 
 
 def test_main_2(main):

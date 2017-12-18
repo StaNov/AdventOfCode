@@ -8,7 +8,6 @@ def solver():
     return Solver()
 
 
-@pytest.mark.skip
 def test_1_full_example(solver):
     input_ = [
         ("pbga", 66, []),
