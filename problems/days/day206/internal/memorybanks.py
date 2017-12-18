@@ -1,5 +1,8 @@
 class MemoryBanks:
     def __init__(self, banks):
+        if not banks:
+            raise Exception("Cannot instantiate empty banks!")
+
         self._banks = banks
 
     def process_until_cycle_is_found(self):

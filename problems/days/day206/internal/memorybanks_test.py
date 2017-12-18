@@ -1,10 +1,18 @@
+import pytest
+
 from . import MemoryBanks
 
 
-def test_empty_banks():
-    banks = MemoryBanks([])
+def test_empty_banks_raises_exception():
+    with pytest.raises(Exception):
+        MemoryBanks([])
+
+
+@pytest.mark.skip
+def test_one_bank():
+    banks = MemoryBanks([1])
     banks.process_until_cycle_is_found()
-    assert 0 == banks.get_steps()
+    assert 1 == banks.get_steps()
 
 
 def test_two_banks():
