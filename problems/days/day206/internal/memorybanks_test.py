@@ -14,6 +14,12 @@ def test_two_banks():
 
 
 def test_two_banks_swap():
-    banks = MemoryBanks([0, 1])
+    banks = MemoryBanks([1, 0])
     banks.do_step()
-    assert [1, 0] == banks._banks
+    assert [0, 1] == banks._banks
+
+
+def test_three_banks_distribution():
+    banks = MemoryBanks([2, 0, 0, 0])
+    banks.do_step()
+    assert [0, 1, 1, 0] == banks._banks
