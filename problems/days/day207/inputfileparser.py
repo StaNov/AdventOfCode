@@ -10,6 +10,6 @@ class InputFileParser(BaseParser):
         for line in input_string.splitlines():
             match = re.fullmatch("(.+) \((\d+)\)", line)
             name, number = match.groups()
-            result[name] = int(number)
+            result[name] = (int(number), [])
 
         return result
