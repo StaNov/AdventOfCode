@@ -8,17 +8,22 @@ def test_empty_banks_raises_exception():
         MemoryBanks([])
 
 
-@pytest.mark.skip
-def test_one_bank():
+def test_one_step():
     banks = MemoryBanks([1])
     banks.process_until_cycle_is_found()
     assert 1 == banks.get_steps()
 
 
-def test_two_banks():
+def test_two_steps():
     banks = MemoryBanks([0, 1])
     banks.process_until_cycle_is_found()
     assert 2 == banks.get_steps()
+
+
+def test_three_steps():
+    banks = MemoryBanks([1, 0, 0])
+    banks.process_until_cycle_is_found()
+    assert 3 == banks.get_steps()
 
 
 def test_two_banks_swap():
