@@ -8,8 +8,11 @@ class InputFileParser(BaseParser):
         result = {}
 
         for line in input_string.splitlines():
-            match = re.fullmatch("(.+) \((\d+)\)", line)
-            name, number = match.groups()
-            result[name] = (int(number), [])
+            self.parse_line(line, result)
 
         return result
+
+    def parse_line(self, line, result):
+        match = re.fullmatch("(.+) \((\d+)\)", line)
+        name, number = match.groups()
+        result[name] = (int(number), [])
