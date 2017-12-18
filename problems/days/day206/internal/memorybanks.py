@@ -4,13 +4,13 @@ class MemoryBanks:
             raise Exception("Cannot instantiate empty banks!")
 
         self._banks = banks
-        self._visited_states = {tuple(banks)}
+        self._visited_states = dict()
         self._banks = banks
         self._steps_taken = 0
 
     def process_until_cycle_is_found(self):
         while tuple(self._banks) not in self._visited_states or self._steps_taken == 0:
-            self._visited_states.add(tuple(self._banks))
+            self._visited_states[tuple(self._banks)] = self._steps_taken
             self.do_step()
 
     def do_step(self):
@@ -39,7 +39,7 @@ class MemoryBanks:
         return self._steps_taken
 
     def get_loop_length(self):
-        return 5
+        return self._steps_taken - self._visited_states[tuple(self._banks)]
 
     def __str__(self):
         return str(self._banks)

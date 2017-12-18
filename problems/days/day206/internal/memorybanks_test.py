@@ -50,7 +50,7 @@ def test_distribute_over_start():
     assert [1, 2, 1, 2] == banks._banks
 
 
-def test_loop_length():
+def test_loop_length_five_steps():
     banks = MemoryBanks([2, 0, 0])
     banks.process_until_cycle_is_found()
     # 2, 0, 0
@@ -61,3 +61,23 @@ def test_loop_length():
     # 1, 0, 1
     # 0, 1, 1  <----
     assert 5 == banks.get_loop_length()
+
+
+def test_loop_length_nine_steps():
+    banks = MemoryBanks([2, 0, 0, 0, 0])
+    banks.process_until_cycle_is_found()
+    # 2, 0, 0, 0, 0
+    # 0, 1, 1, 0, 0
+    # 0, 0, 2, 0, 0
+    # 0, 0, 0, 1, 1
+    # 0, 0, 0, 0, 2  <----
+    # 1, 1, 0, 0, 0
+    # 0, 2, 0, 0, 0
+    # 0, 0, 1, 1, 0
+    # 0, 0, 0, 2, 0
+    # 1, 0, 0, 0, 1
+    # 0, 1, 0, 0, 1
+    # 0, 0, 1, 0, 1
+    # 0, 0, 0, 1, 1
+    # 0, 0, 0, 0, 2  <----
+    assert 9 == banks.get_loop_length()
