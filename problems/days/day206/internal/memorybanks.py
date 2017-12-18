@@ -16,13 +16,11 @@ class MemoryBanks:
     def do_step(self):
         highest_index = self.get_highest_index()
         to_distribute = self._banks[highest_index]
-        current_index = highest_index
         self._banks[highest_index] = 0
 
-        while to_distribute > 0:
-            current_index = (current_index + 1) % len(self._banks)
+        for i in range(to_distribute):
+            current_index = (highest_index + i + 1) % len(self._banks)
             self._banks[current_index] += 1
-            to_distribute -= 1
 
         self._steps_taken += 1
 
