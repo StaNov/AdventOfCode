@@ -38,5 +38,8 @@ class MemoryBanks:
     def get_steps(self):
         return self._steps_taken
 
+    def get_loop_length(self):
+        return 5
+
     def __str__(self):
         return str(self._banks)
