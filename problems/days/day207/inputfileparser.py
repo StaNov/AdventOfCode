@@ -13,6 +13,9 @@ class InputFileParser(BaseParser):
         return result
 
     def parse_line(self, line, result):
-        match = re.fullmatch("(.+) \((\d+)\)", line)
+        parts = line.split(" -> ")
+        name_and_number = parts[0]
+        subprograms = parts[1].split(", ") if len(parts) == 2 else []
+        match = re.fullmatch("(.+) \((\d+)\)", name_and_number)
         name, number = match.groups()
-        result[name] = (int(number), [])
+        result[name] = (int(number), subprograms)
