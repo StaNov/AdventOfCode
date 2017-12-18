@@ -5,10 +5,11 @@ from problems.utils import InputFileParser as BaseParser
 
 class InputFileParser(BaseParser):
     def parse(self, input_string):
-        if not input_string:
-            return {}
+        result = {}
 
-        match = re.fullmatch("(.+) \((\d+)\)", input_string)
-        name, number = match.groups()
-        return {name: int(number)}
-        # return input_string.splitlines()
+        for line in input_string.splitlines():
+            match = re.fullmatch("(.+) \((\d+)\)", line)
+            name, number = match.groups()
+            result[name] = int(number)
+
+        return result

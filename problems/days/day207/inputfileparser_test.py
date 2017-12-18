@@ -7,3 +7,7 @@ def test_parse_empty():
 
 def test_parse_one_line():
     assert {"abc": 123} == InputFileParser().parse("abc (123)")
+
+
+def test_parse_two_lines():
+    assert {"abc": 123, "defg": 45} == InputFileParser().parse("abc (123)\ndefg (45)")
