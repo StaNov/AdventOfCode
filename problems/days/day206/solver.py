@@ -9,6 +9,6 @@ class Solver(AbstractSolver):
         return banks.get_steps()
 
     def solve_2_internal(self, input_):
-        # TODO
-        return 0
-        # self.helper.helper_method(input_)
+        banks = MemoryBanks(input_)
+        banks.process_until_cycle_is_found()
+        return banks.get_loop_length()
