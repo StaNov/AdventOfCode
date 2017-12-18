@@ -3,14 +3,10 @@ from .internal import MemoryBanks
 
 
 class Solver(AbstractSolver):
-    def __init__(self):
-        super().__init__()
-        self.helper = MemoryBanks([])
-
     def solve_1_internal(self, input_):
-        # TODO
-        return 0
-        # self.helper.helper_method(input_)
+        banks = MemoryBanks(input_)
+        banks.process_until_cycle_is_found()
+        return banks.get_steps()
 
     def solve_2_internal(self, input_):
         # TODO
