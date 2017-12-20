@@ -1,3 +1,6 @@
+from .program import Program
+
+
 class ProgramTree:
     def __init__(self, input_):
         self._root = None
@@ -19,13 +22,3 @@ class ProgramTree:
 
     def get_root_program_name(self):
         return self._root.name
-
-
-class Program:
-    def __init__(self, name, number, subprograms):
-        self.name = name
-        self.number = number
-        self.subprograms = subprograms
-
-    def __str__(self):
-        return "{} ({}) -> {}".format(self.name, self.number, [program.name for program in self.subprograms])
