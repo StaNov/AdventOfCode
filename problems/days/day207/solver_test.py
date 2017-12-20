@@ -8,8 +8,7 @@ def solver():
     return Solver()
 
 
-def test_1_full_example(solver):
-    input_ = [
+TEST_INPUT = [
         ("pbga", 66, []),
         ("xhth", 57, []),
         ("ebii", 61, []),
@@ -24,11 +23,12 @@ def test_1_full_example(solver):
         ("gyxo", 61, []),
         ("cntj", 57, []),
     ]
-    assert "tknk" == solver.solve_1(input_)
+
+
+def test_1_full_example(solver):
+    assert "tknk" == solver.solve_1(TEST_INPUT)
 
 
 @pytest.mark.skip
 def test_2_full_example(solver):
-    # TODO
-    # assert 0 == solver.solve_2("test test")
-    pass
+    assert 60 == solver.solve_2(TEST_INPUT)
