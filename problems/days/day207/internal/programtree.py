@@ -10,10 +10,10 @@ class ProgramTree:
 
         while input_:
             processed_program = input_.pop(0)
-            name, number, subprograms = processed_program
+            name, weight, subprograms = processed_program
 
             if set(subprograms) <= set(programs.keys()):
-                new_program = Program(name, number, [programs[subprogram_name] for subprogram_name in subprograms])
+                new_program = Program(name, weight, [programs[subprogram_name] for subprogram_name in subprograms])
                 programs[name] = new_program
                 if not self._root or self._root.name in subprograms:
                     self._root = new_program
