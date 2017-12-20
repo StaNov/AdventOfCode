@@ -1,3 +1,4 @@
+from .programtree import Program
 from . import ProgramTree
 
 
@@ -19,3 +20,11 @@ def test_root_of_one_nested_program_root_is_first():
 def test_root_of_two_programs():
     tree = ProgramTree([("root", 987, ["leaf_1", "leaf_2"]), ("leaf_1", 456, []), ("leaf_2", 123, [])])
     assert "root" == tree.get_root_program_name()
+
+
+def test_program_to_string():
+    leaf_1 = Program("leaf_1", 456, [])
+    leaf_2 = Program("leaf_2", 123, [])
+    root = Program("root", 987, [leaf_1, leaf_2])
+
+    assert "root (987) -> ['leaf_1', 'leaf_2']" == str(root)

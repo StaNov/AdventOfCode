@@ -2,6 +2,7 @@ class ProgramTree:
     def __init__(self, input_):
         self._root = None
 
+        # TODO extract to method
         programs = {}
 
         while input_:
@@ -25,3 +26,6 @@ class Program:
         self.name = name
         self.number = number
         self.subprograms = subprograms
+
+    def __str__(self):
+        return "{} ({}) -> {}".format(self.name, self.number, [program.name for program in self.subprograms])
