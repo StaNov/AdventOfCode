@@ -81,6 +81,16 @@ def test_unbalanced_with_balanced_children():
     assert unbalanced_program is UnbalanceFinder(unbalanced_tree).find_unbalanced_program()
 
 
+def test_get_correct_weight_of_unbalanced_program():
+    program = Program("unbalanced", 10, [
+        Program("balanced_1", 6, []),
+        Program("balanced_1", 6, []),
+        Program("balanced_1", 8, []),
+    ])
+
+    assert 6 == UnbalanceFinder(program).get_correct_weight_of_unbalanced_program()
+
+
 def test_get_unbalanced_subprogram_empty_list():
     assert None is unbalancefinder._get_unbalanced_subprogram([])
 

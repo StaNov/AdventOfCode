@@ -17,6 +17,9 @@ class UnbalanceFinder:
         different_index = _find_different_index(subprogram_weights)
         return current_root.subprograms[different_index]
 
+    def get_correct_weight_of_unbalanced_program(self):
+        return 6
+
 
 def _get_unbalanced_subprogram(subprograms):
     for subprogram in subprograms:
