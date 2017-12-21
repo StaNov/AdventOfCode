@@ -20,11 +20,11 @@ class UnbalanceFinder:
     def get_correct_weight_of_unbalanced_program(self):
         unbalanced_program = self.find_unbalanced_program()
         siblings = _get_parent_of_program(unbalanced_program, self._root).subprograms
+        balanced_sibling = siblings[0] if siblings[0] is not unbalanced_program else siblings[1]
+        correct_total_weight = weightcomputer.weight_of(balanced_sibling)
+        unbalanced_program_weight = weightcomputer.weight_of(unbalanced_program)
 
-        if siblings[0].weight != unbalanced_program.weight:
-            return siblings[0].weight
-        else:
-            return siblings[1].weight
+        return unbalanced_program.weight + (correct_total_weight - unbalanced_program_weight)
 
 
 def _get_unbalanced_subprogram(subprograms):

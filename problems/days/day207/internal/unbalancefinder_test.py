@@ -1,5 +1,3 @@
-import pytest
-
 from . import unbalancefinder
 from .unbalancefinder import UnbalanceFinder
 from .program import Program
@@ -93,7 +91,6 @@ def test_get_correct_weight_of_unbalanced_program():
     assert 6 == UnbalanceFinder(program).get_correct_weight_of_unbalanced_program()
 
 
-@pytest.mark.skip
 def test_get_correct_weight_of_unbalanced_program_with_nested():
     program = Program("unbalanced", 10, [
         Program("balanced_1", 5, [
