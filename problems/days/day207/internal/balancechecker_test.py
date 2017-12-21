@@ -1,5 +1,3 @@
-import pytest
-
 from . import balancechecker
 from .program import Program
 
@@ -17,7 +15,6 @@ def test_is_balanced_two_programs_unbalanced():
     assert not balancechecker.is_balanced(program)
 
 
-@pytest.mark.skip
 def test_is_balanced_nested_subprograms():
     program = Program("root", 1, [
         Program("child_1", 6, [
