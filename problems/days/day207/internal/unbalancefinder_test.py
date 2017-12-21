@@ -1,3 +1,5 @@
+import pytest
+
 from . import unbalancefinder
 from .unbalancefinder import UnbalanceFinder
 from .program import Program
@@ -81,24 +83,37 @@ def test_unbalanced_with_balanced_children():
     assert unbalanced_program is UnbalanceFinder(unbalanced_tree).find_unbalanced_program()
 
 
-def test_get_correct_weight_of_unbalanced_program_1():
+def test_get_correct_weight_of_unbalanced_program():
     program = Program("unbalanced", 10, [
-        Program("balanced_1", 6, []),
-        Program("balanced_1", 6, []),
-        Program("balanced_1", 8, []),
+        Program("test_1", 6, []),
+        Program("test_2", 6, []),
+        Program("test_3", 8, []),
     ])
 
     assert 6 == UnbalanceFinder(program).get_correct_weight_of_unbalanced_program()
 
 
-def test_get_correct_weight_of_unbalanced_program_2():
+@pytest.mark.skip
+def test_get_correct_weight_of_unbalanced_program_with_nested():
     program = Program("unbalanced", 10, [
-        Program("balanced_1", 5, []),
-        Program("balanced_1", 20, []),
-        Program("balanced_1", 5, []),
+        Program("balanced_1", 5, [
+            Program("nested_1_1", 2, []),
+            Program("nested_1_2", 2, []),
+            Program("nested_1_3", 2, []),
+        ]),
+        Program("unbalanced", 20, [
+            Program("nested_2_1", 1, []),
+            Program("nested_2_2", 1, []),
+            Program("nested_2_3", 1, []),
+        ]),
+        Program("balanced_2", 2, [
+            Program("nested_3_1", 3, []),
+            Program("nested_3_2", 3, []),
+            Program("nested_3_3", 3, []),
+        ]),
     ])
 
-    assert 5 == UnbalanceFinder(program).get_correct_weight_of_unbalanced_program()
+    assert 8 == UnbalanceFinder(program).get_correct_weight_of_unbalanced_program()
 
 
 def test_get_unbalanced_subprogram_empty_list():
