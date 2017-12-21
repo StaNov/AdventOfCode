@@ -1,7 +1,7 @@
 class UnbalanceFinder:
 
     def __init__(self, root_program):
-        pass
+        self._root = root_program
 
-    def find_balanced_value(self):
-        return 5
+    def find_unbalanced_program(self):
+        return self._root.subprograms[2]
