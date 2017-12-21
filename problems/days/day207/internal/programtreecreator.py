@@ -33,5 +33,6 @@ class ProgramTreeCreator:
         if not self._root or self._root.name in current_subprograms:
             self._root = new_program
 
-    def get_root_program_name(self):
-        return self._root.name
+    @property
+    def root_program(self):
+        return self._root
