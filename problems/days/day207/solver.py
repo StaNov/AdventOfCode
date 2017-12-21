@@ -1,5 +1,5 @@
 from problems.utils import AbstractSolver
-from .internal import ProgramTreeCreator
+from .internal import ProgramTreeCreator, UnbalanceFinder
 
 
 class Solver(AbstractSolver):
@@ -7,5 +7,5 @@ class Solver(AbstractSolver):
         return ProgramTreeCreator(input_).root_program.name
 
     def solve_2_internal(self, input_):
-        # TODO
-        return 0
+        root_program = ProgramTreeCreator(input_).root_program
+        return UnbalanceFinder(root_program).get_correct_weight_of_unbalanced_program()
