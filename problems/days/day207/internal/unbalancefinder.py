@@ -42,3 +42,16 @@ def _find_different_index(list_):
     for i, item in enumerate(list_):
         if item != good_one:
             return i
+
+
+def _get_parent_of_program(program, root):
+    for p in root.subprograms:
+        if p is program:
+            return root
+
+        recursive_parent = _get_parent_of_program(program, p)
+
+        if recursive_parent:
+            return recursive_parent
+
+    return None

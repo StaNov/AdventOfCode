@@ -134,3 +134,18 @@ def test_different_index_1():
 
 def test_different_index_2():
     assert 2 == unbalancefinder._find_different_index([4, 4, 6, 4, 4, 4])
+
+
+def test_get_parent_of_program():
+    searched_program = Program("searched", 1, [])
+    parent = Program("parent", 1, [searched_program])
+    root = Program("test_1", 1, [
+        Program("test_2", 1, [
+            Program("test_3", 1, [
+                Program("test_4", 1, []),
+                parent
+            ])
+        ])
+    ])
+
+    assert parent is unbalancefinder._get_parent_of_program(searched_program, root)
