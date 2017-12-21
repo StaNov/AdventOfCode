@@ -8,7 +8,9 @@ def solver():
     return Solver()
 
 
-TEST_INPUT = [
+@pytest.fixture
+def test_input():
+    return [
         ("pbga", 66, []),
         ("xhth", 57, []),
         ("ebii", 61, []),
@@ -25,10 +27,10 @@ TEST_INPUT = [
     ]
 
 
-def test_1_full_example(solver):
-    assert "tknk" == solver.solve_1(TEST_INPUT)
+def test_1_full_example(solver, test_input):
+    assert "tknk" == solver.solve_1(test_input)
 
 
 @pytest.mark.skip
-def test_2_full_example(solver):
-    assert 60 == solver.solve_2(TEST_INPUT)
+def test_2_full_example(solver, test_input):
+    assert 60 == solver.solve_2(test_input)
