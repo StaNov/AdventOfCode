@@ -1,3 +1,4 @@
+from . import balancechecker
 from . import weightcomputer
 
 
@@ -15,6 +16,14 @@ class UnbalanceFinder:
         subprogram_weights = [weightcomputer.weight_of(subprogram) for subprogram in current_root.subprograms]
         different_index = _find_different_index(subprogram_weights)
         return current_root.subprograms[different_index]
+
+
+def _get_unbalanced_subprogram(subprograms):
+    for subprogram in subprograms:
+        if balancechecker.is_balanced(subprogram):
+            return subprogram
+
+    return None
 
 
 def _find_different_index(list_):
