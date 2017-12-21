@@ -5,7 +5,6 @@ from .unbalancefinder import UnbalanceFinder
 from .program import Program
 
 
-@pytest.mark.skip
 def test_three_programs_one_unbalanced():
     unbalanced_program = Program("unbalanced", 8, [])
     unbalanced_tree = Program("root", 1, [
@@ -17,7 +16,6 @@ def test_three_programs_one_unbalanced():
     assert unbalanced_program is UnbalanceFinder(unbalanced_tree).find_unbalanced_program()
 
 
-@pytest.mark.skip
 def test_three_programs_one_unbalanced_another():
     unbalanced_program = Program("unbalanced", 4, [])
     unbalanced_tree = Program("root", 1, [
