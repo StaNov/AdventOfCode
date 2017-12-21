@@ -20,7 +20,7 @@ class UnbalanceFinder:
 
 def _get_unbalanced_subprogram(subprograms):
     for subprogram in subprograms:
-        if balancechecker.is_balanced(subprogram):
+        if not balancechecker.is_balanced(subprogram):
             return subprogram
 
     return None

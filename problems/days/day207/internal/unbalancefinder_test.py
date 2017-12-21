@@ -70,8 +70,28 @@ def test_unbalanced_among_balanced_ones():
 # TODO unbalanced with balanced children
 
 
-def test_get_unbalanced_subprogram():
+def test_get_unbalanced_subprogram_empty_list():
     assert None is unbalancefinder._get_unbalanced_subprogram([])
+
+
+def test_get_unbalanced_subprogram():
+    unbalanced_program = Program("unbalanced", 5, [
+        Program("test_1", 3, []),
+        Program("test_2", 3, []),
+        Program("test_3", 4, []),
+    ])
+
+    assert unbalanced_program is unbalancefinder._get_unbalanced_subprogram([unbalanced_program])
+
+
+def test_get_unbalanced_subprogram_balanced():
+    balanced_program = Program("unbalanced", 5, [
+        Program("test_1", 3, []),
+        Program("test_2", 3, []),
+        Program("test_3", 3, []),
+    ])
+
+    assert None is unbalancefinder._get_unbalanced_subprogram([balanced_program])
 
 
 def test_different_index_1():
