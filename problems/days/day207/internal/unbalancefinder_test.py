@@ -1,5 +1,3 @@
-import pytest
-
 from . import unbalancefinder
 from .unbalancefinder import UnbalanceFinder
 from .program import Program
@@ -27,14 +25,17 @@ def test_three_programs_one_unbalanced_another():
     assert unbalanced_program is UnbalanceFinder(unbalanced_tree).find_unbalanced_program()
 
 
-@pytest.mark.skip
-def test_three_programs_under_one_middle():
+def test_three_programs_under_middle_ones():
     unbalanced_program = Program("unbalanced", 10, [])
     unbalanced_tree = Program("root", 1, [
-        Program("middle", 2, [
-            Program("balanced_1", 3, []),
-            unbalanced_program,
-            Program("balanced_2", 3, []),
+        Program("middle_1", 2, [
+            Program("middle_2", 3, [
+                Program("middle_3", 3, [
+                    Program("balanced_1", 4, []),
+                    unbalanced_program,
+                    Program("balanced_2", 4, []),
+                ])
+            ])
         ])
     ])
 
