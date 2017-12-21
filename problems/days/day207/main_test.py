@@ -12,6 +12,4 @@ def test_main_1(main):
 
 
 def test_main_2(main):
-    # TODO
-    # assert 0 == main.calculate_part_2()
-    pass
+    assert 1072 == main.calculate_part_2()

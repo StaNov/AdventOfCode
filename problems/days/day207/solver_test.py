@@ -31,6 +31,5 @@ def test_1_full_example(solver, test_input):
     assert "tknk" == solver.solve_1(test_input)
 
 
-@pytest.mark.skip
 def test_2_full_example(solver, test_input):
     assert 60 == solver.solve_2(test_input)
