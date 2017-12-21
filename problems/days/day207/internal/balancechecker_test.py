@@ -30,3 +30,20 @@ def test_is_balanced_nested_subprograms():
     ])
 
     assert balancechecker.is_balanced(program)
+
+
+def test_is_balanced_unbalanced_nested_subprograms():
+    program = Program("root", 1, [
+        Program("child_1", 6, [
+            Program("child_1_1", 2, []),
+            Program("child_1_2", 3, []),
+            Program("child_1_3", 4, []),
+        ]),
+        Program("child_2", 3, [
+            Program("child_1_1", 4, []),
+            Program("child_1_2", 4, []),
+            Program("child_1_3", 4, []),
+        ]),
+    ])
+
+    assert not balancechecker.is_balanced(program)
