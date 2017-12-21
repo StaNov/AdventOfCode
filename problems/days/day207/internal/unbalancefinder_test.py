@@ -43,5 +43,9 @@ def test_three_programs_under_one_middle():
     assert unbalanced_program is UnbalanceFinder(unbalanced_tree).find_unbalanced_program()
 
 
-def test_different_index():
+def test_different_index_1():
     assert 1 == unbalancefinder._find_different_index([1, 2, 1, 1, 1, 1])
+
+
+def test_different_index_2():
+    assert 2 == unbalancefinder._find_different_index([4, 4, 6, 4, 4, 4])

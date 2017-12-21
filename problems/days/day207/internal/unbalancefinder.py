@@ -13,4 +13,15 @@ class UnbalanceFinder:
 
 
 def _find_different_index(list):
-    return 1
+    first = list[0]
+    second = list[1]
+    third = list[2]
+
+    if first == second:
+        good_one = first
+    else:
+        good_one = third
+
+    for i, item in enumerate(list):
+        if item != good_one:
+            return i
