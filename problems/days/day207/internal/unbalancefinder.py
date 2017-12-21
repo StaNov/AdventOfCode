@@ -10,8 +10,8 @@ class UnbalanceFinder:
     def find_unbalanced_program(self):
         current_root = self._root
 
-        while current_root.subprograms and current_root.subprograms[0].subprograms:
-            current_root = current_root.subprograms[0]
+        while _get_unbalanced_subprogram(current_root.subprograms):
+            current_root = _get_unbalanced_subprogram(current_root.subprograms)
 
         subprogram_weights = [weightcomputer.weight_of(subprogram) for subprogram in current_root.subprograms]
         different_index = _find_different_index(subprogram_weights)
