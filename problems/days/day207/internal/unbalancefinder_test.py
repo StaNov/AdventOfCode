@@ -64,7 +64,21 @@ def test_unbalanced_among_balanced_ones():
 
     assert unbalanced_program is UnbalanceFinder(unbalanced_tree).find_unbalanced_program()
 
-# TODO unbalanced with balanced children
+
+def test_unbalanced_with_balanced_children():
+    unbalanced_program = Program("unbalanced", 10, [
+        Program("balanced_1", 6, []),
+        Program("balanced_1", 6, []),
+        Program("balanced_1", 6, []),
+    ])
+
+    unbalanced_tree = Program("root", 1, [
+        unbalanced_program,
+        Program("middle_2", 2, []),
+        Program("middle_3", 2, []),
+    ])
+
+    assert unbalanced_program is UnbalanceFinder(unbalanced_tree).find_unbalanced_program()
 
 
 def test_get_unbalanced_subprogram_empty_list():
