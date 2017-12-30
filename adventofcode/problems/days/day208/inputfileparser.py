@@ -4,4 +4,5 @@ from .parsedinput import ParsedInput
 
 class InputFileParser(BaseParser):
     def parse(self, input_string):
-        return ParsedInput(input_string.split()[0])
+        register_name, instruction_type, __, __, __, __, __ = input_string.split()
+        return ParsedInput(register_name)
