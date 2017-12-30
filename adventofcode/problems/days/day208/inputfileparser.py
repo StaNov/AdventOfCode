@@ -38,5 +38,6 @@ def parse_condition_type(string):
         "<": Instruction.ConditionType.LESSER,
         "<=": Instruction.ConditionType.LESSER_EQUALS,
         "==": Instruction.ConditionType.EQUALS,
+        "!=": Instruction.ConditionType.NOT_EQUALS,
     }
     return string_to_type[string]
