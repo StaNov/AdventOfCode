@@ -21,3 +21,4 @@ class Instruction:
     class ConditionType(Enum):
         GREATER = 0,
         GREATER_EQUALS = 1,
+        LESSER = 2,

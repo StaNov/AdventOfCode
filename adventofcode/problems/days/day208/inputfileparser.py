@@ -34,6 +34,7 @@ def parse_instruction_type(string):
 def parse_condition_type(string):
     string_to_type = {
         ">": Instruction.ConditionType.GREATER,
-        ">=": Instruction.ConditionType.GREATER_EQUALS
+        ">=": Instruction.ConditionType.GREATER_EQUALS,
+        "<": Instruction.ConditionType.LESSER,
     }
     return string_to_type[string]
