@@ -70,3 +70,8 @@ def test_condition_type_equals():
 def test_condition_type_not_equals():
     parsed_input = InputFileParser().parse("b inc 5 if a != 1")
     assert Instruction.ConditionType.NOT_EQUALS == parsed_input.instructions[0].condition_type
+
+
+def test_condition_value_1():
+    parsed_input = InputFileParser().parse("b inc 5 if a != 1")
+    assert 1 == parsed_input.instructions[0].condition_value

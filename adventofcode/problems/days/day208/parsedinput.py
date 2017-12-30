@@ -13,6 +13,7 @@ class Instruction:
         self.value_to_apply = value_to_apply
         self.condition_register = condition_register
         self.condition_type = condition_type
+        self.condition_value = 1
 
     class Type(Enum):
         INC = 0
