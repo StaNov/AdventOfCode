@@ -11,6 +11,7 @@ class Instruction:
         self.register_name = register_name
         self.type = instruction_type
         self.value_to_apply = value_to_apply
+        self.condition_register = "a"
 
     class Type(Enum):
         INC = 0
