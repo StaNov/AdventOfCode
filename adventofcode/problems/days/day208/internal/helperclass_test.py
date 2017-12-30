@@ -22,6 +22,7 @@ def test_with_exception():
         raise Exception("Test exception in test")
 
 
+@pytest.mark.skip
 @testsuite.time_expensive
 def test_time_expensive_test():
     time.sleep(1)
