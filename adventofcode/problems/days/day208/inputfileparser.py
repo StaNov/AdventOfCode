@@ -4,10 +4,11 @@ from .parsedinput import ParsedInput, Instruction
 
 class InputFileParser(BaseParser):
     def parse(self, input_string):
-        register_name, instruction_type, __, __, __, __, __ = input_string.split()
+        register_name, instruction_type, value_to_apply, __, __, __, __ = input_string.split()
         return ParsedInput(
             register_name,
-            string_to_instruction_type(instruction_type)
+            string_to_instruction_type(instruction_type),
+            int(value_to_apply)
         )
 
 
