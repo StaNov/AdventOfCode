@@ -1,8 +1,8 @@
 class ParsedInput:
-    def __init__(self):
-        self.instructions = [Instruction()]
+    def __init__(self, register_name):
+        self.instructions = [Instruction(register_name)]
 
 
 class Instruction:
-    def __init__(self):
-        self.register_name = "b"
+    def __init__(self, register_name):
+        self.register_name = register_name
