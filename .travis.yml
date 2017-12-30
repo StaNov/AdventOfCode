@@ -4,6 +4,6 @@ python:
   - "3.5"
 
 script:
-  - python runtests.py -m "not time_expensive"
-  - python runtests.py -m "time_expensive"
-  - python profile.py
+  - python adventofcode/runtests.py -m "not time_expensive"
+  - python adventofcode/runtests.py -m "time_expensive"
+  - python adventofcode/profile.py
