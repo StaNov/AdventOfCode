@@ -32,6 +32,11 @@ def test_value_to_apply_2():
     assert 10001 == parsed_input.instructions[0].value_to_apply
 
 
-def test_condition_register():
+def test_condition_register_1():
     parsed_input = InputFileParser().parse("b inc 5 if a > 1")
     assert "a" == parsed_input.instructions[0].condition_register
+
+
+def test_condition_register_2():
+    parsed_input = InputFileParser().parse("b inc 5 if abcde > 1")
+    assert "abcde" == parsed_input.instructions[0].condition_register
