@@ -11,7 +11,7 @@ class InputFileParser(BaseParser):
             __,  # "if"
             condition_register,
             condition_type,
-            __
+            condition_value
         ) = input_string.split()
 
         return ParsedInput(
@@ -19,7 +19,8 @@ class InputFileParser(BaseParser):
             parse_instruction_type(instruction_type),
             int(value_to_apply),
             condition_register,
-            parse_condition_type(condition_type)
+            parse_condition_type(condition_type),
+            int(condition_value)
         )
 
 

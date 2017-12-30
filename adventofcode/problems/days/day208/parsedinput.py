@@ -2,18 +2,36 @@ from enum import Enum
 
 
 class ParsedInput:
-    def __init__(self, register_name, instruction_type, value_to_apply, condition_register, condition_type):
-        self.instructions = [Instruction(register_name, instruction_type, value_to_apply, condition_register, condition_type)]
+    def __init__(self,
+                 register_name,
+                 instruction_type,
+                 value_to_apply,
+                 condition_register,
+                 condition_type,
+                 condition_value):
+        self.instructions = [Instruction(
+            register_name,
+            instruction_type,
+            value_to_apply,
+            condition_register,
+            condition_type,
+            condition_value)]
 
 
 class Instruction:
-    def __init__(self, register_name, instruction_type, value_to_apply, condition_register, condition_type):
+    def __init__(self,
+                 register_name,
+                 instruction_type,
+                 value_to_apply,
+                 condition_register,
+                 condition_type,
+                 condition_value):
         self.register_name = register_name
         self.type = instruction_type
         self.value_to_apply = value_to_apply
         self.condition_register = condition_register
         self.condition_type = condition_type
-        self.condition_value = 1
+        self.condition_value = condition_value
 
     class Type(Enum):
         INC = 0
