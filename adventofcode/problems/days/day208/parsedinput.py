@@ -12,7 +12,11 @@ class Instruction:
         self.type = instruction_type
         self.value_to_apply = value_to_apply
         self.condition_register = condition_register
+        self.condition_type = Instruction.ConditionType.GREATER
 
     class Type(Enum):
         INC = 0
         DEC = 1
+
+    class ConditionType(Enum):
+        GREATER = 0
