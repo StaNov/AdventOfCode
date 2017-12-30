@@ -1,5 +1,3 @@
-import pytest
-
 from .inputfileparser import InputFileParser
 from .parsedinput import Instruction
 
@@ -19,7 +17,6 @@ def test_instruction_type_inc():
     assert Instruction.Type.INC == parsed_input.instructions[0].type
 
 
-@pytest.mark.skip
 def test_instruction_type_dec():
     parsed_input = InputFileParser().parse("b dec 5 if a > 1")
     assert Instruction.Type.DEC == parsed_input.instructions[0].type
