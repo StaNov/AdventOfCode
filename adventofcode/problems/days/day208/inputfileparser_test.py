@@ -1,3 +1,5 @@
+import pytest
+
 from .inputfileparser import InputFileParser
 from .parsedinput import Instruction
 
@@ -80,3 +82,9 @@ def test_condition_value_1():
 def test_condition_value_2():
     parsed_input = InputFileParser().parse("b inc 5 if a != 98765")
     assert 98765 == parsed_input.instructions[0].condition_value
+
+
+@pytest.mark.skip
+def test_multiple_lines():
+    parsed_input = InputFileParser().parse("b inc 5 if a > 1\nb inc 5 if a > 1\nb inc 5 if a > 1")
+    assert 3 == len(parsed_input.instructions)

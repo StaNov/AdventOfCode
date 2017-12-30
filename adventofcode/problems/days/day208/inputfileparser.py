@@ -4,6 +4,8 @@ from .parsedinput import ParsedInput, Instruction
 
 class InputFileParser(BaseParser):
     def parse(self, input_string):
+        parsed_input = ParsedInput()
+
         (
             register_name,
             instruction_type,
@@ -14,7 +16,7 @@ class InputFileParser(BaseParser):
             condition_value
         ) = input_string.split()
 
-        return ParsedInput(
+        parsed_input.add_instruction(
             register_name,
             parse_instruction_type(instruction_type),
             int(value_to_apply),
@@ -22,6 +24,8 @@ class InputFileParser(BaseParser):
             parse_condition_type(condition_type),
             int(condition_value)
         )
+
+        return parsed_input
 
 
 def parse_instruction_type(string):
