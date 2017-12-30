@@ -4,18 +4,36 @@ from .parsedinput import ParsedInput, Instruction
 
 class InputFileParser(BaseParser):
     def parse(self, input_string):
-        register_name, instruction_type, value_to_apply, __, condition_register, __, __ = input_string.split()
+        (
+            register_name,
+            instruction_type,
+            value_to_apply,
+            __,  # "if"
+            condition_register,
+            condition_type,
+            __
+        ) = input_string.split()
+
         return ParsedInput(
             register_name,
-            string_to_instruction_type(instruction_type),
+            parse_instruction_type(instruction_type),
             int(value_to_apply),
-            condition_register
+            condition_register,
+            parse_condition_type(condition_type)
         )
 
 
-def string_to_instruction_type(string):
+def parse_instruction_type(string):
     string_to_type = {
         "inc": Instruction.Type.INC,
         "dec": Instruction.Type.DEC
+    }
+    return string_to_type[string]
+
+
+def parse_condition_type(string):
+    string_to_type = {
+        ">": Instruction.ConditionType.GREATER,
+        ">=": Instruction.ConditionType.GREATER_EQUALS
     }
     return string_to_type[string]

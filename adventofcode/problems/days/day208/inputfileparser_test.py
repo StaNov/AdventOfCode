@@ -42,6 +42,11 @@ def test_condition_register_2():
     assert "abcde" == parsed_input.instructions[0].condition_register
 
 
-def test_condition_type():
+def test_condition_type_greater():
     parsed_input = InputFileParser().parse("b inc 5 if a > 1")
     assert Instruction.ConditionType.GREATER == parsed_input.instructions[0].condition_type
+
+
+def test_condition_type_greater_equals():
+    parsed_input = InputFileParser().parse("b inc 5 if a >= 1")
+    assert Instruction.ConditionType.GREATER_EQUALS == parsed_input.instructions[0].condition_type

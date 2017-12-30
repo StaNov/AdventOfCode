@@ -2,21 +2,22 @@ from enum import Enum
 
 
 class ParsedInput:
-    def __init__(self, register_name, instruction_type, value_to_apply, condition_register):
-        self.instructions = [Instruction(register_name, instruction_type, value_to_apply, condition_register)]
+    def __init__(self, register_name, instruction_type, value_to_apply, condition_register, condition_type):
+        self.instructions = [Instruction(register_name, instruction_type, value_to_apply, condition_register, condition_type)]
 
 
 class Instruction:
-    def __init__(self, register_name, instruction_type, value_to_apply, condition_register):
+    def __init__(self, register_name, instruction_type, value_to_apply, condition_register, condition_type):
         self.register_name = register_name
         self.type = instruction_type
         self.value_to_apply = value_to_apply
         self.condition_register = condition_register
-        self.condition_type = Instruction.ConditionType.GREATER
+        self.condition_type = condition_type
 
     class Type(Enum):
         INC = 0
         DEC = 1
 
     class ConditionType(Enum):
-        GREATER = 0
+        GREATER = 0,
+        GREATER_EQUALS = 1,
