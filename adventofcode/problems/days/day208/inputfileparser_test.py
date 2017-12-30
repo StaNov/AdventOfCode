@@ -55,3 +55,8 @@ def test_condition_type_greater_equals():
 def test_condition_type_lesser():
     parsed_input = InputFileParser().parse("b inc 5 if a < 1")
     assert Instruction.ConditionType.LESSER == parsed_input.instructions[0].condition_type
+
+
+def test_condition_type_lesser_equals():
+    parsed_input = InputFileParser().parse("b inc 5 if a <= 1")
+    assert Instruction.ConditionType.LESSER_EQUALS == parsed_input.instructions[0].condition_type
