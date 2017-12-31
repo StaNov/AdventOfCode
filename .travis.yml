@@ -1,7 +1,7 @@
 language: python
 
 python:
-  - "3.5"
+  - "3.6.4"
 
 script:
   - python adventofcode/runtests.py -m "not time_expensive"
