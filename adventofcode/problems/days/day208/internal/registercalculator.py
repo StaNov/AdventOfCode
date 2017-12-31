@@ -1,10 +1,13 @@
+from ..parsedinput import Instruction
+
+
 class RegisterCalculator:
     def __init__(self):
-        self.instruction_applied = False
+        self.value_applied = 0
 
-    def apply_instruction(self, instruction):
-        self.instruction_applied = True
+    def apply_instruction(self, instruction: Instruction):
+        self.value_applied = instruction.value_to_apply
 
     @property
     def highest_value(self):
-        return 10 if self.instruction_applied else 0
+        return self.value_applied
