@@ -21,11 +21,14 @@ def test_input():
     return parsed_input
 
 
+# TODO
+@pytest.mark.skip
 def test_1_full_example(solver, test_input):
-    # TODO
-    assert 0 == solver.solve_1(test_input)
+    assert 1 == solver.solve_1(test_input)
 
 
+# TODO
+@pytest.mark.skip
 def test_2_full_example(solver, test_input):
     # TODO
     assert 0 == solver.solve_2("test test")
