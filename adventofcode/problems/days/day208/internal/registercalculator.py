@@ -3,11 +3,14 @@ from ..parsedinput import Instruction
 
 class RegisterCalculator:
     def __init__(self):
-        self.max_value = 0
+        self.registers = {}
 
     def apply_instruction(self, instruction: Instruction):
-        self.max_value = max(self.max_value, instruction.value_to_apply)
+        if instruction.register_name not in self.registers.keys():
+            self.registers[instruction.register_name] = 0
+
+        self.registers[instruction.register_name] += instruction.value_to_apply
 
     @property
     def highest_value(self):
-        return self.max_value
+        return max(self.registers.values(), default=0)
