@@ -9,7 +9,10 @@ class RegisterCalculator:
         if instruction.register_name not in self.registers.keys():
             self.registers[instruction.register_name] = 0
 
-        self.registers[instruction.register_name] += instruction.value_to_apply
+        if instruction.type == Instruction.Type.INC:
+            self.registers[instruction.register_name] += instruction.value_to_apply
+        elif instruction.type == Instruction.Type.DEC:
+            self.registers[instruction.register_name] -= instruction.value_to_apply
 
     @property
     def highest_value(self):

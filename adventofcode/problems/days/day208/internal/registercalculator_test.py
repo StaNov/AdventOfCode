@@ -33,3 +33,8 @@ def test_apply_two_instructions_same_register(calculator):
     calculator.apply_instruction(Instruction("a", Instruction.Type.INC, 20, "a", Instruction.ConditionType.GREATER_EQUALS, 0))
     calculator.apply_instruction(Instruction("a", Instruction.Type.INC, 10, "a", Instruction.ConditionType.GREATER_EQUALS, 0))
     assert 30 == calculator.highest_value
+
+
+def test_decrement_instruction(calculator):
+    calculator.apply_instruction(Instruction("a", Instruction.Type.DEC, 10, "a", Instruction.ConditionType.GREATER_EQUALS, 0))
+    assert -10 == calculator.highest_value
