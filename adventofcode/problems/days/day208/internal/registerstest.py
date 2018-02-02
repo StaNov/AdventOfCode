@@ -15,3 +15,8 @@ def test_get_untouched_register(registers: Registers):
 def test_get_setted_register(registers: Registers):
     registers.add("register", 12)
     assert 12 == registers.get("register")
+
+
+def test_get_other_register(registers: Registers):
+    registers.add("setted register", 10)
+    assert 0 == registers.get("untouched register")
