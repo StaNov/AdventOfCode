@@ -1,3 +1,9 @@
 class Registers:
-    def get(self, param):
-        return 0
+    def __init__(self) -> None:
+        self.value = 0
+
+    def get(self, name):
+        return self.value
+
+    def add(self, name, value):
+        self.value += value
