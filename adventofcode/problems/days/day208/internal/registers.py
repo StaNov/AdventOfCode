@@ -13,3 +13,7 @@ class Registers:
     def _initialize_register_if_untouched(self, name):
         if name not in self._registers:
             self._registers[name] = 0
+
+    @property
+    def registers(self):
+        return [(name, self._registers[name]) for name in self._registers]
