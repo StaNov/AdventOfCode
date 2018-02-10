@@ -7,4 +7,4 @@ script:
   - python adventofcode/runtests.py -m "not time_expensive"
   - python adventofcode/runtests.py -m "time_expensive"
   - python adventofcode/profile.py
-  - coverage xml adventofcode/runtests.py -m "" && python-codacy-coverage -r coverage.xml
+  - coverage run adventofcode/runtests.py -m "" && coverage xml && python-codacy-coverage -r coverage.xml
