@@ -1,3 +1,4 @@
 pytest
 pyinstrument
 coverage
+codacy-coverage
