@@ -1,7 +1,7 @@
 import pytest
 
 from . import RegisterCalculator
-from ..parsedinput import Instruction
+from .parsedinput import Instruction
 
 
 @pytest.fixture

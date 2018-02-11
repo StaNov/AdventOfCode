@@ -1,5 +1,5 @@
+from .parsedinput import Instruction
 from .registers import Registers
-from ..parsedinput import Instruction
 
 
 class RegisterCalculator:

@@ -2,10 +2,10 @@ from adventofcode.problems.utils import AbstractDayCalculator
 
 if __name__ == "__main__":
     from adventofcode.problems.days.day208.solver import Solver
-    from adventofcode.problems.days.day208.inputfileparser import InputFileParser
+    from adventofcode.problems.days.day208.internal import InputFileParser
 else:
     from .solver import Solver
-    from .inputfileparser import InputFileParser
+    from .internal import InputFileParser
 
 
 class DayCalculator(AbstractDayCalculator):

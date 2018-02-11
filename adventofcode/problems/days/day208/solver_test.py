@@ -1,6 +1,6 @@
 import pytest
 
-from .parsedinput import ParsedInput, Instruction
+from .internal import ParsedInput, Instruction
 from .solver import Solver
 
 
