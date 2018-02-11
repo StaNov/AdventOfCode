@@ -9,7 +9,7 @@ class LineCalculator:
         return self._get_result()
 
     def _process_number(self, number):
-        raise NotImplemented()
+        raise NotImplementedError()
 
     def _get_result(self):
-        raise NotImplemented()
+        raise NotImplementedError()

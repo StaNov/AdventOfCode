@@ -9,14 +9,14 @@ class Solver(AbstractSolver):
         self.controller = MarshallerController(self.marshaller)
         self.recorder = PositionRecorder()
 
-    def solve_1_internal(self, input_string):
-        for instruction in input_string.split(", "):
+    def _solve_1_internal(self, input_):
+        for instruction in input_.split(", "):
             self.controller.execute_instruction(instruction)
 
         return self.marshaller.steps_from_start()
 
-    def solve_2_internal(self, input_string):
-        for instruction in input_string.split(", "):
+    def _solve_2_internal(self, input_):
+        for instruction in input_.split(", "):
             self.controller.execute_instruction(instruction)
 
             current_position = self.marshaller.current_position()

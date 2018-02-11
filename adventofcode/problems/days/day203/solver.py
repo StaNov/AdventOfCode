@@ -6,8 +6,8 @@ class Solver(AbstractSolver):
     def __init__(self):
         super().__init__()
 
-    def solve_1_internal(self, input_string):
-        spiral_length = int(input_string)
+    def _solve_1_internal(self, input_):
+        spiral_length = int(input_)
         spiral = SpiralComputing(spiral_length)
 
         return spiral.distance_from_start()
@@ -20,8 +20,8 @@ class Solver(AbstractSolver):
 
         return spiral.get_last_number_distance()
 
-    def solve_2_internal(self, input_string):
-        limit = int(input_string)
+    def _solve_2_internal(self, input_):
+        limit = int(input_)
         spiral = SpiralSumming()
 
         while spiral.get_last_number() <= limit:

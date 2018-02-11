@@ -7,12 +7,12 @@ class Solver(AbstractSolver):
         super().__init__()
         self.helper = RegisterCalculator()
 
-    def solve_1_internal(self, input_):
+    def _solve_1_internal(self, input_):
         # TODO
         # return self.helper.helper_method(input_)
         return 0
 
-    def solve_2_internal(self, input_):
+    def _solve_2_internal(self, input_):
         # TODO
         # return self.helper.helper_method(input_)
         return 0

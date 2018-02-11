@@ -6,10 +6,10 @@ else:
 
 
 class DayCalculator(AbstractDayCalculator):
-    def get_main_calculator_file_path(self):
+    def _get_main_calculator_file_path(self):
         return __file__
 
-    def create_new_solver(self):
+    def _create_new_solver(self):
         return Solver()
 
 

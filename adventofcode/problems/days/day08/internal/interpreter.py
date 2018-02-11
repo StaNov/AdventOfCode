@@ -45,7 +45,7 @@ class CommandProcessor:
         raise Exception("This is abstract class, use the static create method instead.")
 
     def process(self, array):
-        raise Exception("Abstract method not implemented.")
+        raise NotImplementedError("Abstract method not implemented.")
 
     @staticmethod
     def create(command):

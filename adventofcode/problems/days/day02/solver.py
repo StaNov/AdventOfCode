@@ -8,13 +8,13 @@ class Solver(AbstractSolver):
         self.keyboard = Keyboard()
         self.keyboard_advanced = KeyboardAdvanced()
 
-    def solve_1_internal(self, input_string):
+    def _solve_1_internal(self, input_):
         self.controller = KeyboardController(self.keyboard)
-        return self._solve(input_string)
+        return self._solve(input_)
 
-    def solve_2_internal(self, input_string):
+    def _solve_2_internal(self, input_):
         self.controller = KeyboardController(self.keyboard_advanced)
-        return self._solve(input_string)
+        return self._solve(input_)
 
     def _solve(self, input_string):
         lines = input_string.splitlines()

@@ -7,12 +7,12 @@ class Solver(AbstractSolver):
         super().__init__()
         self.interpreter = None
 
-    def solve_1_internal(self, input_string):
-        self._run_interpreter(input_string)
+    def _solve_1_internal(self, input_):
+        self._run_interpreter(input_)
         return self.interpreter.get_lightens()
 
-    def solve_2_internal(self, input_string):
-        self._run_interpreter(input_string)
+    def _solve_2_internal(self, input_):
+        self._run_interpreter(input_)
         result = self.interpreter.get_display()
         return result
 

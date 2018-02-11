@@ -7,8 +7,8 @@ class Solver(AbstractSolver):
         super().__init__()
         self.helper = CaptchaComputer()
 
-    def solve_1_internal(self, input_string):
-        return CaptchaComputer().compute_captcha(input_string)
+    def _solve_1_internal(self, input_):
+        return CaptchaComputer().compute_captcha(input_)
 
-    def solve_2_internal(self, input_string):
-        return CaptchaComputerHalfSlice().compute_captcha(input_string)
+    def _solve_2_internal(self, input_):
+        return CaptchaComputerHalfSlice().compute_captcha(input_)

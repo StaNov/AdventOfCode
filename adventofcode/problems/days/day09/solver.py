@@ -7,13 +7,13 @@ class Solver(AbstractSolver):
         super().__init__()
         self.letters_processor = None
 
-    def solve_1_internal(self, input_string):
+    def _solve_1_internal(self, input_):
         self.letters_processor = LettersProcessor()
-        return self.solve(input_string)
+        return self.solve(input_)
 
-    def solve_2_internal(self, input_string):
+    def _solve_2_internal(self, input_):
         self.letters_processor = LettersProcessorRecursive()
-        return self.solve(input_string)
+        return self.solve(input_)
 
     def solve(self, input_string):
         for char in input_string:

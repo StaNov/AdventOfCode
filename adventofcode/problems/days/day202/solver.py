@@ -6,11 +6,11 @@ class Solver(AbstractSolver):
     def __init__(self):
         super().__init__()
 
-    def solve_1_internal(self, input_string):
-        return _solve(input_string, LineCalculatorMinMax)
+    def _solve_1_internal(self, input_):
+        return _solve(input_, LineCalculatorMinMax)
 
-    def solve_2_internal(self, input_string):
-        return _solve(input_string, LineCalculatorDivision)
+    def _solve_2_internal(self, input_):
+        return _solve(input_, LineCalculatorDivision)
 
 
 def _solve(input_string, line_calculator_type):

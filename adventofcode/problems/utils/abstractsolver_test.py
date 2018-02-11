@@ -6,10 +6,10 @@ from . import AbstractSolver
 @pytest.fixture
 def solver():
     class DummySolver(AbstractSolver):
-        def solve_2_internal(self, input_string):
+        def _solve_2_internal(self, input_):
             return 0
 
-        def solve_1_internal(self, input_string):
+        def _solve_1_internal(self, input_):
             return 0
 
     return DummySolver()

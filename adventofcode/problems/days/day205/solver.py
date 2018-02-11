@@ -3,10 +3,10 @@ from .internal import TrampolineMaze
 
 
 class Solver(AbstractSolver):
-    def solve_1_internal(self, input_):
+    def _solve_1_internal(self, input_):
         return solve(input_, False)
 
-    def solve_2_internal(self, input_):
+    def _solve_2_internal(self, input_):
         return solve(input_, True)
 
 
