@@ -5,7 +5,7 @@ class CaptchaComputer:
 
         result = 0
 
-        for i in range(len(input_string)):
+        for i, _ in enumerate(input_string):
             digit_1 = input_string[i]
             digit_2 = input_string[(i + self._get_second_digit_index_offset(len(input_string))) % len(input_string)]
 

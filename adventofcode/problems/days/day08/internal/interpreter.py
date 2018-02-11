@@ -7,7 +7,7 @@ class Interpreter:
         self._init_array(width, height)
 
     def _init_array(self, width, height):
-        for i in range(0, height):
+        for _ in range(0, height):
             line = []
             for j in range(0, width):
                 line.append(False)
