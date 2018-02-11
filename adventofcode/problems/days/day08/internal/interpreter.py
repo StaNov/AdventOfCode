@@ -9,7 +9,7 @@ class Interpreter:
     def _init_array(self, width, height):
         for _ in range(0, height):
             line = []
-            for j in range(0, width):
+            for _ in range(0, width):
                 line.append(False)
             self.array.append(line)
 
@@ -80,7 +80,7 @@ class RotateRowCommandProcessor(CommandProcessor):
         self.by = int(match.group(2))
 
     def process(self, array):
-        for i in range(0, self.by):
+        for _ in range(0, self.by):
             self._move_by_one_step(array)
 
     def _move_by_one_step(self, array):
@@ -99,7 +99,7 @@ class RotateColumnCommandProcessor(CommandProcessor):
         self.by = int(match.group(2))
 
     def process(self, array):
-        for i in range(0, self.by):
+        for _ in range(0, self.by):
             self._move_by_one_step(array)
 
     def _move_by_one_step(self, array):

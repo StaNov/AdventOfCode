@@ -14,7 +14,7 @@ class RegisterCalculator:
         value_to_apply = instruction.value_to_apply
         if instruction.type == Instruction.Type.DEC:
             value_to_apply = - value_to_apply
-            
+
         self._registers.add(instruction.register_name, value_to_apply)
 
     def condition_is_met(self, instruction):
