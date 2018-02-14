@@ -1,5 +1,5 @@
 from adventofcode.problems.utils import InputFileParser as BaseParser
-from .parsedinput import ParsedInput, Instruction
+from .parsedinput import ParsedInput, InstructionType, InstructionConditionType
 
 
 class InputFileParser(BaseParser):
@@ -33,19 +33,19 @@ class InputFileParser(BaseParser):
 
 def parse_instruction_type(string):
     string_to_type = {
-        "inc": Instruction.Type.INC,
-        "dec": Instruction.Type.DEC
+        "inc": InstructionType.INC,
+        "dec": InstructionType.DEC
     }
     return string_to_type[string]
 
 
 def parse_condition_type(string):
     string_to_type = {
-        ">": Instruction.ConditionType.GREATER,
-        ">=": Instruction.ConditionType.GREATER_EQUALS,
-        "<": Instruction.ConditionType.LESSER,
-        "<=": Instruction.ConditionType.LESSER_EQUALS,
-        "==": Instruction.ConditionType.EQUALS,
-        "!=": Instruction.ConditionType.NOT_EQUALS,
+        ">": InstructionConditionType.GREATER,
+        ">=": InstructionConditionType.GREATER_EQUALS,
+        "<": InstructionConditionType.LESSER,
+        "<=": InstructionConditionType.LESSER_EQUALS,
+        "==": InstructionConditionType.EQUALS,
+        "!=": InstructionConditionType.NOT_EQUALS,
     }
     return string_to_type[string]

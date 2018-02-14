@@ -1,5 +1,5 @@
 from .inputfileparser import InputFileParser
-from .parsedinput import Instruction
+from .parsedinput import InstructionType, InstructionConditionType
 
 
 def test_register_name_1():
@@ -14,12 +14,12 @@ def test_register_name_2():
 
 def test_instruction_type_inc():
     parsed_input = InputFileParser().parse("b inc 5 if a > 1")
-    assert Instruction.Type.INC == parsed_input.instructions[0].type
+    assert InstructionType.INC == parsed_input.instructions[0].type
 
 
 def test_instruction_type_dec():
     parsed_input = InputFileParser().parse("b dec 5 if a > 1")
-    assert Instruction.Type.DEC == parsed_input.instructions[0].type
+    assert InstructionType.DEC == parsed_input.instructions[0].type
 
 
 def test_value_to_apply_1():
@@ -44,32 +44,32 @@ def test_condition_register_2():
 
 def test_condition_type_greater():
     parsed_input = InputFileParser().parse("b inc 5 if a > 1")
-    assert Instruction.ConditionType.GREATER == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.GREATER == parsed_input.instructions[0].condition_type
 
 
 def test_condition_type_greater_equals():
     parsed_input = InputFileParser().parse("b inc 5 if a >= 1")
-    assert Instruction.ConditionType.GREATER_EQUALS == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.GREATER_EQUALS == parsed_input.instructions[0].condition_type
 
 
 def test_condition_type_lesser():
     parsed_input = InputFileParser().parse("b inc 5 if a < 1")
-    assert Instruction.ConditionType.LESSER == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.LESSER == parsed_input.instructions[0].condition_type
 
 
 def test_condition_type_lesser_equals():
     parsed_input = InputFileParser().parse("b inc 5 if a <= 1")
-    assert Instruction.ConditionType.LESSER_EQUALS == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.LESSER_EQUALS == parsed_input.instructions[0].condition_type
 
 
 def test_condition_type_equals():
     parsed_input = InputFileParser().parse("b inc 5 if a == 1")
-    assert Instruction.ConditionType.EQUALS == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.EQUALS == parsed_input.instructions[0].condition_type
 
 
 def test_condition_type_not_equals():
     parsed_input = InputFileParser().parse("b inc 5 if a != 1")
-    assert Instruction.ConditionType.NOT_EQUALS == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.NOT_EQUALS == parsed_input.instructions[0].condition_type
 
 
 def test_condition_value_1():

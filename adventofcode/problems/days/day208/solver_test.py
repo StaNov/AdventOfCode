@@ -1,6 +1,6 @@
 import pytest
 
-from .internal import ParsedInput, Instruction
+from .internal import ParsedInput, InstructionType, InstructionConditionType
 from .solver import Solver
 
 
@@ -13,10 +13,10 @@ def solver():
 def test_input():
     parsed_input = ParsedInput()
 
-    parsed_input.add_instruction("b", Instruction.Type.INC, 5, "a", Instruction.ConditionType.GREATER, 1)
-    parsed_input.add_instruction("a", Instruction.Type.INC, 1, "b", Instruction.ConditionType.LESSER, 5)
-    parsed_input.add_instruction("c", Instruction.Type.DEC, -10, "a", Instruction.ConditionType.GREATER_EQUALS, 1)
-    parsed_input.add_instruction("c", Instruction.Type.INC, -20, "c", Instruction.ConditionType.EQUALS, 10)
+    parsed_input.add_instruction("b", InstructionType.INC, 5, "a", InstructionConditionType.GREATER, 1)
+    parsed_input.add_instruction("a", InstructionType.INC, 1, "b", InstructionConditionType.LESSER, 5)
+    parsed_input.add_instruction("c", InstructionType.DEC, -10, "a", InstructionConditionType.GREATER_EQUALS, 1)
+    parsed_input.add_instruction("c", InstructionType.INC, -20, "c", InstructionConditionType.EQUALS, 10)
 
     return parsed_input
 
