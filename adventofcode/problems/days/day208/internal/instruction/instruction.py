@@ -1,5 +1,7 @@
 from enum import Enum
 
+from . import applier
+
 
 class InstructionType(Enum):
     INC = 0
@@ -21,8 +23,12 @@ class Instruction:
                  instruction_type,
                  value_to_apply):
         self.register_name = register_name
-        self.type = instruction_type
-        self.value_to_apply = value_to_apply
+        self._applier = applier.incremental.apply if instruction_type == InstructionType.INC else applier.decremental.apply
+        self._value_to_apply = value_to_apply
+
+    @property
+    def value_to_apply(self):
+        return self._applier(self._value_to_apply)
 
 
 class InstructionWithCondition(Instruction):
