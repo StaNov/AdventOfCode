@@ -1,7 +1,7 @@
 import pytest
 
 from adventofcode.problems.utils import testsuite
-from .main import DayCalculator
+from .daycalculator import DayCalculator
 
 
 @pytest.fixture

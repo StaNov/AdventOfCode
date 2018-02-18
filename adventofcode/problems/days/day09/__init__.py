@@ -1,1 +1,1 @@
-from .main import DayCalculator
+from .daycalculator import DayCalculator

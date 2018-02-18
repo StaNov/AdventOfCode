@@ -1,6 +1,6 @@
 import pytest
 
-from .main import DayCalculator
+from .daycalculator import DayCalculator
 
 
 @pytest.fixture
