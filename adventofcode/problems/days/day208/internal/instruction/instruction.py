@@ -23,6 +23,8 @@ class Instruction:
                  instruction_type,
                  value_to_apply):
         self.register_name = register_name
+        # TODO only for testing, can be removed somehow?
+        self._instruction_type = instruction_type
         self._applier = applier.incremental.apply if instruction_type == InstructionType.INC else applier.decremental.apply
         self._value_to_apply = value_to_apply
 

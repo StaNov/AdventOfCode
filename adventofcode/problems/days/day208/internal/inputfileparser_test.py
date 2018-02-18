@@ -14,12 +14,12 @@ def test_register_name_2():
 
 def test_instruction_type_inc():
     parsed_input = InputFileParser().parse("b inc 5 if a > 1")
-    assert InstructionType.INC == parsed_input.instructions[0].type
+    assert InstructionType.INC == parsed_input.instructions[0]._instruction_type
 
 
 def test_instruction_type_dec():
     parsed_input = InputFileParser().parse("b dec 5 if a > 1")
-    assert InstructionType.DEC == parsed_input.instructions[0].type
+    assert InstructionType.DEC == parsed_input.instructions[0]._instruction_type
 
 
 def test_value_to_apply_1():
