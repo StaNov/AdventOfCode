@@ -4,7 +4,7 @@ python:
   - "3.6"
 
 script:
-  - python adventofcode/runtests.py -m "not time_expensive"
-  - python adventofcode/runtests.py -m "time_expensive"
+  - python adventofcode/runtests.py --onlycheap
+  - python adventofcode/runtests.py --onlyexpensive
   - python adventofcode/profile.py
-  - coverage run adventofcode/runtests.py -m "" && coverage xml && python-codacy-coverage -r coverage.xml
+  - coverage run adventofcode/runtests.py --all && coverage xml && python-codacy-coverage -r coverage.xml
