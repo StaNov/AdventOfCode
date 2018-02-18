@@ -26,7 +26,7 @@ def get_day_calculator(day_number):
 
 
 def _get_dynamically_imported_class(day_number):
-    imported_module = importlib.import_module("adventofcode.problems.days.day" + str(day_number).zfill(2) + ".main")
+    imported_module = importlib.import_module("adventofcode.problems.days.day" + str(day_number).zfill(2))
     return getattr(imported_module, "DayCalculator")
 
 
