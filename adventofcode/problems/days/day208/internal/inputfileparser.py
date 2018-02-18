@@ -1,5 +1,6 @@
 from adventofcode.problems.utils import InputFileParser as BaseParser
-from .parsedinput import ParsedInput, InstructionType, InstructionConditionType
+from .instruction import InstructionType, InstructionConditionType
+from .parsedinput import ParsedInput
 
 
 class InputFileParser(BaseParser):

@@ -1,5 +1,5 @@
 from .inputfileparser import InputFileParser
-from .parsedinput import InstructionType, InstructionConditionType
+from .instruction import InstructionType, InstructionConditionType
 
 
 def test_register_name_1():

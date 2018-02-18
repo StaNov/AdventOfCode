@@ -1,4 +1,4 @@
-from .parsedinput import Instruction, InstructionType, InstructionConditionType
+from .instruction import InstructionType, InstructionConditionType, InstructionWithCondition
 from .registers import Registers
 
 
@@ -6,7 +6,7 @@ class RegisterCalculator:
     def __init__(self):
         self._registers = Registers()
 
-    def apply_instruction(self, instruction: Instruction):
+    def apply_instruction(self, instruction: InstructionWithCondition):
         if not self.condition_is_met(instruction):
             return
 
