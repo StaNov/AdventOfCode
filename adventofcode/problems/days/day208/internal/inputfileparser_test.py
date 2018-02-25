@@ -24,12 +24,12 @@ def test_instruction_type_dec():
 
 def test_value_to_apply_1():
     parsed_input = InputFileParser().parse("b inc 5 if a > 1")
-    assert 5 == parsed_input.instructions[0].value_to_apply
+    assert 5 == parsed_input.instructions[0]._value_to_apply
 
 
 def test_value_to_apply_2():
     parsed_input = InputFileParser().parse("b inc 10001 if a > 1")
-    assert 10001 == parsed_input.instructions[0].value_to_apply
+    assert 10001 == parsed_input.instructions[0]._value_to_apply
 
 
 def test_condition_register_1():
