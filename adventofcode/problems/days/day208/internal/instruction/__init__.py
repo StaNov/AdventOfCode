@@ -1,3 +1,4 @@
-from .instruction import Instruction, InstructionWithCondition
+from .instruction import Instruction
 from .instructionconditiontype import InstructionConditionType
 from .instructiontype import InstructionType
+from .instructionwithcondition import InstructionWithCondition
