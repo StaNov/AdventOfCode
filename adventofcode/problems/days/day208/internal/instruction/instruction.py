@@ -1,20 +1,4 @@
-from enum import Enum
-
 from . import applier
-
-
-class InstructionType(Enum):
-    INC = 0
-    DEC = 1
-
-
-class InstructionConditionType(Enum):
-    GREATER = 0
-    GREATER_EQUALS = 1
-    LESSER = 2
-    LESSER_EQUALS = 3
-    EQUALS = 4
-    NOT_EQUALS = 5
 
 
 class Instruction:
@@ -25,7 +9,7 @@ class Instruction:
         self.register_name = register_name
         # TODO only for testing, can be removed somehow?
         self._instruction_type = instruction_type
-        self._applier = applier.incremental.apply if instruction_type == InstructionType.INC else applier.decremental.apply
+        self._applier = applier.get_applier_for_instruction_type(instruction_type)
         self._value_to_apply = value_to_apply
 
     @property
