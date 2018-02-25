@@ -1,3 +1,5 @@
+# TODO redo the condition-independent tests only to Instruction
+
 import pytest
 
 from . import RegisterCalculator
