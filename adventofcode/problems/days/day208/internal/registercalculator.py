@@ -7,12 +7,12 @@ class RegisterCalculator:
         self._registers = Registers()
 
     def apply_instruction(self, instruction: InstructionWithCondition):
-        if not self.condition_is_met(instruction):
+        if not self._condition_is_met(instruction):
             return
 
-        self._registers.add(instruction.register_name, instruction.value_to_apply)
+        instruction.apply_on_registers(self._registers)
 
-    def condition_is_met(self, instruction):
+    def _condition_is_met(self, instruction):
         return (self._registers.get(instruction.condition_register) < instruction.condition_value
                 or instruction.condition_type != InstructionConditionType.LESSER)
 

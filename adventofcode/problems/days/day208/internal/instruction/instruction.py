@@ -12,6 +12,6 @@ class Instruction:
         self._applier = applier.get_applier_for_instruction_type(instruction_type)
         self._value_to_apply = value_to_apply
 
-    @property
-    def value_to_apply(self):
-        return self._applier(self._value_to_apply)
+    def apply_on_registers(self, registers):
+        value_to_apply = self._applier(self._value_to_apply)
+        registers.add(self.register_name, value_to_apply)
