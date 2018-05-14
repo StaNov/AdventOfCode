@@ -1,4 +1,4 @@
-from adventofcode.problems.utils import InputFileParser as BaseParser
+from adventofcode.problems.framework import InputFileParser as BaseParser
 from .instruction import InstructionType, InstructionConditionType
 from .parsedinput import ParsedInput
 

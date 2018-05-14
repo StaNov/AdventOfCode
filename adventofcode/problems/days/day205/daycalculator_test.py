@@ -1,6 +1,6 @@
 import pytest
 
-from adventofcode.problems.utils import testsuite
+from adventofcode.problems.framework import testsuite
 from .daycalculator import DayCalculator
 
 

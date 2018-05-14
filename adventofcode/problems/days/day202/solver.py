@@ -1,4 +1,4 @@
-from adventofcode.problems.utils import AbstractSolver
+from adventofcode.problems.framework import AbstractSolver
 from .internal import LinesSummer, LineCalculatorMinMax, LineCalculatorDivision
 
 

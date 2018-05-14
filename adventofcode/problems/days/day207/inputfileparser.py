@@ -1,6 +1,6 @@
 import re
 
-from adventofcode.problems.utils import InputFileParser as BaseParser
+from adventofcode.problems.framework import InputFileParser as BaseParser
 
 
 class InputFileParser(BaseParser):

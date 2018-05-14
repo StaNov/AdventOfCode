@@ -1,4 +1,4 @@
-from adventofcode.problems.utils.inputfileparser import InputFileParser
+from adventofcode.problems.framework.inputfileparser import InputFileParser
 
 
 def test_parse_empty_string():

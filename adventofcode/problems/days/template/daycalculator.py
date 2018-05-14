@@ -1,4 +1,4 @@
-from adventofcode.problems.utils import AbstractDayCalculator
+from adventofcode.problems.framework import AbstractDayCalculator
 
 if __name__ == "__main__":
     # TODO replace template with dayXXX

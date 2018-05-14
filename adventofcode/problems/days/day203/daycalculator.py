@@ -1,4 +1,4 @@
-from adventofcode.problems.utils import AbstractDayCalculator
+from adventofcode.problems.framework import AbstractDayCalculator
 
 if __name__ == "__main__":
     from adventofcode.problems.days.day203.solver import Solver
