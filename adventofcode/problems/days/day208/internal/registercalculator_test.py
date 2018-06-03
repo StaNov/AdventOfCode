@@ -1,7 +1,6 @@
 import pytest
 
 from . import RegisterCalculator
-from .instruction import InstructionType, Instruction
 
 
 @pytest.fixture
@@ -13,40 +12,35 @@ def test_zero_is_highest_value_after_calculator_is_created(calculator):
     assert 0 == calculator.highest_value
 
 
-def test_apply_one_instruction_1(calculator):
+def test_apply_one_instruction(calculator):
     calculator.apply_instruction(
-        Instruction("a", InstructionType.INC, 10)
+        InstructionMock("a", 10)
     )
     assert 10 == calculator.highest_value
 
 
-def test_apply_one_instruction_2(calculator):
+def test_apply_two_instructions(calculator):
     calculator.apply_instruction(
-        Instruction("a", InstructionType.INC, 20)
-    )
-    assert 20 == calculator.highest_value
-
-
-def test_apply_two_instructions_first_bigger(calculator):
-    calculator.apply_instruction(
-        Instruction("a", InstructionType.INC, 20)
+        InstructionMock("a", 20)
     )
     calculator.apply_instruction(
-        Instruction("b", InstructionType.INC, 10)
+        InstructionMock("b", 10)
     )
     assert 20 == calculator.highest_value
 
 
 def test_apply_two_instructions_same_register(calculator):
     calculator.apply_instruction(
-        Instruction("a", InstructionType.INC, 20)
+        InstructionMock("a", 20)
     )
     calculator.apply_instruction(
-        Instruction("a", InstructionType.INC, 10)
+        InstructionMock("a", 10)
     )
     assert 30 == calculator.highest_value
 
 
+# TODO move somewhere else
+@pytest.mark.skip
 def test_decrement_instruction(calculator):
     calculator.apply_instruction(
         Instruction("a", InstructionType.DEC, 10)
@@ -54,10 +48,20 @@ def test_decrement_instruction(calculator):
     assert -10 == calculator.highest_value
 
 
-# TODO what about this one?
+# TODO move somewhere else
 @pytest.mark.skip
 def test_false_condition_keeps_zero_value(calculator):
     calculator.apply_instruction(
         InstructionWithCondition("a", InstructionType.INC, 20, "a", InstructionConditionType.LESSER, 0)
     )
     assert 0 == calculator.highest_value
+
+
+class InstructionMock:
+
+    def __init__(self, register_name, value_to_add):
+        self._register_name = register_name
+        self._value_to_add = value_to_add
+
+    def apply_on_registers(self, registers):
+        registers.add(self._register_name, self._value_to_add)
