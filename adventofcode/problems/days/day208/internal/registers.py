@@ -16,4 +16,4 @@ class Registers:
 
     @property
     def registers(self):
-        return list(self._registers.items())
+        return set(self._registers.items())

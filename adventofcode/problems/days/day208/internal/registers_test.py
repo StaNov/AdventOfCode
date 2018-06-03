@@ -25,4 +25,4 @@ def test_untouched_register_has_zero_value(registers: Registers):
 def test_get_all_registers(registers: Registers):
     registers.add("first", 1)
     registers.add("second", 2)
-    assert [("first", 1), ("second", 2)] == registers.registers
+    assert {("first", 1), ("second", 2)} == registers.registers
