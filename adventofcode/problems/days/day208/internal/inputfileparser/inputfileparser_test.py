@@ -1,5 +1,5 @@
-from .inputfileparser import InputFileParser
-from .instruction import InstructionType, InstructionConditionType
+from adventofcode.problems.days.day208.internal.inputfileparser import InputFileParser
+from adventofcode.problems.days.day208.internal.instruction import InstructionType, InstructionConditionType
 
 
 def test_register_name():

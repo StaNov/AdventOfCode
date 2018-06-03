@@ -1,6 +1,6 @@
 from adventofcode.problems.framework import InputFileParser as BaseParser
-from .instruction import InstructionType, InstructionConditionType
-from .parsedinput import ParsedInput
+from adventofcode.problems.days.day208.internal.instruction import InstructionType, InstructionConditionType
+from adventofcode.problems.days.day208.internal.inputfileparser.parsedinput import ParsedInput
 
 
 class InputFileParser(BaseParser):
@@ -22,17 +22,17 @@ class InputFileParser(BaseParser):
 
             parsed_input.add_instruction(
                 register_name,
-                parse_instruction_type(instruction_type),
+                _parse_instruction_type(instruction_type),
                 int(value_to_apply),
                 condition_register,
-                parse_condition_type(condition_type),
+                _parse_condition_type(condition_type),
                 int(condition_value)
             )
 
         return parsed_input
 
 
-def parse_instruction_type(string):
+def _parse_instruction_type(string):
     string_to_type = {
         "inc": InstructionType.INC,
         "dec": InstructionType.DEC
@@ -40,7 +40,7 @@ def parse_instruction_type(string):
     return string_to_type[string]
 
 
-def parse_condition_type(string):
+def _parse_condition_type(string):
     string_to_type = {
         ">": InstructionConditionType.GREATER,
         ">=": InstructionConditionType.GREATER_EQUALS,

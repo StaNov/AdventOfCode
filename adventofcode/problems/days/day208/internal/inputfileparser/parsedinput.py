@@ -1,4 +1,4 @@
-from .instruction import InstructionWithCondition
+from adventofcode.problems.days.day208.internal.instruction import InstructionWithCondition
 
 
 class ParsedInput:

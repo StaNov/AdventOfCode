@@ -1,4 +1,3 @@
-from .inputfileparser import InputFileParser
+from .inputfileparser import InputFileParser, ParsedInput
 from .instruction import InstructionType, InstructionConditionType
-from .parsedinput import ParsedInput
 from .registercalculator import RegisterCalculator
