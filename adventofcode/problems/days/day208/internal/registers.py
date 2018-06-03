@@ -16,4 +16,4 @@ class Registers:
 
     @property
     def registers(self):
-        return [(name, self._registers[name]) for name in self._registers]
+        return list(self._registers.items())
