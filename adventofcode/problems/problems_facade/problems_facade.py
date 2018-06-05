@@ -4,6 +4,12 @@ import re
 
 
 def get_available_days():
+    result = _get_numbers_of_available_days()
+    result.sort()
+    return result
+
+
+def _get_numbers_of_available_days():
     result = []
 
     days_folder_path = os.path.join(os.path.dirname(__file__), "..", "days")
@@ -12,8 +18,6 @@ def get_available_days():
         match = re.fullmatch("day(\d+)", folder_name)
         if match:
             result.append(int(match.group(1)))
-
-    result.sort()
 
     return result
 
