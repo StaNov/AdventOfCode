@@ -13,6 +13,8 @@ def get_available_days():
         if match:
             result.append(int(match.group(1)))
 
+    result.sort()
+
     return result
 
 

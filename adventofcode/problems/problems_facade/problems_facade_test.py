@@ -12,6 +12,15 @@ def test_get_available_days():
     assert -1 not in days
 
 
+def test_available_days_are_returned_sorted():
+    days = problems_facade.get_available_days()
+
+    sorted_days = days.copy()
+    sorted_days.sort()
+
+    assert sorted_days == days
+
+
 def test_get_day_calculator_existing():
     for i in range(1, 4):
         _day_calculator_is_instantiable(i)
