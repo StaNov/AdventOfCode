@@ -31,9 +31,9 @@ def test_get_day_calculator_not_existing():
         problems_facade.get_day_calculator(-1)
 
 
-def test_all_days_instantiable():
-    for i in problems_facade.get_available_days():
-        _day_calculator_is_instantiable(i)
+@pytest.mark.parametrize("parametrized_day_number", problems_facade.get_available_days())
+def test_all_days_instantiable(parametrized_day_number):
+    _day_calculator_is_instantiable(parametrized_day_number)
 
 
 def _day_calculator_is_instantiable(day_number):
