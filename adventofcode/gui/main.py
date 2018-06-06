@@ -6,7 +6,7 @@ from adventofcode import problems
 
 def run_gui():
     top = Tk()
-    top.wm_title("Advent of Code 2016, by StaNov")
+    top.wm_title("Advent of Code, by StaNov")
     top.geometry('600x300')
 
     days_box = ttk.Combobox(top, state="readonly")
