@@ -1,7 +1,7 @@
 import os
 import re
 
-VALID_FOLDER_NAMES = ["day\d+", "template", "__pycache__", ".cache"]
+VALID_FOLDER_NAMES = ["day\d+", "template", "__pycache__", ".cache", "__init__.py"]
 VALID_FOLDER_NAMES_REGEX = str.join("|", VALID_FOLDER_NAMES)
 
 
