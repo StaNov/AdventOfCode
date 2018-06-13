@@ -21,14 +21,14 @@ class AbstractDayCalculator:
         _print_separator()
         print("SECOND RESULT IS:\n\n" + str(result_2))
 
-    def calculate_part_1(self):
+    def calculate_part_1(self, custom_input=None):
         solver = self._create_new_solver()
-        input_ = self._get_parsed_input()
+        input_ = custom_input if custom_input is not None else self._get_parsed_input()
         return solver.solve_1(input_)
 
-    def calculate_part_2(self):
+    def calculate_part_2(self, custom_input=None):
         solver = self._create_new_solver()
-        input_ = self._get_parsed_input()
+        input_ = custom_input if custom_input is not None else self._get_parsed_input()
         return solver.solve_2(input_)
 
     def _create_new_solver(self):
