@@ -11,22 +11,22 @@ def input_text_parser():
 
 def test_register_name(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond > 1")
-    assert "reg" == parsed_input.instructions[0]._register_name
+    assert "reg" == parsed_input.instructions[0]._applier._register_name
 
 
 def test_instruction_type_inc(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond > 1")
-    assert InstructionType.INC == parsed_input.instructions[0]._instruction_type
+    assert InstructionType.INC == parsed_input.instructions[0]._applier._instruction_type
 
 
 def test_instruction_type_dec(input_text_parser):
     parsed_input = input_text_parser.parse("reg dec 5 if cond > 1")
-    assert InstructionType.DEC == parsed_input.instructions[0]._instruction_type
+    assert InstructionType.DEC == parsed_input.instructions[0]._applier._instruction_type
 
 
 def test_value_to_apply(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 10001 if cond > 1")
-    assert 10001 == parsed_input.instructions[0]._value_to_apply
+    assert 10001 == parsed_input.instructions[0]._applier._value_to_apply
 
 
 def test_condition_register(input_text_parser):

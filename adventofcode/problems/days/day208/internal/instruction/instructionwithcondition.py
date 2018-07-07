@@ -1,3 +1,4 @@
+from .applier import Applier
 from .instruction import Instruction
 from .instructionconditiontype import InstructionConditionType
 
@@ -10,7 +11,9 @@ class InstructionWithCondition(Instruction):
                  condition_register,
                  condition_type,
                  condition_value):
-        super().__init__(register_name, instruction_type, value_to_apply)
+        applier = Applier(register_name, instruction_type, value_to_apply)
+        super().__init__(applier)
+
         self._condition_register = condition_register
         self._condition_type = condition_type
         self._condition_value = condition_value

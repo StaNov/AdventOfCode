@@ -14,5 +14,8 @@ class Applier:
         self._register_name = register_name
         self._value_to_apply = value_to_apply_processor(value_to_apply)
 
+        # TODO only for testing of parser
+        self._instruction_type = instruction_type
+
     def apply_on_registers(self, registers):
         registers.add(self._register_name, self._value_to_apply)
