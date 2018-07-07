@@ -9,7 +9,7 @@ class Instruction:
         self._applier = Applier(register_name, instruction_type, value_to_apply)
 
         # TODO only for testing, can be removed somehow?
-        self.register_name = register_name
+        self._register_name = register_name
         self._instruction_type = instruction_type
         self._value_to_apply = value_to_apply
 

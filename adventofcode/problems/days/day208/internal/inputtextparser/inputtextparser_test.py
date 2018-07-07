@@ -4,7 +4,7 @@ from adventofcode.problems.days.day208.internal.instruction import InstructionTy
 
 def test_register_name():
     parsed_input = InputTextParser().parse("reg inc 5 if cond > 1")
-    assert "reg" == parsed_input.instructions[0].register_name
+    assert "reg" == parsed_input.instructions[0]._register_name
 
 
 def test_instruction_type_inc():
