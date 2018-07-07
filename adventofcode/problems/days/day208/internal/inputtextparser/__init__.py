@@ -1,2 +1,2 @@
-from .helperclass import HelperClass
 from .inputtextparser import InputTextParser
+from .parsedinput import ParsedInput

@@ -3,10 +3,10 @@ from adventofcode.problems.framework import AbstractDayCalculator
 if __name__ == "__main__":
     # TODO replace template with dayXXX
     from adventofcode.problems.days.template.solver import Solver
-    from adventofcode.problems.days.template.internal import InputFileParser
+    from adventofcode.problems.days.template.internal import InputTextParser
 else:
     from .solver import Solver
-    from .internal import InputFileParser
+    from .internal import InputTextParser
 
 
 class DayCalculator(AbstractDayCalculator):
@@ -17,7 +17,7 @@ class DayCalculator(AbstractDayCalculator):
         return Solver()
 
     def _get_input_file_parser(self):
-        return InputFileParser()
+        return InputTextParser()
 
 
 if __name__ == "__main__":

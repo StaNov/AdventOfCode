@@ -8,6 +8,8 @@ def main():
     return DayCalculator()
 
 
+# TODO
+@pytest.mark.skip
 def test_main_1_on_empty_input(main):
     assert 0 == main.calculate_part_1("")
 

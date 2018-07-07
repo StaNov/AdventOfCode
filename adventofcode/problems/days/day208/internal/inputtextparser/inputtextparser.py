@@ -1,9 +1,9 @@
-from adventofcode.problems.framework import InputFileParser as BaseParser
-from adventofcode.problems.days.day208.internal.instruction import InstructionType, InstructionConditionType
-from adventofcode.problems.days.day208.internal.inputfileparser.parsedinput import ParsedInput
+from adventofcode.problems.framework import DefaultInputTextParser
+from ...internal.instruction import InstructionType, InstructionConditionType
+from .parsedinput import ParsedInput
 
 
-class InputFileParser(BaseParser):
+class InputTextParser(DefaultInputTextParser):
     def parse(self, input_string):
         parsed_input = ParsedInput()
 

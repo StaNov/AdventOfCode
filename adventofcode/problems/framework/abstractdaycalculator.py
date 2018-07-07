@@ -1,11 +1,11 @@
 from . import inputfilereader
-from .inputfileparser import InputFileParser
+from .defaultinputtextparser import DefaultInputTextParser
 
 
 class AbstractDayCalculator:
-    def __init__(self):
-        self._file_content = self._load_file_content()
-        self._file_parser = self._get_input_file_parser()
+    def __init__(self, custom_input_text=None):
+        self._input_text = custom_input_text if custom_input_text is not None else self._load_input_file_content()
+        self._input_text_parser = self._get_input_file_parser()
 
     def calculate_both_parts_and_print_results(self):
         print("Calculating first result...")
@@ -21,14 +21,14 @@ class AbstractDayCalculator:
         _print_separator()
         print("SECOND RESULT IS:\n\n" + str(result_2))
 
-    def calculate_part_1(self, custom_input=None):
+    def calculate_part_1(self):
         solver = self._create_new_solver()
-        input_ = custom_input if custom_input is not None else self._get_parsed_input()
+        input_ = self._get_parsed_input()
         return solver.solve_1(input_)
 
-    def calculate_part_2(self, custom_input=None):
+    def calculate_part_2(self):
         solver = self._create_new_solver()
-        input_ = custom_input if custom_input is not None else self._get_parsed_input()
+        input_ = self._get_parsed_input()
         return solver.solve_2(input_)
 
     def _create_new_solver(self):
@@ -38,14 +38,14 @@ class AbstractDayCalculator:
         raise NotImplementedError("Abstract method not implemented!")
 
     def _get_input_file_parser(self):
-        return InputFileParser()
+        return DefaultInputTextParser()
 
-    def _load_file_content(self):
+    def _load_input_file_content(self):
         main_calculator_file_name = self._get_main_calculator_file_path()
         return inputfilereader.read_file_to_string(main_calculator_file_name)
 
     def _get_parsed_input(self):
-        return self._file_parser.parse(self._file_content)
+        return self._input_text_parser.parse(self._input_text)
 
 
 def _print_separator():

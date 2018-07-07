@@ -1,9 +1,9 @@
 import re
 
-from adventofcode.problems.framework import InputFileParser as BaseParser
+from adventofcode.problems.framework import DefaultInputTextParser
 
 
-class InputFileParser(BaseParser):
+class InputTextParser(DefaultInputTextParser):
     def parse(self, input_string):
         result = []
 
