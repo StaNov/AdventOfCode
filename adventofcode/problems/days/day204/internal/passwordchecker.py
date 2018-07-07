@@ -1,6 +1,6 @@
 class PasswordChecker:
 
-    def __init__(self) -> None:
+    def __init__(self):
         super().__init__()
 
     def check(self, password):

@@ -8,7 +8,7 @@ _processor_of_type = {
 
 
 class Applier:
-    def __init__(self, register_name, instruction_type, value_to_apply) -> None:
+    def __init__(self, register_name, instruction_type, value_to_apply):
         value_to_apply_processor = _processor_of_type[instruction_type]
 
         self._register_name = register_name
