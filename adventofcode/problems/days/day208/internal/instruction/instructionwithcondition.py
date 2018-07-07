@@ -11,9 +11,9 @@ class InstructionWithCondition(Instruction):
                  condition_type,
                  condition_value):
         super().__init__(register_name, instruction_type, value_to_apply)
-        self.condition_register = condition_register
-        self.condition_type = condition_type
-        self.condition_value = condition_value
+        self._condition_register = condition_register
+        self._condition_type = condition_type
+        self._condition_value = condition_value
 
     def apply_on_registers(self, registers):
         if not self._condition_is_met(registers):
@@ -22,5 +22,5 @@ class InstructionWithCondition(Instruction):
         super().apply_on_registers(registers)
 
     def _condition_is_met(self, registers):
-        return (registers.get(self.condition_register) < self.condition_value
-                or self.condition_type != InstructionConditionType.LESSER)
+        return (registers.get(self._condition_register) < self._condition_value
+                or self._condition_type != InstructionConditionType.LESSER)

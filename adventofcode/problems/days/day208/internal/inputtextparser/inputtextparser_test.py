@@ -31,42 +31,42 @@ def test_value_to_apply(input_text_parser):
 
 def test_condition_register(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond > 1")
-    assert "cond" == parsed_input.instructions[0].condition_register
+    assert "cond" == parsed_input.instructions[0]._condition_register
 
 
 def test_condition_type_greater(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond > 1")
-    assert InstructionConditionType.GREATER == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.GREATER == parsed_input.instructions[0]._condition_type
 
 
 def test_condition_type_greater_equals(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond >= 1")
-    assert InstructionConditionType.GREATER_EQUALS == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.GREATER_EQUALS == parsed_input.instructions[0]._condition_type
 
 
 def test_condition_type_lesser(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond < 1")
-    assert InstructionConditionType.LESSER == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.LESSER == parsed_input.instructions[0]._condition_type
 
 
 def test_condition_type_lesser_equals(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond <= 1")
-    assert InstructionConditionType.LESSER_EQUALS == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.LESSER_EQUALS == parsed_input.instructions[0]._condition_type
 
 
 def test_condition_type_equals(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond == 1")
-    assert InstructionConditionType.EQUALS == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.EQUALS == parsed_input.instructions[0]._condition_type
 
 
 def test_condition_type_not_equals(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond != 1")
-    assert InstructionConditionType.NOT_EQUALS == parsed_input.instructions[0].condition_type
+    assert InstructionConditionType.NOT_EQUALS == parsed_input.instructions[0]._condition_type
 
 
 def test_condition_value(input_text_parser):
     parsed_input = input_text_parser.parse("reg inc 5 if cond != 98765")
-    assert 98765 == parsed_input.instructions[0].condition_value
+    assert 98765 == parsed_input.instructions[0]._condition_value
 
 
 def test_multiple_lines(input_text_parser):
