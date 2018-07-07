@@ -6,7 +6,7 @@ from ..registersspy import RegistersSpy
 def test_registers_spy_is_untouched_after_creation():
     registers = RegistersSpy()
 
-    assert (None, None) == registers.called_with_name_and_value()
+    assert () == registers.called_commands()
 
 
 def test_value_is_applied_to_registers():
@@ -15,4 +15,4 @@ def test_value_is_applied_to_registers():
 
     applier.apply_on_registers(registers)
 
-    assert ("a", 10) == registers.called_with_name_and_value()
+    assert (("a", 10),) == registers.called_commands()

@@ -12,7 +12,7 @@ def test_instruction_with_true_condition_applies_value_on_registers():
 
     instruction.apply_on_registers(registers)
 
-    assert ("a", 10) == registers.called_with_name_and_value()
+    assert (("a", 10),) == registers.called_commands()
 
 
 def test_instruction_with_false_condition_applies_nothing():
@@ -23,4 +23,4 @@ def test_instruction_with_false_condition_applies_nothing():
 
     instruction.apply_on_registers(registers)
 
-    assert (None, None) == registers.called_with_name_and_value()
+    assert () == registers.called_commands()
