@@ -28,5 +28,9 @@ def test_2_zero_is_visited_twice(solver):
     assert 0 == solver.solve_2([1, -1])
 
 
-def test_2_one_is_visited_twice(solver):
-    assert 1 == solver.solve_2([1, 1, -1])
+def test_2_result_in_one_traversing(solver):
+    assert 5 == solver.solve_2([5, 1, -1])
+
+
+def test_2_two_traversings_are_needed_to_find_the_result(solver):
+    assert 1 == solver.solve_2([1, 2, -5])

@@ -14,10 +14,11 @@ class Solver(AbstractSolver):
         visited_frequencies = {0}
         current_sum = 0
 
-        for number in input_:
-            current_sum += number
+        while True:
+            for number in input_:
+                current_sum += number
 
-            if current_sum in visited_frequencies:
-                return current_sum
+                if current_sum in visited_frequencies:
+                    return current_sum
 
-            visited_frequencies.add(current_sum)
+                visited_frequencies.add(current_sum)
