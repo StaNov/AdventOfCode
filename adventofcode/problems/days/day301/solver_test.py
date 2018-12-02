@@ -13,15 +13,15 @@ def test_1_empty_input_returns_zero(solver):
 
 
 def test_1_positive_number_returns_the_given_number(solver):
-    assert 123 == solver.solve_1(["+123"])
+    assert 123 == solver.solve_1([123])
 
 
 def test_1_negative_number_returns_the_given_number(solver):
-    assert -456 == solver.solve_1(["-456"])
+    assert -456 == solver.solve_1([-456])
 
 
 def test_1_multiple_numbers_return_their_sum(solver):
-    assert 700 == solver.solve_1(["+1000", "-300"])
+    assert 700 == solver.solve_1([1000, -300])
 
 
 def test_2_full_example(solver):
