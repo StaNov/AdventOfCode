@@ -8,7 +8,7 @@ class Solver(AbstractSolver):
         self.helper = HelperClass()
 
     def _solve_1_internal(self, input_):
-        return 0
+        return 0 if len(input_) == 0 else 1
 
     def _solve_2_internal(self, input_):
         # TODO
