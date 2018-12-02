@@ -24,6 +24,5 @@ def test_1_multiple_numbers_return_their_sum(solver):
     assert 700 == solver.solve_1([1000, -300])
 
 
-def test_2_full_example(solver):
-    # TODO
-    assert 0 == solver.solve_2("test test")
+def test_2_zero_is_visited_twice(solver):
+    assert 0 == solver.solve_2([1, -1])

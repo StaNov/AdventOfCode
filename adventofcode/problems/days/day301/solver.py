@@ -11,5 +11,4 @@ class Solver(AbstractSolver):
         return sum(input_)
 
     def _solve_2_internal(self, input_):
-        # TODO
-        return self.helper.helper_method(input_)
+        return 0
