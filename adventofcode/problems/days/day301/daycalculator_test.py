@@ -8,10 +8,6 @@ def calculator():
     return DayCalculator()
 
 
-def test_empty_input_gives_zero_result():
-    assert 0 == DayCalculator("").calculate_part_1()
-
-
 def test_example_1():
     assert 3 == DayCalculator("+1\n-2\n+3\n+1").calculate_part_1()
 
