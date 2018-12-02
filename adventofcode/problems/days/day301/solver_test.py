@@ -20,6 +20,10 @@ def test_1_input_with_two_gives_two_as_result(solver):
     assert 2 == solver.solve_1(["+2"])
 
 
+def test_1_multiple_digits_input(solver):
+    assert 123 == solver.solve_1(["+123"])
+
+
 def test_2_full_example(solver):
     # TODO
     assert 0 == solver.solve_2("test test")

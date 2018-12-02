@@ -11,9 +11,9 @@ class Solver(AbstractSolver):
         if len(input_) == 0:
             return 0
 
-        second_character = input_[0][1]
+        digits_part = input_[0][1:]
 
-        return int(second_character)
+        return int(digits_part)
 
     def _solve_2_internal(self, input_):
         # TODO
