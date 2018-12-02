@@ -11,9 +11,13 @@ class Solver(AbstractSolver):
         if len(input_) == 0:
             return 0
 
-        digits_part = input_[0][1:]
+        result = 0
 
-        return int(digits_part)
+        for number in input_:
+            digits_part = number[1:]
+            result += int(digits_part)
+
+        return result
 
     def _solve_2_internal(self, input_):
         # TODO
