@@ -11,4 +11,13 @@ class Solver(AbstractSolver):
         return sum(input_)
 
     def _solve_2_internal(self, input_):
-        return 0
+        visited_frequencies = {0}
+        current_sum = 0
+
+        for number in input_:
+            current_sum += number
+
+            if current_sum in visited_frequencies:
+                return current_sum
+
+            visited_frequencies.add(current_sum)

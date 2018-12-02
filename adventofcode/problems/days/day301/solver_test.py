@@ -26,3 +26,7 @@ def test_1_multiple_numbers_return_their_sum(solver):
 
 def test_2_zero_is_visited_twice(solver):
     assert 0 == solver.solve_2([1, -1])
+
+
+def test_2_one_is_visited_twice(solver):
+    assert 1 == solver.solve_2([1, 1, -1])
