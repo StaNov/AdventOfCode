@@ -32,20 +32,14 @@ def test_example_2_1():
     assert 0 == DayCalculator("+1\n-1").calculate_part_2()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_2_2():
     assert 10 == DayCalculator("+3\n+3\n+4\n-2\n-4").calculate_part_2()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_2_3():
     assert 5 == DayCalculator("-6\n+3\n+8\n+5\n-6").calculate_part_2()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_2_4():
     assert 14 == DayCalculator("+7\n+7\n-2\n-7\n-4").calculate_part_2()
 
