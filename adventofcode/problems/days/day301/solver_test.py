@@ -29,7 +29,7 @@ def test_1_one_negative_number(solver):
 
 
 def test_1_two_numbers_sum(solver):
-    assert 3 == solver.solve_1(["+1", "+2"])
+    assert 700 == solver.solve_1(["+1000", "-300"])
 
 
 def test_2_full_example(solver):
