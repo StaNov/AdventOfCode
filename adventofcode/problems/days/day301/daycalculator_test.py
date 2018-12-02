@@ -44,8 +44,5 @@ def test_example_2_4():
     assert 14 == DayCalculator("+7\n+7\n-2\n-7\n-4").calculate_part_2()
 
 
-# TODO
-@pytest.mark.skip
 def test_main_2(calculator):
-    # TODO
-    assert 0 == calculator.calculate_part_2()
+    assert 71892 == calculator.calculate_part_2()
