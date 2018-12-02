@@ -30,6 +30,30 @@ def test_main_1(calculator):
 
 # TODO
 @pytest.mark.skip
+def test_example_1():
+    assert 0 == DayCalculator("+1\n-1").calculate_part_2()
+
+
+# TODO
+@pytest.mark.skip
+def test_example_2():
+    assert 10 == DayCalculator("+3\n+3\n+4\n-2\n-4").calculate_part_2()
+
+
+# TODO
+@pytest.mark.skip
+def test_example_3():
+    assert 5 == DayCalculator("-6\n+3\n+8\n+5\n-6").calculate_part_2()
+
+
+# TODO
+@pytest.mark.skip
+def test_example_4():
+    assert 14 == DayCalculator("+7\n+7\n-2\n-7\n-4").calculate_part_2()
+
+
+# TODO
+@pytest.mark.skip
 def test_main_2(calculator):
     # TODO
     assert 0 == calculator.calculate_part_2()
