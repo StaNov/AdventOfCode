@@ -24,6 +24,10 @@ def test_1_multiple_digits_input(solver):
     assert 123 == solver.solve_1(["+123"])
 
 
+def test_1_one_negative_number(solver):
+    assert -456 == solver.solve_1(["-456"])
+
+
 def test_1_two_numbers_sum(solver):
     assert 3 == solver.solve_1(["+1", "+2"])
 

@@ -10,8 +10,14 @@ class Solver(AbstractSolver):
     def _solve_1_internal(self, input_):
         result = 0
 
-        for number in input_:
-            result += int(number[1:])
+        for value in input_:
+            sign = value[0]
+            number = int(value[1:])
+
+            if sign == "-":
+                number = -number
+
+            result += number
 
         return result
 
