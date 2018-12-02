@@ -8,14 +8,10 @@ class Solver(AbstractSolver):
         self.helper = HelperClass()
 
     def _solve_1_internal(self, input_):
-        if len(input_) == 0:
-            return 0
-
         result = 0
 
         for number in input_:
-            digits_part = number[1:]
-            result += int(digits_part)
+            result += int(number[1:])
 
         return result
 
