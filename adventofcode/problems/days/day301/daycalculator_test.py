@@ -28,11 +28,8 @@ def test_example_4():
     assert -6 == DayCalculator("-1\n-2\n-3").calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
 def test_main_1(calculator):
-    # TODO
-    assert 0 == calculator.calculate_part_1()
+    assert 516 == calculator.calculate_part_1()
 
 
 # TODO
