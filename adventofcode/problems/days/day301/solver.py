@@ -2,6 +2,16 @@ from adventofcode.problems.framework import AbstractSolver
 from .internal import HelperClass
 
 
+def parse_input_value(value):
+    sign = value[0]
+    number = int(value[1:])
+
+    if sign == "-":
+        number = -number
+
+    return number
+
+
 class Solver(AbstractSolver):
     def __init__(self):
         super().__init__()
@@ -11,13 +21,7 @@ class Solver(AbstractSolver):
         result = 0
 
         for value in input_:
-            sign = value[0]
-            number = int(value[1:])
-
-            if sign == "-":
-                number = -number
-
-            result += number
+            result += parse_input_value(value)
 
         return result
 
