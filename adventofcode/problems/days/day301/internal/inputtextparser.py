@@ -3,10 +3,11 @@ from adventofcode.problems.framework import DefaultInputTextParser
 
 class InputTextParser(DefaultInputTextParser):
     def parse(self, input_string):
-        return [parse_input_value(x) for x in input_string.splitlines()]
+        input_lines = input_string.splitlines()
+        return [parse_input_line(x) for x in input_lines]
 
 
-def parse_input_value(value):
+def parse_input_line(value):
     sign = value[0]
     number = int(value[1:])
 
