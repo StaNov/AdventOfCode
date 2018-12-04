@@ -1,6 +1,6 @@
 class SameLettersCounter:
-    def __init__(self):
-        self.result = 0
+    def __init__(self, word):
+        self.word = word
 
-    def helper_method(self, param):
-        return self.result
+    def has_two_same_letters(self):
+        return len(self.word) != 0

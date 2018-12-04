@@ -6,14 +6,12 @@ from adventofcode.problems.framework import testsuite
 from . import SameLettersCounter
 
 
-@pytest.fixture
-def helper():
-    return SameLettersCounter()
+def test_empty_string_has_no_doubles():
+    assert not SameLettersCounter("").has_two_same_letters()
 
 
-def test_helper_method(helper):
-    # TODO
-    assert 0 == helper.helper_method("test")
+def test_two_same_letters():
+    assert SameLettersCounter("aa").has_two_same_letters()
 
 
 def test_with_exception():
@@ -23,5 +21,6 @@ def test_with_exception():
 
 
 @testsuite.time_expensive
+@pytest.mark.skip
 def test_time_expensive_test():
     time.sleep(1)
