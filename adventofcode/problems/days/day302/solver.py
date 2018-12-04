@@ -8,7 +8,15 @@ class Solver(AbstractSolver):
         self.helper = HelperClass()
 
     def _solve_1_internal(self, input_):
-        return 0 if len(input_) == 0 else 1
+        if len(input_) == 0:
+            return 0
+
+        line = input_[0]
+
+        if "bb" in line:
+            return 1
+
+        return 2
 
     def _solve_2_internal(self, input_):
         # TODO
