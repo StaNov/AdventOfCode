@@ -19,10 +19,8 @@ def test_example_1_1(calculator):
         "ababab").calculate_part_1()
 
 
-@pytest.mark.skip
 def test_main_1(calculator):
-    # TODO
-    assert 0 == calculator.calculate_part_1()
+    assert 5000 == calculator.calculate_part_1()
 
 
 # TODO
