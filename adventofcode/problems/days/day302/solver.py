@@ -12,10 +12,11 @@ class Solver(AbstractSolver):
 
         line = input_[0]
 
-        if "bb" in line:
-            return 1
-
-        return 2
+        return (
+            (1 if SameLettersCounter(line).has_n_same_letters(2) else 0)
+            +
+            (1 if SameLettersCounter(line).has_n_same_letters(3) else 0)
+        )
 
     def _solve_2_internal(self, input_):
         # TODO

@@ -12,8 +12,6 @@ def test_example_1_0(calculator):
     assert 0 == DayCalculator("").calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_1_1(calculator):
     assert 0 == DayCalculator("abcdef").calculate_part_1()
 
@@ -26,26 +24,18 @@ def test_example_1_3(calculator):
     assert 1 == DayCalculator("abbcde").calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_1_4(calculator):
     assert 1 == DayCalculator("abcccd").calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_1_5(calculator):
     assert 1 == DayCalculator("aabcdd").calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_1_6(calculator):
     assert 1 == DayCalculator("abcdee").calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_1_7(calculator):
     assert 1 == DayCalculator("ababab").calculate_part_1()
 
