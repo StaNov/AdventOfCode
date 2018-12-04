@@ -67,6 +67,7 @@ def test_example_1_8(calculator):
         "ababab").calculate_part_1()
 
 
+@pytest.mark.skip
 def test_main_1(calculator):
     # TODO
     assert 0 == calculator.calculate_part_1()
@@ -82,6 +83,7 @@ def test_example_2_2(calculator):
     assert 0 == DayCalculator("Part 2, example 2").calculate_part_2()
 
 
+@pytest.mark.skip
 def test_main_2(calculator):
     # TODO
     assert 0 == calculator.calculate_part_2()
