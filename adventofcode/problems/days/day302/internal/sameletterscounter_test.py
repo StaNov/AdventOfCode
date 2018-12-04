@@ -22,6 +22,10 @@ def test_two_same_letters_far_from_each_other():
     assert SameLettersCounter("aba").has_two_same_letters()
 
 
+def test_three_same_letters_are_not_exactly_two():
+    assert not SameLettersCounter("aaa").has_two_same_letters()
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):

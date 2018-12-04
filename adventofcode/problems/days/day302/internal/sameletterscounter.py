@@ -7,9 +7,10 @@ class SameLettersCounter:
             return False
 
         first_letter = self.word[0]
+        counter = 0
 
-        for letter in self.word[1:]:
+        for letter in self.word:
             if letter == first_letter:
-                return True
+                counter += 1
 
-        return False
+        return counter == 2
