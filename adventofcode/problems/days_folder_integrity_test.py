@@ -1,8 +1,16 @@
 import os
 import re
 
-VALID_FOLDER_NAMES = ["day\d+", "template", "__pycache__", ".cache", "__init__.py"]
-VALID_FOLDER_NAMES_REGEX = str.join("|", VALID_FOLDER_NAMES)
+VALID_FOLDER_NAMES_SUBREGEXES = [
+    "day\d+",
+    "template",
+    "__pycache__",
+    ".pytest_cache",
+    ".cache",
+    "__init__.py",
+]
+
+VALID_FOLDER_NAMES_REGEX = str.join("|", VALID_FOLDER_NAMES_SUBREGEXES)
 
 
 def test_directory_names_in_days():
