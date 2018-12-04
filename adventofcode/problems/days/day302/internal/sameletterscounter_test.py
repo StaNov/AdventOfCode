@@ -26,6 +26,10 @@ def test_three_same_letters_are_not_exactly_two():
     assert not SameLettersCounter("aaa").has_two_same_letters()
 
 
+def test_two_letters_not_first_one():
+    assert SameLettersCounter("baa").has_two_same_letters()
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):
