@@ -22,4 +22,5 @@ class Solver(AbstractSolver):
 
     def _solve_2_internal(self, input_):
         # TODO
-        return self.helper.has_two_same_letters(input_)
+        # return self.helper.has_two_same_letters(input_)
+        return 0
