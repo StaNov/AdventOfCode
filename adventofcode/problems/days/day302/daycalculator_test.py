@@ -24,8 +24,6 @@ def test_example_1_2(calculator):
     assert 2 == DayCalculator("bababc").calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_1_3(calculator):
     assert 1 == DayCalculator("abbcde").calculate_part_1()
 
