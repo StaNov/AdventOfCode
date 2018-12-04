@@ -3,4 +3,7 @@ class SameLettersCounter:
         self.word = word
 
     def has_two_same_letters(self):
-        return len(self.word) != 0
+        if len(self.word) == 0:
+            return False
+
+        return self.word[0] == self.word[1]

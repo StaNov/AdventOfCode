@@ -14,6 +14,10 @@ def test_two_same_letters():
     assert SameLettersCounter("aa").has_two_same_letters()
 
 
+def test_two_different_letters():
+    assert not SameLettersCounter("ab").has_two_same_letters()
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):
