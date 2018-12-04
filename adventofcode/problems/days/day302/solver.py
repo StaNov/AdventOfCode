@@ -7,16 +7,18 @@ class Solver(AbstractSolver):
         super().__init__()
 
     def _solve_1_internal(self, input_):
-        if len(input_) == 0:
-            return 0
 
-        line = input_[0]
+        doubles_count = 0
+        triples_count = 0
 
-        return (
-            (1 if SameLettersCounter(line).has_n_same_letters(2) else 0)
-            +
-            (1 if SameLettersCounter(line).has_n_same_letters(3) else 0)
-        )
+        for line in input_:
+            if SameLettersCounter(line).has_n_same_letters(2):
+                doubles_count += 1
+
+            if SameLettersCounter(line).has_n_same_letters(3):
+                triples_count += 1
+
+        return doubles_count * triples_count
 
     def _solve_2_internal(self, input_):
         # TODO
