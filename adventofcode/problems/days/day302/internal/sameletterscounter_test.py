@@ -30,6 +30,10 @@ def test_two_letters_not_first_one():
     assert SameLettersCounter("baa").has_n_same_letters(2)
 
 
+def test_three_same_letters():
+    assert SameLettersCounter("abbba").has_n_same_letters(3)
+
+
 def test_with_exception():
     # TODO
     with pytest.raises(Exception):
