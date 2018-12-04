@@ -26,15 +26,15 @@ def test_main_1(calculator):
 # TODO
 @pytest.mark.skip
 def test_example_2_1(calculator):
-    # TODO
-    assert 0 == DayCalculator("Part 2, example 1").calculate_part_2()
-
-
-# TODO
-@pytest.mark.skip
-def test_example_2_2(calculator):
-    # TODO
-    assert 0 == DayCalculator("Part 2, example 2").calculate_part_2()
+    assert "fgij" == DayCalculator(
+        "abcde\n"
+        "fghij\n"
+        "klmno\n"
+        "pqrst\n"
+        "fguij\n"
+        "axcye\n"
+        "wvxyz"
+    ).calculate_part_2()
 
 
 @pytest.mark.skip
