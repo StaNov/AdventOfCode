@@ -8,6 +8,10 @@ def calculator():
     return DayCalculator()
 
 
+def test_example_1_0(calculator):
+    assert 0 == DayCalculator("").calculate_part_1()
+
+
 # TODO
 @pytest.mark.skip
 def test_example_1_1(calculator):
