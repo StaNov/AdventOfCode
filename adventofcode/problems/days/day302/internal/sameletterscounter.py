@@ -1,4 +1,4 @@
-class HelperClass:
+class SameLettersCounter:
     def __init__(self):
         self.result = 0
 

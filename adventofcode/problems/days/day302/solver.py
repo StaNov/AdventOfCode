@@ -1,11 +1,11 @@
 from adventofcode.problems.framework import AbstractSolver
-from .internal import HelperClass
+from .internal import SameLettersCounter
 
 
 class Solver(AbstractSolver):
     def __init__(self):
         super().__init__()
-        self.helper = HelperClass()
+        self.helper = SameLettersCounter()
 
     def _solve_1_internal(self, input_):
         if len(input_) == 0:

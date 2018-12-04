@@ -3,12 +3,12 @@ import time
 import pytest
 
 from adventofcode.problems.framework import testsuite
-from . import HelperClass
+from . import SameLettersCounter
 
 
 @pytest.fixture
 def helper():
-    return HelperClass()
+    return SameLettersCounter()
 
 
 def test_helper_method(helper):
