@@ -1,9 +1,8 @@
 from adventofcode.problems.framework import AbstractDayCalculator
 
 if __name__ == "__main__":
-    # TODO replace template with dayXXX
-    from adventofcode.problems.days.template.solver import Solver
-    from adventofcode.problems.days.template.internal import InputTextParser
+    from adventofcode.problems.days.day301.solver import Solver
+    from adventofcode.problems.days.day301.internal import InputTextParser
 else:
     from .solver import Solver
     from .internal import InputTextParser
