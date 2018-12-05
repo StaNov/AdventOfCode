@@ -35,7 +35,5 @@ def test_example_2_1(calculator):
     ).calculate_part_2()
 
 
-@pytest.mark.skip
 def test_main_2(calculator):
-    # TODO
-    assert 0 == calculator.calculate_part_2()
+    assert "ymdrchgpvwfloluktajxijsqb" == calculator.calculate_part_2()
