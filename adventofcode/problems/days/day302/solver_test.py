@@ -14,3 +14,7 @@ def test_2_two_letters(solver):
 
 def test_2_three_letters(solver):
     assert "ab" == solver.solve_2(["abc", "abd"])
+
+
+def test_2_three_letters_another_order(solver):
+    assert "ac" == solver.solve_2(["axc", "ayc"])
