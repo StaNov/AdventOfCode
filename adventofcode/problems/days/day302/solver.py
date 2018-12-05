@@ -3,9 +3,6 @@ from .internal import SameLettersCounter, WordsWithoutOneLetterGenerator
 
 
 class Solver(AbstractSolver):
-    def __init__(self):
-        super().__init__()
-
     def _solve_1_internal(self, input_):
         doubles_count = 0
         triples_count = 0
