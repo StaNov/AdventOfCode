@@ -8,10 +8,12 @@ class Solver(AbstractSolver):
         triples_count = 0
 
         for line in input_:
-            if SameLettersCounter(line).has_n_same_letters(2):
+            counter = SameLettersCounter(line)
+
+            if counter.has_n_same_letters(2):
                 doubles_count += 1
 
-            if SameLettersCounter(line).has_n_same_letters(3):
+            if counter.has_n_same_letters(3):
                 triples_count += 1
 
         return doubles_count * triples_count
