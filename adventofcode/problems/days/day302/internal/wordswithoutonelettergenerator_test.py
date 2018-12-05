@@ -14,3 +14,7 @@ def test_empty_string(generator):
 
 def test_two_letters_word(generator):
     assert {"a", "b"} == generator.generate("ab")
+
+
+def test_three_letters(generator):
+    assert {"ab", "ac", "bc"} == generator.generate("abc")
