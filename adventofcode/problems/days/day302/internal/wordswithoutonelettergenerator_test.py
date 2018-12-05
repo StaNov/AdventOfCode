@@ -18,3 +18,7 @@ def test_two_letters_word(generator):
 
 def test_three_letters(generator):
     assert {"ab", "ac", "bc"} == generator.generate("abc")
+
+
+def test_double_letters_dont_generate_more_words(generator):
+    assert {"bbc", "abc", "abb"} == generator.generate("abbc")
