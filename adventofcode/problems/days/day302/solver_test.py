@@ -18,3 +18,7 @@ def test_2_three_letters(solver):
 
 def test_2_three_letters_another_order(solver):
     assert "ac" == solver.solve_2(["axc", "ayc"])
+
+
+def test_2_more_letters(solver):
+    assert "abcdefg" == solver.solve_2(["abcdexfg", "abcdeyfg"])
