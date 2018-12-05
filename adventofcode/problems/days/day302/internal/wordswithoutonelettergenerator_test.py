@@ -1,5 +1,12 @@
+import pytest
+
 from . import WordsWithoutOneLetterGenerator
 
 
-def test_empty_string():
-    assert [] == WordsWithoutOneLetterGenerator().generate("")
+@pytest.fixture
+def generator():
+    return WordsWithoutOneLetterGenerator()
+
+
+def test_empty_string(generator):
+    assert [] == generator.generate("")
