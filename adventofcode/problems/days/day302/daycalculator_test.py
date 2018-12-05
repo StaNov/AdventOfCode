@@ -23,8 +23,6 @@ def test_main_1(calculator):
     assert 5000 == calculator.calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
 def test_example_2_1(calculator):
     assert "fgij" == DayCalculator(
         "abcde\n"
