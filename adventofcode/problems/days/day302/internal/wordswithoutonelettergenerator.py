@@ -1,4 +1,4 @@
 class WordsWithoutOneLetterGenerator:
 
     def generate(self, input_):
-        return list(input_)
+        return set(input_)
