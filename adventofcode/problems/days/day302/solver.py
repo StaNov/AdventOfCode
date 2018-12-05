@@ -21,6 +21,4 @@ class Solver(AbstractSolver):
         return doubles_count * triples_count
 
     def _solve_2_internal(self, input_):
-        # TODO
-        # return self.helper.has_two_same_letters(input_)
-        return 0
+        return "a"
