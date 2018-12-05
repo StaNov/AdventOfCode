@@ -22,9 +22,8 @@ class Solver(AbstractSolver):
     def _solve_2_internal(self, input_):
         potential_solutions = set()
 
-        for word in input_:
-            words_without_one_letter = WordsWithoutOneLetterGenerator(word).generate()
-            for word_without_letter in words_without_one_letter:
+        for line in input_:
+            for word_without_letter in WordsWithoutOneLetterGenerator(line).generate():
                 if word_without_letter in potential_solutions:
                     return word_without_letter
 
