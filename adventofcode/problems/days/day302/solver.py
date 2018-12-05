@@ -21,4 +21,5 @@ class Solver(AbstractSolver):
         return doubles_count * triples_count
 
     def _solve_2_internal(self, input_):
-        return "a"
+        first_word = input_[0]
+        return first_word[:-1]
