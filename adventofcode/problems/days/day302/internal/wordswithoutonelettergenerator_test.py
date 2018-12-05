@@ -10,3 +10,7 @@ def generator():
 
 def test_empty_string(generator):
     assert [] == generator.generate("")
+
+
+def test_two_letters_word(generator):
+    assert ["a", "b"] == generator.generate("ab")
