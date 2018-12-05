@@ -22,3 +22,7 @@ def test_2_three_letters_another_order(solver):
 
 def test_2_more_letters(solver):
     assert "abcdefg" == solver.solve_2(["abcdexfg", "abcdeyfg"])
+
+
+def test_2_more_words(solver):
+    assert "abcd" == solver.solve_2(["abcxd", "otherWord", "abcyd"])
