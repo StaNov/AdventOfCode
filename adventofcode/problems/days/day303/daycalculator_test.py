@@ -8,9 +8,17 @@ def calculator():
     return DayCalculator()
 
 
+def test_example_1_empty_input(calculator):
+    assert 0 == DayCalculator("").calculate_part_1()
+
+
+# TODO
+@pytest.mark.skip
 def test_example_1_1(calculator):
-    # TODO
-    assert 0 == DayCalculator("Part 1, example 1").calculate_part_1()
+    assert 4 == DayCalculator(
+        "#1 @ 1,3: 4x4\n"
+        "#2 @ 3,1: 4x4\n"
+        "#3 @ 5,5: 2x2").calculate_part_1()
 
 
 def test_example_1_2(calculator):
