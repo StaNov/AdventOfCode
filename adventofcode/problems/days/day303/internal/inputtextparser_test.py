@@ -1,6 +1,5 @@
 from .inputtextparser import InputTextParser
 
 
-def test_parse():
-    # TODO
-    assert ["abc", "def", "ghi"] == InputTextParser().parse("abc\ndef\nghi")
+def test_parse_empty_input():
+    assert [] == InputTextParser().parse("")
