@@ -53,3 +53,9 @@ def test_more_patches(santa_suit):
     santa_suit.saw_patch(SantaSuitPiece(4, 6, 6, 2, 2))
 
     assert 2 == santa_suit.get_overlapping_count()
+
+
+def test_one_patch_is_intact(santa_suit):
+    santa_suit.saw_patch(SantaSuitPiece(1, 1, 1, 2, 2))
+
+    assert 1 == santa_suit.get_intact_patch_id()

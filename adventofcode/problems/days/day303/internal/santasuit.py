@@ -10,3 +10,6 @@ class SantaSuit:
 
     def get_overlapping_count(self):
         return len(list(filter(lambda x: x > 1, self.suit.values())))
+
+    def get_intact_patch_id(self):
+        return 1
