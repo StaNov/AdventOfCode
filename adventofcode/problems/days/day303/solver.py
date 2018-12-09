@@ -8,7 +8,10 @@ class Solver(AbstractSolver):
         self.helper = HelperClass()
 
     def _solve_1_internal(self, input_):
-        return 0 if len(input_) < 2 else 1
+        if len(input_) < 2:
+            return 0
+
+        return input_[0].size_x * input_[0].size_y
 
     def _solve_2_internal(self, input_):
         # TODO

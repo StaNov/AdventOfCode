@@ -26,6 +26,13 @@ def test_1_one_piece_does_not_create_overlap(solver):
     ])
 
 
+def test_1_bigger_overlap(solver):
+    assert 2 == solver.solve_1([
+        SantaSuitPiece(1, 1, 1, 1, 2),
+        SantaSuitPiece(2, 1, 1, 1, 2),
+    ])
+
+
 def test_2_something(solver):
     # TODO
     assert 0 == solver.solve_2("test test")
