@@ -11,11 +11,8 @@ class Solver(AbstractSolver):
         if len(input_) < 2:
             return 0
 
-        patch_1 = input_[0]
-        patch_2 = input_[1]
-
-        self.santa_suit.saw_patch(patch_1)
-        self.santa_suit.saw_patch(patch_2)
+        for patch in input_:
+            self.santa_suit.saw_patch(patch)
 
         return self.santa_suit.get_overlapping_count()
 
