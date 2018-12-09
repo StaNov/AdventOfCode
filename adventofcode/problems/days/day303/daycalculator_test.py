@@ -29,22 +29,16 @@ def test_main_1(calculator):
     assert 111266 == calculator.calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
-def test_example_2_1(calculator):
+def test_example_2_one_patch_always_intact(calculator):
     assert 1 == DayCalculator("#1 @ 1,1: 2x2").calculate_part_2()
 
 
-# TODO
-@pytest.mark.skip
-def test_example_2_2(calculator):
+def test_example_2_full_example(calculator):
     assert 3 == DayCalculator(
         "#1 @ 1,3: 4x4\n"
         "#2 @ 3,1: 4x4\n"
         "#3 @ 5,5: 2x2").calculate_part_2()
 
 
-# TODO
-@pytest.mark.skip
 def test_main_2(calculator):
-    assert 0 == calculator.calculate_part_2()
+    assert 266 == calculator.calculate_part_2()
