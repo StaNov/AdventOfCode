@@ -20,6 +20,12 @@ def test_1_one_overlapping_square(solver):
     ])
 
 
+def test_1_one_piece_does_not_create_overlap(solver):
+    assert 0 == solver.solve_1([
+        SantaSuitPiece(1, 1, 1, 1, 1),
+    ])
+
+
 def test_2_something(solver):
     # TODO
     assert 0 == solver.solve_2("test test")
