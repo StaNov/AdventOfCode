@@ -32,13 +32,16 @@ def test_main_1(calculator):
 # TODO
 @pytest.mark.skip
 def test_example_2_1(calculator):
-    assert 0 == DayCalculator("Part 2, example 1").calculate_part_2()
+    assert 1 == DayCalculator("#1 @ 1,1: 2x2").calculate_part_2()
 
 
 # TODO
 @pytest.mark.skip
 def test_example_2_2(calculator):
-    assert 0 == DayCalculator("Part 2, example 2").calculate_part_2()
+    assert 3 == DayCalculator(
+        "#1 @ 1,3: 4x4\n"
+        "#2 @ 3,1: 4x4\n"
+        "#3 @ 5,5: 2x2").calculate_part_2()
 
 
 # TODO
