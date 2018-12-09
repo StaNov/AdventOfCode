@@ -8,9 +8,6 @@ class Solver(AbstractSolver):
         self.santa_suit = SantaSuit()
 
     def _solve_1_internal(self, input_):
-        if len(input_) < 2:
-            return 0
-
         for patch in input_:
             self.santa_suit.saw_patch(patch)
 
