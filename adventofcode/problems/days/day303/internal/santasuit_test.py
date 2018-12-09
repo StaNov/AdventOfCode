@@ -44,3 +44,12 @@ def test_different_position_some_overlap(santa_suit):
     santa_suit.saw_patch(SantaSuitPiece(2, 2, 2, 2, 2))
 
     assert 1 == santa_suit.get_overlapping_count()
+
+
+def test_more_patches(santa_suit):
+    santa_suit.saw_patch(SantaSuitPiece(1, 1, 1, 2, 2))
+    santa_suit.saw_patch(SantaSuitPiece(2, 5, 5, 2, 2))
+    santa_suit.saw_patch(SantaSuitPiece(3, 2, 2, 2, 2))
+    santa_suit.saw_patch(SantaSuitPiece(4, 6, 6, 2, 2))
+
+    assert 2 == santa_suit.get_overlapping_count()
