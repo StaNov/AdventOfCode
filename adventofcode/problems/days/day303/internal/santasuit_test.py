@@ -59,3 +59,11 @@ def test_one_patch_is_intact(santa_suit):
     santa_suit.saw_patch(SantaSuitPiece(1, 1, 1, 2, 2))
 
     assert 1 == santa_suit.get_intact_patch_id()
+
+
+def test_three_patches_last_intact(santa_suit):
+    santa_suit.saw_patch(SantaSuitPiece(1, 1, 1, 2, 2))
+    santa_suit.saw_patch(SantaSuitPiece(2, 1, 1, 2, 2))
+    santa_suit.saw_patch(SantaSuitPiece(3, 9, 9, 2, 2))
+
+    assert 3 == santa_suit.get_intact_patch_id()
