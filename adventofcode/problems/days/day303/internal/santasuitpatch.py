@@ -1,4 +1,4 @@
-class SantaSuitPiece:
+class SantaSuitPatch:
     def __init__(self, patch_id, position_x, position_y, size_x, size_y) -> None:
         super().__init__()
         self.id = int(patch_id)

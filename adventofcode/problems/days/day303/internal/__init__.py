@@ -1,3 +1,3 @@
 from .inputtextparser import InputTextParser
 from .santasuit import SantaSuit
-from .santasuitpiece import SantaSuitPiece
+from .santasuitpatch import SantaSuitPatch

@@ -2,7 +2,7 @@ import re
 
 from adventofcode.problems.framework import DefaultInputTextParser
 # TODO why doesn't work "from . import" ?
-from .santasuitpiece import SantaSuitPiece
+from .santasuitpatch import SantaSuitPatch
 
 
 class InputTextParser(DefaultInputTextParser):
@@ -19,4 +19,4 @@ class InputTextParser(DefaultInputTextParser):
 def parse_line(line):
     groups = re.match(r"#(\d+) @ (\d+),(\d+): (\d+)x(\d+)", line).groups()
     piece_id, position_x, position_y, size_x, size_y = groups
-    return SantaSuitPiece(piece_id, position_x, position_y, size_x, size_y)
+    return SantaSuitPatch(piece_id, position_x, position_y, size_x, size_y)
