@@ -21,7 +21,7 @@ class InputTextParser(DefaultInputTextParser):
         return name, int(number), subprograms
 
     def parse_name_and_number(self, name_and_number):
-        match = re.fullmatch("(.+) \((\d+)\)", name_and_number)
+        match = re.fullmatch(r"(.+) \((\d+)\)", name_and_number)
         name, number = match.groups()
         return name, number
 

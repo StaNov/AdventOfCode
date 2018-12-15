@@ -3,7 +3,7 @@ import re
 
 class LineParser:
 
-    pattern = "\[(.+?)\]"
+    pattern = r"\[(.+?)\]"
     separator = "|"
 
     @staticmethod

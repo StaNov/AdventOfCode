@@ -2,13 +2,14 @@ import pytest
 
 from .solver import Solver
 
-test_input =\
-    "7\n"\
-    "3\n"\
-    "rect 3x2\n"\
-    "rotate column x=1 by 1\n"\
-    "rotate row y=0 by 4\n"\
+test_input = (
+    "7\n"
+    "3\n"
+    "rect 3x2\n"
+    "rotate column x=1 by 1\n"
+    "rotate row y=0 by 4\n"
     "rotate column x=1 by 1"
+)
 
 
 @pytest.fixture
@@ -32,7 +33,8 @@ def test_1_single_rect(solver):
 
 
 def test_2_1(solver):
-    assert solver.solve_2(test_input) == \
-        " X  X X\n"\
-        "X X    \n"\
+    assert solver.solve_2(test_input) == (
+        " X  X X\n"
+        "X X    \n"
         " X     \n"
+    )

@@ -2,12 +2,12 @@ import os
 import re
 
 VALID_FOLDER_NAMES_SUBREGEXES = [
-    "day\d+",
-    "template",
-    "__pycache__",
-    ".pytest_cache",
-    ".cache",
-    "__init__.py",
+    r"day\d+",
+    r"template",
+    r"__pycache__",
+    r".pytest_cache",
+    r".cache",
+    r"__init__.py",
 ]
 
 VALID_FOLDER_NAMES_REGEX = str.join("|", VALID_FOLDER_NAMES_SUBREGEXES)

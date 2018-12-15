@@ -61,7 +61,7 @@ class CommandProcessor:
 
 class RectCommandProcessor(CommandProcessor):
     def __init__(self, command):
-        match = re.fullmatch("rect (\w+)x(\w+)", command)
+        match = re.fullmatch(r"rect (\w+)x(\w+)", command)
 
         self.rect_width = int(match.group(1))
         self.rect_height = int(match.group(2))
@@ -74,7 +74,7 @@ class RectCommandProcessor(CommandProcessor):
 
 class RotateRowCommandProcessor(CommandProcessor):
     def __init__(self, command):
-        match = re.fullmatch("rotate row y=(\w+) by (\w+)", command)
+        match = re.fullmatch(r"rotate row y=(\w+) by (\w+)", command)
 
         self.row = int(match.group(1))
         self.by = int(match.group(2))
@@ -93,7 +93,7 @@ class RotateRowCommandProcessor(CommandProcessor):
 
 class RotateColumnCommandProcessor(CommandProcessor):
     def __init__(self, command):
-        match = re.fullmatch("rotate column x=(\w+) by (\w+)", command)
+        match = re.fullmatch(r"rotate column x=(\w+) by (\w+)", command)
 
         self.column = int(match.group(1))
         self.by = int(match.group(2))

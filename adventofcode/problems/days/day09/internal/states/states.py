@@ -28,7 +28,7 @@ class StateReadingParenthesesContent(LettersProcessorState):
             self.parentheses_content = self.parentheses_content + letter
             return
 
-        match = re.fullmatch("(\w+)x(\w+)", self.parentheses_content)
+        match = re.fullmatch(r"(\w+)x(\w+)", self.parentheses_content)
 
         if match is None:
             raise Exception("Bad format of parentheses content: " + self.parentheses_content)
