@@ -12,3 +12,9 @@ def test_create_ore_mine_with_one_car():
     cars = mine.cars
     assert 1 == len(cars)
     assert (0, 0) == cars[0].position
+
+
+def test_create_car_moves_down_after_one_step():
+    mine = OreMine([Car((0, 0))])
+    mine.simulate_step()
+    assert (0, 1) == mine.cars[0].position
