@@ -1,5 +1,6 @@
 import pytest
 
+from adventofcode.problems.framework import testsuite
 from .daycalculator import DayCalculator
 
 
@@ -25,6 +26,7 @@ def test_example_1_1(calculator):
         "#3 @ 5,5: 2x2").calculate_part_1()
 
 
+@testsuite.time_expensive
 def test_main_1(calculator):
     assert 111266 == calculator.calculate_part_1()
 
@@ -40,5 +42,6 @@ def test_example_2_full_example(calculator):
         "#3 @ 5,5: 2x2").calculate_part_2()
 
 
+@testsuite.time_expensive
 def test_main_2(calculator):
     assert 266 == calculator.calculate_part_2()
