@@ -9,9 +9,11 @@ def calculator():
 
 
 def test_example_1_1(calculator):
-    assert "3,1" == DayCalculator(
+    assert "3,3" == DayCalculator(
         r" /-\ " "\n"
         r" | v " "\n"
+        r" | | " "\n"
+        r" | | " "\n"
         r" | ^ " "\n"
         r" \-/ " "\n"
     ).calculate_part_1()
@@ -20,10 +22,10 @@ def test_example_1_1(calculator):
 # TODO
 @pytest.mark.skip
 def test_example_1_2(calculator):
-    assert "3,0" == DayCalculator(
-        r" /><\ " "\n"
-        r" |  | " "\n"
-        r" \--/ " "\n"
+    assert "4,0" == DayCalculator(
+        r" />---<\ " "\n"
+        r" |     | " "\n"
+        r" \-----/ " "\n"
     ).calculate_part_1()
 
 

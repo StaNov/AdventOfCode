@@ -9,7 +9,7 @@ class Solver(AbstractSolver):
 
     def _solve_1_internal(self, input_):
         # TODO
-        return "3,1"
+        return "3,3"
 
     def _solve_2_internal(self, input_):
         # TODO
