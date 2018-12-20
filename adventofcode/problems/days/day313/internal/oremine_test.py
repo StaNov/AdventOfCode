@@ -3,17 +3,12 @@ import time
 import pytest
 
 from adventofcode.problems.framework import testsuite
-from . import HelperClass
+from . import OreMine
 
 
-@pytest.fixture
-def helper():
-    return HelperClass()
-
-
-def test_helper_method(helper):
-    # TODO
-    assert 0 == helper.helper_method("test")
+def test_create_empty_ore_mine():
+    cars = OreMine([]).cars
+    assert 0 == len(cars)
 
 
 def test_with_exception():
