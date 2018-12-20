@@ -20,13 +20,35 @@ def test_example_1_1(calculator):
 # TODO
 @pytest.mark.skip
 def test_example_1_2(calculator):
+    assert "3,0" == DayCalculator(
+        r" /><\ " "\n"
+        r" |  | " "\n"
+        r" \--/ " "\n"
+    ).calculate_part_1()
+
+
+# TODO
+@pytest.mark.skip
+def test_example_1_3(calculator):
+    assert "1,1" == DayCalculator(
+        r" /-<\ " "\n"
+        r" |  | " "\n"
+        r" |  | " "\n"
+        r" ^  | " "\n"
+        r" \--/ " "\n"
+    ).calculate_part_1()
+
+
+# TODO
+@pytest.mark.skip
+def test_example_1_4(calculator):
     assert "7,3" == DayCalculator(
-        r"/->-\         "
-        r"|   |  /----\ "
-        r"| /-+--+-\  | "
-        r"| | |  | v  | "
-        r"\-+-/  \-+--/ "
-        r"  \------/    "
+        r"/->-\         " "\n"
+        r"|   |  /----\ " "\n"
+        r"| /-+--+-\  | " "\n"
+        r"| | |  | v  | " "\n"
+        r"\-+-/  \-+--/ " "\n"
+        r"  \------/    " "\n"
     ).calculate_part_1()
 
 
