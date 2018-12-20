@@ -12,9 +12,9 @@ def test_create_empty_ore_mine():
     assert 0 == len(cars)
 
 
-def test_create_ore_mine_with_two_cars():
-    cars = OreMine([Car((0, 0)), Car((1, 1))]).cars
-    assert 2 == len(cars)
+def test_create_ore_mine_with_one_car():
+    cars = OreMine([Car((0, 0))]).cars
+    assert 1 == len(cars)
 
 
 def test_with_exception():
