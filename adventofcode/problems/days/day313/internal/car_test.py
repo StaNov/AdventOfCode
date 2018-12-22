@@ -4,7 +4,7 @@ from .car import Car
 class DirectionSpy:
     APPLY_ON_RESULT = 50, 60
 
-    def __init__(self) -> None:
+    def __init__(self):
         super().__init__()
         self.applied_on = None
 
