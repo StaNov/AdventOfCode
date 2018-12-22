@@ -3,5 +3,5 @@ class OreMine:
         self.cars = cars
 
     def simulate_step(self):
-        car = self.cars[0]
-        car.move()
+        for car in self.cars:
+            car.move()
