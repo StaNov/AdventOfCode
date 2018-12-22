@@ -1,14 +1,13 @@
 from . import OreMine
-from .car import Car
 
 
-class DirectionSpy:
-    def __init__(self) -> None:
+class CarSpy:
+    def __init__(self):
         super().__init__()
-        self.applied_on = None
+        self.moved = False
 
-    def apply_on(self, argument):
-        self.applied_on = argument
+    def move(self):
+        self.moved = True
 
 
 def test_create_empty_ore_mine():
@@ -17,16 +16,17 @@ def test_create_empty_ore_mine():
 
 
 def test_create_ore_mine_with_one_car():
-    mine = OreMine([Car((0, 0), DirectionSpy())])
-    cars = mine.cars
-    assert 1 == len(cars)
+    car = CarSpy()
+    mine = OreMine([car])
 
-    car = cars[0]
-    assert (0, 0) == car.position
-    assert None is car.direction.applied_on
+    assert 1 == len(mine.cars)
+    assert not car.moved
 
 
 def test_car_moves_after_one_step():
-    mine = OreMine([Car((0, 0), DirectionSpy())])
+    car = CarSpy()
+    mine = OreMine([car])
+
     mine.simulate_step()
-    assert (0, 0) == mine.cars[0].direction.applied_on
+
+    assert car.moved

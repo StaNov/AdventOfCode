@@ -4,4 +4,4 @@ class OreMine:
 
     def simulate_step(self):
         car = self.cars[0]
-        car.position = car.direction.apply_on(car.position)
+        car.move()
