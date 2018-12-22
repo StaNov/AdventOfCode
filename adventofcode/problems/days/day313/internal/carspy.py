@@ -1,9 +1,8 @@
 class CarSpy:
-    POSITION_NOT_SPECIFIED = (-1, -1)
-
-    def __init__(self, position=POSITION_NOT_SPECIFIED):
+    def __init__(self, position=(-1, -1), move_by=(0, 0)):
         super().__init__()
         self.position = position
+        self.move_by = move_by
         self.moved = False
         self.those_must_move_after_this = []
         self.those_must_move_before_this = []
@@ -11,10 +10,7 @@ class CarSpy:
     def move(self):
         self.moved = True
 
-        self.position = (
-            self.position[0] + 1,
-            self.position[1] + 1
-        )
+        self.position = tuple(map(sum, zip(self.position, self.move_by)))
 
         for before in self.those_must_move_before_this:
             assert before.moved, "Not all cars were moved that should move before this one."

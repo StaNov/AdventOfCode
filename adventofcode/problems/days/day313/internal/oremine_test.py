@@ -57,7 +57,7 @@ def test_cars_move_in_correct_order():
 
 
 def test_moving_to_occupied_position_causes_collision():
-    car_1 = CarSpy((0, 0))
+    car_1 = CarSpy((0, 0), (1, 1))
     car_2 = CarSpy((1, 1))
 
     mine = OreMine([car_1, car_2])
