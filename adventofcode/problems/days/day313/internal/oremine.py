@@ -3,4 +3,8 @@ class OreMine:
         self.cars = cars
 
     def simulate_step(self):
-        self.cars[0].position = 0, 1
+        previous_x, previous_y = self.cars[0].position
+        self.cars[0].position = (
+            previous_x,
+            previous_y + 1
+        )
