@@ -1,6 +1,14 @@
-from adventofcode.problems.days.day313.internal.direction import Direction
 from . import OreMine
 from .car import Car
+
+
+class DirectionSpy:
+    def __init__(self) -> None:
+        super().__init__()
+        self.applied_on = None
+
+    def apply_on(self, argument):
+        self.applied_on = argument
 
 
 def test_create_empty_ore_mine():
@@ -9,25 +17,16 @@ def test_create_empty_ore_mine():
 
 
 def test_create_ore_mine_with_one_car():
-    mine = OreMine([Car((0, 0), Direction.DOWN)])
+    mine = OreMine([Car((0, 0), DirectionSpy())])
     cars = mine.cars
     assert 1 == len(cars)
-    assert (0, 0) == cars[0].position
+
+    car = cars[0]
+    assert (0, 0) == car.position
+    assert None is car.direction.applied_on
 
 
 def test_car_moves_down_after_one_step():
-    mine = OreMine([Car((0, 0), Direction.DOWN)])
+    mine = OreMine([Car((0, 0), DirectionSpy())])
     mine.simulate_step()
-    assert (0, 1) == mine.cars[0].position
-
-
-def test_car_moves_down_after_one_step_another_location():
-    mine = OreMine([Car((5, 5), Direction.DOWN)])
-    mine.simulate_step()
-    assert (5, 6) == mine.cars[0].position
-
-
-def test_car_moves_up_after_one_step():
-    mine = OreMine([Car((4, 2), Direction.UP)])
-    mine.simulate_step()
-    assert (4, 1) == mine.cars[0].position
+    assert (0, 0) == mine.cars[0].direction.applied_on
