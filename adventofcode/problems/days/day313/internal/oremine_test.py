@@ -1,8 +1,10 @@
-from . import OreMine
+from .oremine import OreMine, CollisionHappened
 
 
 class CarSpy:
-    def __init__(self, position=(0, 0)):
+    POSITION_NOT_SPECIFIED = (-1, -1)
+
+    def __init__(self, position=POSITION_NOT_SPECIFIED):
         super().__init__()
         self.position = position
         self.moved = False
@@ -11,6 +13,11 @@ class CarSpy:
 
     def move(self):
         self.moved = True
+
+        self.position = (
+            self.position[0] + 1,
+            self.position[1] + 1
+        )
 
         for before in self.those_must_move_before_this:
             assert before.moved, "Not all cars were moved that should move before this one."
@@ -48,9 +55,9 @@ def test_car_moves_after_one_step():
 
 
 def test_all_cars_move_after_one_step():
-    car_1 = CarSpy()
-    car_2 = CarSpy()
-    car_3 = CarSpy()
+    car_1 = CarSpy((0, 0))
+    car_2 = CarSpy((0, 1))
+    car_3 = CarSpy((0, 2))
     mine = OreMine([car_1, car_2, car_3])
 
     mine.simulate_step()
@@ -77,3 +84,16 @@ def test_cars_move_in_correct_order():
     assert car_3.moved
     assert car_1.moved
     assert car_2.moved
+
+
+def test_moving_to_occupied_position_causes_collision():
+    car_1 = CarSpy((0, 0))
+    car_2 = CarSpy((1, 1))
+
+    mine = OreMine([car_1, car_2])
+
+    try:
+        mine.simulate_step()
+        assert False, "Collision not detected!"
+    except CollisionHappened as e:
+        assert (1, 1) == e.collision_position
