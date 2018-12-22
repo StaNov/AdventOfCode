@@ -13,3 +13,9 @@ class Direction(Enum):
                 original_x,
                 original_y + 1
             )
+
+        if self is Direction.UP:
+            return (
+                original_x,
+                original_y - 1
+            )
