@@ -15,6 +15,13 @@ class OreMine:
         if same_position_count > 1:
             raise CollisionHappened(car.position)
 
+    def simulate_until_first_collision(self):
+        try:
+            while True:
+                self.simulate_step()
+        except CollisionHappened as collision:
+            return collision.collision_position
+
 
 class CollisionHappened(BaseException):
     def __init__(self, collision_position, *args: object):

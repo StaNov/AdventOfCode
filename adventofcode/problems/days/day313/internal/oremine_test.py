@@ -67,3 +67,12 @@ def test_moving_to_occupied_position_causes_collision():
         assert False, "Collision not detected!"
     except CollisionHappened as e:
         assert (1, 1) == e.collision_position
+
+
+def test_simulate_until_collision_happens():
+    car_1 = CarSpy((0, 0), (1, 1))
+    car_2 = CarSpy((10, 10))
+
+    mine = OreMine([car_1, car_2])
+
+    assert (10, 10) == mine.simulate_until_first_collision()
