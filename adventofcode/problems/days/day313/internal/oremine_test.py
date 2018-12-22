@@ -26,7 +26,7 @@ def test_create_ore_mine_with_one_car():
     assert None is car.direction.applied_on
 
 
-def test_car_moves_down_after_one_step():
+def test_car_moves_after_one_step():
     mine = OreMine([Car((0, 0), DirectionSpy())])
     mine.simulate_step()
     assert (0, 0) == mine.cars[0].direction.applied_on
