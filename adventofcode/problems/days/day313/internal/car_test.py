@@ -26,5 +26,5 @@ def test_car_moves_after_one_step():
 
     car.move()
 
-    assert (10, 20) == direction.applied_on
     assert DirectionSpy.APPLY_ON_RESULT == car.position
+    assert (10, 20) == direction.applied_on
