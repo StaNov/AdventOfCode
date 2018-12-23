@@ -5,12 +5,31 @@ import pytest
 
 
 def run_tests(params):
-    exit_code = pytest.main(params)
-    sys.exit(exit_code)
+    return pytest.main(params)
 
 
 def _script_called_without_arguments():
     return len(sys.argv) == 1
+
+
+def run_tests_all():
+    return run_tests([
+        "--timeout", "10"  # in seconds
+    ])
+
+
+def run_tests_only_expensive():
+    return run_tests([
+        "-m", "time_expensive",
+        "--timeout", "10"  # in seconds
+    ])
+
+
+def run_tests_only_cheap():
+    return run_tests([
+        "-m", "not time_expensive",
+        "--timeout", "1"  # in seconds
+    ])
 
 
 if __name__ == "__main__":
@@ -36,20 +55,15 @@ if __name__ == "__main__":
 
     if args.all:
         print("Running all tests...")
-        run_tests([
-            "--timeout", "10"  # in seconds
-        ])
+        exit_code = run_tests_all()
+        sys.exit(exit_code)
 
     if args.onlyexpensive:
         print("Running only expensive tests...")
-        run_tests([
-            "-m", "time_expensive",
-            "--timeout", "10"  # in seconds
-        ])
+        exit_code = run_tests_only_expensive()
+        sys.exit(exit_code)
 
     if args.onlycheap or _script_called_without_arguments():
         print("Running only cheap tests...")
-        run_tests([
-            "-m", "not time_expensive",
-            "--timeout", "1"  # in seconds
-        ])
+        exit_code = run_tests_only_cheap()
+        sys.exit(exit_code)
