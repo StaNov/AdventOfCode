@@ -1,3 +1,4 @@
+from .direction import Direction
 from .inputtextparser import InputTextParser
 
 
@@ -19,8 +20,12 @@ def test_one_car_facing_up_another_position():
         "  ^  "
     )
 
-    assert len(parsed.cars) == 1
-    assert parsed.cars[0].position == (2, 1)
+    cars = parsed.cars
+    assert len(cars) == 1
+
+    car = cars[0]
+    assert car.position == (2, 1)
+    assert car.direction is Direction.UP
 
 
 def test_more_cars():
