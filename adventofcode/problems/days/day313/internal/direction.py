@@ -27,3 +27,9 @@ class Direction(Enum):
                 original_x + 1,
                 original_y
             )
+
+        if self is Direction.LEFT:
+            return (
+                original_x - 1,
+                original_y
+            )
