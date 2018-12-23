@@ -1,3 +1,6 @@
+from .roadtype import RoadType
+
+
 class OreMine:
     def __init__(self, cars):
         self.cars = cars
@@ -8,12 +11,7 @@ class OreMine:
         for car in self.cars:
             car.move()
             self._check_collisions(car)
-
-            class StraightRoadType:
-                def rotate(self, direction):
-                    return direction
-
-            car.turn(StraightRoadType())
+            car.turn(RoadType.STRAIGHT)
 
     def _check_collisions(self, car):
         same_position_count = sum(car.position == c.position for c in self.cars)
