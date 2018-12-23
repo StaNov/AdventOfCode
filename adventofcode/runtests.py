@@ -36,12 +36,20 @@ if __name__ == "__main__":
 
     if args.all:
         print("Running all tests...")
-        run_tests([])
+        run_tests([
+            "--timeout", "10"  # in seconds
+        ])
 
     if args.onlyexpensive:
         print("Running only expensive tests...")
-        run_tests(["-m", "time_expensive"])
+        run_tests([
+            "-m", "time_expensive",
+            "--timeout", "10"  # in seconds
+        ])
 
     if args.onlycheap or _script_called_without_arguments():
         print("Running only cheap tests...")
-        run_tests(["-m", "not time_expensive"])
+        run_tests([
+            "-m", "not time_expensive",
+            "--timeout", "1"  # in seconds
+        ])
