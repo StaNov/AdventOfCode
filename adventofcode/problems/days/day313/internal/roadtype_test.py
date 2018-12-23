@@ -15,3 +15,10 @@ def test_left_to_up_turns_left_to_up():
     final_rotation = RoadType.LEFT_TO_UP.rotate(initial_rotation)
 
     assert final_rotation is Direction.UP
+
+
+def test_left_to_up_turns_down_to_right():
+    initial_rotation = Direction.DOWN
+    final_rotation = RoadType.LEFT_TO_UP.rotate(initial_rotation)
+
+    assert final_rotation is Direction.RIGHT
