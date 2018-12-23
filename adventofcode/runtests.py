@@ -14,14 +14,14 @@ def _script_called_without_arguments():
 
 def run_tests_all():
     return run_tests([
-        "--timeout", "20"  # in seconds
+        "--timeout", "30"  # in seconds
     ])
 
 
 def run_tests_only_expensive():
     return run_tests([
         "-m", "time_expensive",
-        "--timeout", "20"  # in seconds
+        "--timeout", "30"  # in seconds
     ])
 
 
