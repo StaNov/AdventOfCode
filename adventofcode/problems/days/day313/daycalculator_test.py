@@ -8,7 +8,7 @@ def calculator():
     return DayCalculator()
 
 
-def test_example_1_1(calculator):
+def test_example_1_vertical_collision(calculator):
     assert "3,3" == DayCalculator(
         r" /-\ " "\n"
         r" | v " "\n"
@@ -19,9 +19,7 @@ def test_example_1_1(calculator):
     ).calculate_part_1()
 
 
-# TODO
-@pytest.mark.skip
-def test_example_1_2(calculator):
+def test_example_1_horizontal_collision(calculator):
     assert "4,0" == DayCalculator(
         r" />---<\ " "\n"
         r" |     | " "\n"
@@ -31,7 +29,7 @@ def test_example_1_2(calculator):
 
 # TODO
 @pytest.mark.skip
-def test_example_1_3(calculator):
+def test_example_1_corner_collision(calculator):
     assert "1,1" == DayCalculator(
         r" /-<\ " "\n"
         r" |  | " "\n"
@@ -43,7 +41,7 @@ def test_example_1_3(calculator):
 
 # TODO
 @pytest.mark.skip
-def test_example_1_4(calculator):
+def test_example_1_full(calculator):
     assert "7,3" == DayCalculator(
         r"/->-\         " "\n"
         r"|   |  /----\ " "\n"
