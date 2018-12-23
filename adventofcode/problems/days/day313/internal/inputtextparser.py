@@ -5,12 +5,16 @@ from adventofcode.problems.framework import DefaultInputTextParser
 
 
 class InputTextParser(DefaultInputTextParser):
-    def parse(self, input_string):
-        cars = []
+    def __init__(self):
+        self.cars = []
 
+    def parse(self, input_string):
         for y, line in enumerate(input_string.splitlines()):
             for x, letter in enumerate(line):
-                if letter == "^":
-                    cars.append(Car((x, y), Direction.UP))
+                self.process_letter(letter, (x, y))
 
-        return OreMine(cars)
+        return OreMine(self.cars)
+
+    def process_letter(self, letter, position):
+        if letter == "^":
+            self.cars.append(Car(position, Direction.UP))
