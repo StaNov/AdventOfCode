@@ -7,7 +7,7 @@ sudo: required
 dist: xenial
 
 script:
-  - python adventofcode/runtests.py --onlycheap
-  - python adventofcode/runtests.py --onlyexpensive
-  - python adventofcode/profile.py
+  - python -m adventofcode.runtests --onlycheap
+  - python -m adventofcode.runtests --onlyexpensive
+  - python -m adventofcode.profile
   - coverage run adventofcode/runtests.py --all && coverage xml && python-codacy-coverage -r coverage.xml
