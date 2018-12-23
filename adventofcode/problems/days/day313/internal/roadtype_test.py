@@ -10,6 +10,13 @@ def test_straight_does_not_change_direction():
     assert final_rotation is initial_rotation
 
 
+def test_left_to_up_turns_up_to_left():
+    initial_rotation = Direction.UP
+    final_rotation = RoadType.LEFT_TO_UP.rotate(initial_rotation)
+
+    assert final_rotation is Direction.LEFT
+
+
 def test_left_to_up_turns_left_to_up():
     initial_rotation = Direction.LEFT
     final_rotation = RoadType.LEFT_TO_UP.rotate(initial_rotation)
