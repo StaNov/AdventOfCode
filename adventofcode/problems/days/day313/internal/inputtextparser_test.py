@@ -37,3 +37,14 @@ def test_more_cars():
     parsed_positions = map(lambda car: car.position, parsed.cars)
 
     assert set(parsed_positions) == {(1, 0), (4, 0), (0, 1), (2, 1)}
+
+
+def test_direction_down():
+    parsed = InputTextParser().parse("v")
+
+    cars = parsed.cars
+    assert len(cars) == 1
+
+    car = cars[0]
+    assert car.position == (0, 0)
+    assert car.direction is Direction.DOWN

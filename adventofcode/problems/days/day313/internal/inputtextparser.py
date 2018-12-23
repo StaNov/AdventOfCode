@@ -16,5 +16,8 @@ class InputTextParser(DefaultInputTextParser):
         return OreMine(self.cars)
 
     def process_letter(self, letter, position):
-        if letter == "^":
-            self.cars.append(Car(position, Direction.UP))
+        if letter not in "^v":
+            return
+
+        direction = Direction.UP if letter == "^" else Direction.DOWN
+        self.cars.append(Car(position, direction))
