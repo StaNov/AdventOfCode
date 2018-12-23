@@ -41,10 +41,9 @@ def test_more_cars():
 
 def test_direction_down():
     parsed = InputTextParser().parse("v")
+    assert parsed.cars[0].direction is Direction.DOWN
 
-    cars = parsed.cars
-    assert len(cars) == 1
 
-    car = cars[0]
-    assert car.position == (0, 0)
-    assert car.direction is Direction.DOWN
+def test_direction_right():
+    parsed = InputTextParser().parse(">")
+    assert parsed.cars[0].direction is Direction.RIGHT
