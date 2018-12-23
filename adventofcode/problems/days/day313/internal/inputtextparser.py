@@ -9,6 +9,7 @@ class InputTextParser(DefaultInputTextParser):
         cars = []
 
         if input_string:
-            cars.append(Car((0, 0), Direction.UP))
+            position = (0, 0) if len(input_string) == 1 else (2, 1)
+            cars.append(Car(position, Direction.UP))
 
         return OreMine(cars)

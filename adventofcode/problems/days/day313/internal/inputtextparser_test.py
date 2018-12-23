@@ -11,3 +11,13 @@ def test_one_car_facing_up():
 
     assert len(parsed.cars) == 1
     assert parsed.cars[0].position == (0, 0)
+
+
+def test_one_car_facing_up_another_position():
+    parsed = InputTextParser().parse(
+        "     "
+        "  ^  "
+    )
+
+    assert len(parsed.cars) == 1
+    assert parsed.cars[0].position == (2, 1)
