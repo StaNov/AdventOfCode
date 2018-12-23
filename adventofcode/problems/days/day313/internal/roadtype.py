@@ -14,4 +14,7 @@ class RoadType(Enum):
         if initial_direction is Direction.LEFT:
             return Direction.UP
 
-        return Direction.RIGHT
+        if initial_direction is Direction.DOWN:
+            return Direction.RIGHT
+
+        return Direction.DOWN
