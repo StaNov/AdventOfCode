@@ -4,6 +4,7 @@ class CarSpy:
         self.position = position
         self.move_by = move_by
         self.moved = False
+        self.turned = False
         self.those_must_move_after_this = []
         self.those_must_move_before_this = []
 
@@ -17,6 +18,9 @@ class CarSpy:
 
         for after in self.those_must_move_after_this:
             assert not after.moved, "Some car was incorrectly moved before this one."
+
+    def turn(self, road_type):
+        self.turned = True
 
     def can_move_only_before(self, before):
         self.those_must_move_after_this = before
