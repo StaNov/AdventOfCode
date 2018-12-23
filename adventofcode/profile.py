@@ -6,7 +6,7 @@ from adventofcode import runtests
 
 
 def profile():
-    profiler = Profiler(use_signal=False)
+    profiler = Profiler()
     profiler.start()
 
     exit_code = runtests.run_tests_all()
