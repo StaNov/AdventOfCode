@@ -20,7 +20,7 @@ def test_create_car():
     assert None is car.direction.applied_on
 
 
-def test_car_moves_after_one_step():
+def test_car_moves():
     direction = DirectionSpy()
     car = Car((10, 20), direction)
 
