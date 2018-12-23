@@ -7,14 +7,28 @@ def test_empty_input():
     assert len(parsed.cars) == 0
 
 
-def test_one_car_facing_up():
-    parsed = InputTextParser().parse("^")
-
-    assert len(parsed.cars) == 1
-    assert parsed.cars[0].position == (0, 0)
+def test_direction_up():
+    _assert_direction("^", Direction.UP)
 
 
-def test_one_car_facing_up_another_position():
+def test_direction_down():
+    _assert_direction("v", Direction.DOWN)
+
+
+def test_direction_right():
+    _assert_direction(">", Direction.RIGHT)
+
+
+def test_direction_left():
+    _assert_direction("<", Direction.LEFT)
+
+
+def _assert_direction(letter, expected_direction):
+    parsed = InputTextParser().parse(letter)
+    assert parsed.cars[0].direction is expected_direction
+
+
+def test_one_car_position():
     parsed = InputTextParser().parse(
         "     \n"
         "  ^  "
@@ -22,13 +36,10 @@ def test_one_car_facing_up_another_position():
 
     cars = parsed.cars
     assert len(cars) == 1
-
-    car = cars[0]
-    assert car.position == (2, 1)
-    assert car.direction is Direction.UP
+    assert cars[0].position == (2, 1)
 
 
-def test_more_cars():
+def test_more_cars_positions():
     parsed = InputTextParser().parse(
         " ^  ^\n"
         "^ ^  "
@@ -37,18 +48,3 @@ def test_more_cars():
     parsed_positions = map(lambda car: car.position, parsed.cars)
 
     assert set(parsed_positions) == {(1, 0), (4, 0), (0, 1), (2, 1)}
-
-
-def test_direction_down():
-    parsed = InputTextParser().parse("v")
-    assert parsed.cars[0].direction is Direction.DOWN
-
-
-def test_direction_right():
-    parsed = InputTextParser().parse(">")
-    assert parsed.cars[0].direction is Direction.RIGHT
-
-
-def test_direction_left():
-    parsed = InputTextParser().parse("<")
-    assert parsed.cars[0].direction is Direction.LEFT
