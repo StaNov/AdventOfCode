@@ -7,3 +7,7 @@ def test_apply_direction_down():
 
 def test_apply_direction_up():
     assert Direction.UP.apply_on((10, 20)) == (10, 19)
+
+
+def test_apply_direction_right():
+    assert Direction.RIGHT.apply_on((10, 20)) == (11, 20)
