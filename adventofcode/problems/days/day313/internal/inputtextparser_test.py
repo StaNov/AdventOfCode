@@ -47,3 +47,8 @@ def test_direction_down():
 def test_direction_right():
     parsed = InputTextParser().parse(">")
     assert parsed.cars[0].direction is Direction.RIGHT
+
+
+def test_direction_left():
+    parsed = InputTextParser().parse("<")
+    assert parsed.cars[0].direction is Direction.LEFT

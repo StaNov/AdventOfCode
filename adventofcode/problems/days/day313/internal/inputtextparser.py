@@ -7,6 +7,7 @@ _directions_map = {
     "^": Direction.UP,
     "v": Direction.DOWN,
     ">": Direction.RIGHT,
+    "<": Direction.LEFT,
 }
 
 
