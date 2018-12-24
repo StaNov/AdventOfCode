@@ -53,7 +53,7 @@ def test_more_cars_positions():
 
 def test_corner_left_to_up():
     parsed = InputTextParser().parse(
-        "\\"
+        "/"
     )
 
     assert RoadType.LEFT_TO_UP == parsed.roads[(0, 0)]
@@ -62,8 +62,8 @@ def test_corner_left_to_up():
 
 def test_more_corners():
     parsed = InputTextParser().parse(
-        r" \  " "\n"
-        r"\ \ " "\n"
+        r" /  " "\n"
+        r"/ / " "\n"
     )
 
     assert RoadType.LEFT_TO_UP == parsed.roads[(1, 0)]

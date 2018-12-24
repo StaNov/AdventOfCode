@@ -12,12 +12,12 @@ class RoadType(Enum):
             return initial_direction
 
         if initial_direction is Direction.LEFT:
-            return Direction.UP
-
-        if initial_direction is Direction.DOWN:
-            return Direction.RIGHT
-
-        if initial_direction is Direction.RIGHT:
             return Direction.DOWN
 
-        return Direction.LEFT
+        if initial_direction is Direction.DOWN:
+            return Direction.LEFT
+
+        if initial_direction is Direction.RIGHT:
+            return Direction.UP
+
+        return Direction.RIGHT

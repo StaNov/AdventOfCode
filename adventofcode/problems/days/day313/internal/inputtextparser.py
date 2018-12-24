@@ -12,7 +12,7 @@ _directions_map = {
 }
 
 _roads_map = {
-    "\\": RoadType.LEFT_TO_UP,
+    "/": RoadType.LEFT_TO_UP,
 }
 
 
