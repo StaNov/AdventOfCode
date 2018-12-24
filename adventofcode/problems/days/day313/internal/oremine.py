@@ -16,9 +16,13 @@ class OreMine:
         self.cars.sort(key=lambda c: c.position)
 
         for car in self.cars:
-            car.move()
-            self._check_collisions(car)
-            car.turn(self.roads.get(car.position, RoadType.STRAIGHT))
+            self._move_and_turn_car(car)
+
+    def _move_and_turn_car(self, car):
+        car.move()
+        self._check_collisions(car)
+        road_under_car = self.roads.get(car.position, RoadType.STRAIGHT)
+        car.turn(road_under_car)
 
     def _check_collisions(self, car):
         same_position_count = sum(car.position == c.position for c in self.cars)
