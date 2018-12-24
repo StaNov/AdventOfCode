@@ -3,36 +3,18 @@ from .roadtype import RoadType
 
 
 def test_straight_does_not_change_direction():
-    initial_rotation = object()
-
-    final_rotation = RoadType.STRAIGHT.rotate(initial_rotation)
-
-    assert final_rotation is initial_rotation
-
-
-def test_left_to_up_turns_up_to_right():
-    initial_rotation = Direction.UP
-    final_rotation = RoadType.LEFT_TO_UP.rotate(initial_rotation)
-
-    assert final_rotation is Direction.RIGHT
+    mock_rotation = object()
+    _assert_direction_changed_after_rotation_both_ways(RoadType.STRAIGHT, mock_rotation, mock_rotation)
 
 
 def test_left_to_up_turns_left_to_down():
-    initial_rotation = Direction.LEFT
-    final_rotation = RoadType.LEFT_TO_UP.rotate(initial_rotation)
-
-    assert final_rotation is Direction.DOWN
-
-
-def test_left_to_up_turns_down_to_left():
-    initial_rotation = Direction.DOWN
-    final_rotation = RoadType.LEFT_TO_UP.rotate(initial_rotation)
-
-    assert final_rotation is Direction.LEFT
+    _assert_direction_changed_after_rotation_both_ways(RoadType.LEFT_TO_UP, Direction.LEFT, Direction.DOWN)
 
 
 def test_left_to_up_turns_right_to_up():
-    initial_rotation = Direction.RIGHT
-    final_rotation = RoadType.LEFT_TO_UP.rotate(initial_rotation)
+    _assert_direction_changed_after_rotation_both_ways(RoadType.LEFT_TO_UP, Direction.RIGHT, Direction.UP)
 
-    assert final_rotation is Direction.UP
+
+def _assert_direction_changed_after_rotation_both_ways(road_type, direction_1, direction_2):
+    assert direction_2 is road_type.rotate(direction_1)
+    assert direction_1 is road_type.rotate(direction_2)
