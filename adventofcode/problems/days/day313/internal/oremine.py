@@ -2,8 +2,15 @@ from .roadtype import RoadType
 
 
 class OreMine:
-    def __init__(self, cars):
+    def __init__(self, cars, roads=None):
+        if roads is None:
+            roads = []
+
         self.cars = cars
+        self.roads = {}
+
+        for road_position, road_type in roads:
+            self.roads[road_position] = road_type
 
     def simulate_step(self):
         self.cars.sort(key=lambda c: c.position)
@@ -11,7 +18,7 @@ class OreMine:
         for car in self.cars:
             car.move()
             self._check_collisions(car)
-            car.turn(RoadType.STRAIGHT)
+            car.turn(self.roads.get(car.position, RoadType.STRAIGHT))
 
     def _check_collisions(self, car):
         same_position_count = sum(car.position == c.position for c in self.cars)

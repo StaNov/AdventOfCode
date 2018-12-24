@@ -81,3 +81,14 @@ def test_simulate_until_collision_happens():
     mine = OreMine([car_1, car_2])
 
     assert (10, 10) == mine.simulate_until_first_collision()
+
+
+class RoadTypeSpy:
+    pass
+
+
+def test_create_ore_mine_with_roads():
+    road_type = RoadTypeSpy()
+    mine = OreMine([], [((0, 0), road_type)])
+
+    assert road_type is mine.roads[(0, 0)]
