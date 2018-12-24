@@ -29,10 +29,22 @@ def test_example_1_horizontal_collision(calculator):
 
 # TODO
 @pytest.mark.skip
-def test_example_1_corner_collision(calculator):
-    assert "1,2" == DayCalculator(
+def test_example_1_corner_collision_1(calculator):
+    assert "1,1" == DayCalculator(
         r" /-<\ " "\n"
         r" |  | " "\n"
+        r" |  | " "\n"
+        r" ^  | " "\n"
+        r" \--/ " "\n"
+    ).calculate_part_1()
+
+
+# TODO
+@pytest.mark.skip
+def test_example_1_corner_collision_2(calculator):
+    assert "1,4" == DayCalculator(
+        r" /--\ " "\n"
+        r" v  | " "\n"
         r" |  | " "\n"
         r" |  | " "\n"
         r" \-</ " "\n"
