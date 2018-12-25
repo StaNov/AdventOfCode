@@ -7,7 +7,7 @@ sudo: required
 dist: xenial
 
 script:
-  - echo -en "travis_fold:start:Cheap tests\nRunning cheap tests"; python -m adventofcode.runtests --onlycheap; echo "travis_fold:end:Cheap tests"
-  - echo -en "travis_fold:start:Expensive tests\nRunning expensive tests"; python -m adventofcode.runtests --onlyexpensive; echo "travis_fold:end:Expensive tests"
-  - echo -en "travis_fold:start:Profile\nRunning profiling"; python -m adventofcode.profile; echo "travis_fold:end:Profile"
-  - echo -en "travis_fold:start:Coverage\nRunning coverage"; ( coverage run adventofcode/runtests.py --all && coverage xml && python-codacy-coverage -r coverage.xml ); echo "travis_fold:end:Coverage"
+  - echo -e "travis_fold:start:Cheap tests"; echo -e "Running cheap tests"; python -m adventofcode.runtests --onlycheap; echo "travis_fold:end:Cheap tests"
+  - echo -e "travis_fold:start:Expensive tests"; echo -e "Running expensive tests"; python -m adventofcode.runtests --onlyexpensive; echo "travis_fold:end:Expensive tests"
+  - echo -e "travis_fold:start:Profile"; echo -e "Running profiling"; python -m adventofcode.profile; echo "travis_fold:end:Profile"
+  - echo -e "travis_fold:start:Coverage"; echo -e "Running coverage"; ( coverage run adventofcode/runtests.py --all && coverage xml && python-codacy-coverage -r coverage.xml ); echo "travis_fold:end:Coverage"
