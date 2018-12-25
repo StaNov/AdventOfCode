@@ -60,13 +60,22 @@ def test_corner_left_to_up():
     assert None is parsed.roads.get((0, 1))
 
 
+def test_corner_right_to_up():
+    parsed = InputTextParser().parse(
+        "\\"
+    )
+
+    assert RoadType.RIGHT_TO_UP == parsed.roads[(0, 0)]
+    assert None is parsed.roads.get((0, 1))
+
+
 def test_more_corners():
     parsed = InputTextParser().parse(
         r" /  " "\n"
-        r"/ / " "\n"
+        r"/ \ " "\n"
     )
 
     assert RoadType.LEFT_TO_UP == parsed.roads[(1, 0)]
     assert RoadType.LEFT_TO_UP == parsed.roads[(0, 1)]
-    assert RoadType.LEFT_TO_UP == parsed.roads[(2, 1)]
+    assert RoadType.RIGHT_TO_UP == parsed.roads[(2, 1)]
     assert None is parsed.roads.get((1, 1))
