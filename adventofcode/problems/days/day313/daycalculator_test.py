@@ -49,6 +49,20 @@ def test_example_1_corner_collision_2(calculator):
 
 # TODO
 @pytest.mark.skip
+def test_example_1_one_crossroad(calculator):
+    assert "5,3" == DayCalculator(
+        r"      /--\   " "\n"
+        r"      v  |   " "\n"
+        r"      |  |   " "\n"
+        r" />---+--+-\ " "\n"
+        r" |    \--/ | " "\n"
+        r" |         | " "\n"
+        r" \---------/ " "\n"
+    ).calculate_part_1()
+
+
+# TODO
+@pytest.mark.skip
 def test_example_1_full(calculator):
     assert "7,3" == DayCalculator(
         r"/->-\         " "\n"
