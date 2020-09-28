@@ -14,3 +14,10 @@ def test_turn_left():
     assert Turn.LEFT.of(Direction.LEFT) is Direction.DOWN
     assert Turn.LEFT.of(Direction.UP) is Direction.LEFT
     assert Turn.LEFT.of(Direction.DOWN) is Direction.RIGHT
+
+
+def test_turn_right():
+    assert Turn.RIGHT.of(Direction.RIGHT) is Direction.DOWN
+    assert Turn.RIGHT.of(Direction.LEFT) is Direction.UP
+    assert Turn.RIGHT.of(Direction.UP) is Direction.RIGHT
+    assert Turn.RIGHT.of(Direction.DOWN) is Direction.LEFT
