@@ -17,10 +17,6 @@ def run_tests(timeout_seconds=1, mark="", parallel=True):
     return pytest.main(arguments)
 
 
-def _script_called_without_arguments():
-    return len(sys.argv) == 1
-
-
 def run_tests_all(parallel):
     return run_tests(30, parallel=parallel)
 
@@ -56,13 +52,11 @@ if __name__ == "__main__":
         print("Running all tests...")
         exit_code = run_tests_all(not args.sequential)
         sys.exit(exit_code)
-
-    if args.onlyexpensive:
+    elif args.onlyexpensive:
         print("Running only expensive tests...")
         exit_code = run_tests_only_expensive(not args.sequential)
         sys.exit(exit_code)
-
-    if args.onlycheap or _script_called_without_arguments():
+    else:
         print("Running only cheap tests...")
         exit_code = run_tests_only_cheap(not args.sequential)
         sys.exit(exit_code)
