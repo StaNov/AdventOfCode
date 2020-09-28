@@ -4,8 +4,12 @@ from argparse import ArgumentParser
 import pytest
 
 
-def run_tests(params):
-    return pytest.main(params)
+def run_tests(timeout_seconds=1, mark=""):
+    return pytest.main([
+        "--timeout", str(timeout_seconds),
+        "-n", "auto",
+        "-m", mark
+    ])
 
 
 def _script_called_without_arguments():
@@ -13,23 +17,15 @@ def _script_called_without_arguments():
 
 
 def run_tests_all():
-    return run_tests([
-        "--timeout", "30"  # in seconds
-    ])
+    return run_tests(30)
 
 
 def run_tests_only_expensive():
-    return run_tests([
-        "-m", "time_expensive",
-        "--timeout", "30"  # in seconds
-    ])
+    return run_tests(30, "time_expensive")
 
 
 def run_tests_only_cheap():
-    return run_tests([
-        "-m", "not time_expensive",
-        "--timeout", "1"  # in seconds
-    ])
+    return run_tests(mark="not time_expensive")
 
 
 if __name__ == "__main__":
