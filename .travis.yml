@@ -7,7 +7,7 @@ sudo: required
 dist: xenial
 
 script:
-  - echo -e "travis_fold:start:Cheap"; echo -e "\e[0KCHEAP TESTS"; python -m adventofcode.runtests --onlycheap; echo "travis_fold:end:Cheap"
-  - echo -e "travis_fold:start:Expensive"; echo -e "\e[0KEXPENSIVE TESTS"; python -m adventofcode.runtests --onlyexpensive; echo "travis_fold:end:Expensive"
-  - echo -e "travis_fold:start:Profile"; echo -e "\e[0KPROFILING"; python -m adventofcode.profile; echo "travis_fold:end:Profile"
-  - echo -e "travis_fold:start:Coverage"; echo -e "\e[0KCOVERAGE"; ( coverage run adventofcode/runtests.py --all && coverage xml && python-codacy-coverage -r coverage.xml ); echo "travis_fold:end:Coverage"
+  - echo -e "travis_fold:start:Cheap"; echo -e "\e[0KCHEAP TESTS" && python -m adventofcode.runtests --onlycheap && echo "travis_fold:end:Cheap"
+  - echo -e "travis_fold:start:Expensive"; echo -e "\e[0KEXPENSIVE TESTS" && python -m adventofcode.runtests --onlyexpensive && echo "travis_fold:end:Expensive"
+  - echo -e "travis_fold:start:Profile"; echo -e "\e[0KPROFILING" && python -m adventofcode.profile && echo "travis_fold:end:Profile"
+  - echo -e "travis_fold:start:Coverage"; echo -e "\e[0KCOVERAGE" && ( coverage run adventofcode/runtests.py --all && coverage xml && python-codacy-coverage -r coverage.xml ) && echo "travis_fold:end:Coverage"
