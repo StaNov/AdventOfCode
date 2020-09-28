@@ -9,7 +9,7 @@ def profile():
     profiler = Profiler()
     profiler.start()
 
-    exit_code = runtests.run_tests_all()
+    exit_code = runtests.run_tests_all(parallel=False)
 
     profiler.stop()
 
