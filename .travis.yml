@@ -11,4 +11,4 @@ script:
   - echo -e "travis_fold:start:Cheap"; echo -e "\e[0KCHEAP TESTS" && python -m runtests --onlycheap && echo "travis_fold:end:Cheap"
   - echo -e "travis_fold:start:Expensive"; echo -e "\e[0KEXPENSIVE TESTS" && python -m runtests --onlyexpensive && echo "travis_fold:end:Expensive"
   - echo -e "travis_fold:start:Profile"; echo -e "\e[0KPROFILING" && python -m profile && echo "travis_fold:end:Profile"
-  - echo -e "travis_fold:start:Coverage"; echo -e "\e[0KCOVERAGE" && ( coverage run runtests.py --all --sequential && coverage xml && python-codacy-coverage -r coverage.xml ) && echo "travis_fold:end:Coverage"
+  - echo -e "travis_fold:start:Coverage"; echo -e "\e[0KCOVERAGE" && ( coverage run runtests.py --all --sequential && coverage xml && bash <(curl -Ls https://coverage.codacy.com/get.sh) report ) && echo "travis_fold:end:Coverage"
